@@ -1,0 +1,106 @@
+#########
+# Yabai #
+#########
+
+# yabai="/opt/homebrew/bin/yabai"
+
+## Spaces that should be created
+declare -a yabai_create_spaces=("banana" "web" "develop" "some" "thing" "social")
+
+## Get nuber of spaces that should be created
+yabai_create_spaces_count=${#yabai_create_spaces[@]}
+
+## Get number of existing spaces
+yabai_spaces=$(yabai -m query --spaces | jq length)
+
+## Load scripting additions
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+##########
+# Config #
+##########
+
+yabai -m config split_ratio 0.6
+yabai -m config focus_follows_mouse off # possible: off, autofocus, autoraise
+yabai -m config window_shadow float
+
+## Destroy all spaces in reverse order(except of the first one)
+i=${yabai_spaces}
+while [ "${i}" -ne 1 ]; do
+  yabai -m space "${i}" --destroy
+  i=$((i - 1))
+done
+
+## Create spaces
+i=1
+while [ "${i}" -lt "${yabai_create_spaces_count}" ]; do
+  yabai -m space --create
+  i=$((i + 1))
+done
+
+## Create spaces and label them
+i=0
+for name in "${yabai_create_spaces[@]}"; do
+  i=$((i + 1))
+  yabai -m space ${i} --label "${name}"
+done
+
+#########
+# Rules #
+#########
+
+## Space 1:banana
+space=1
+
+## Space 2:web
+space=2
+yabai -m rule --add app="^Arc$" space="^${space}"
+
+## Space 3:develop
+space=3
+yabai -m rule --add app="^VSCode$" space="^${space}"
+yabai -m rule --add app="^alacritty$" title="^neovim$" space="^${space}"
+yabai -m rule --add app="^alacritty$" title="^t$" space="^${space}"
+
+## Space 4:some
+space=4
+yabai -m rule --add app="^Insomnia$" space="^${space}"
+yabai -m rule --add app="^MongoDB Compass$" space="^${space}"
+
+## Space 5:thing
+space=5
+yabai -m rule --add app="^Notion$" space="^${space}"
+
+## Space 6:social
+space=6
+yabai -m rule --add app="^Beeper$" space="^${space}"
+yabai -m rule --add app="^Discord$" space="^${space}"
+
+## Sticky Windows
+# yabai -m rule --add app="^Todoist$" sticky=on
+
+## Unmanaged applications
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Numi$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^System.*einstellungen$" manage=off
+yabai -m rule --add app="^System.*informationen$" manage=off
+yabai -m rule --add app="^Todoist$" manage=off
+
+## Unmanaged windows of specific applications
+yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
+
+## Apply all rules
+yabai -m rule --apply
+
+###############
+# Post Config #
+###############
+
+yabai -m config layout bsp
+yabai -m config --space 1 layout float
+
+# # yabai -m rule --add app="^Arc$" sub-layer="below" manage=off
+
+# vim:ft=sh

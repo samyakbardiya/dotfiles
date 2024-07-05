@@ -1,0 +1,55 @@
+
+# Focus space
+alt - u    : yabai -m space --focus 1
+alt - e    : yabai -m space --focus 2
+alt - o    : yabai -m space --focus 3
+alt - a    : yabai -m space --focus 4
+alt - 0x0E : yabai -m space --focus 5 # .
+alt - 0x0D : yabai -m space --focus 6 # ,
+# alt - p    : yabai -m space --focus 5
+# alt - 0x0C : yabai -m space --focus 1 # ;
+
+# Move window to space
+alt + shift - u    : yabai -m window --space 1
+alt + shift - e    : yabai -m window --space 2
+alt + shift - o    : yabai -m window --space 3
+alt + shift - a    : yabai -m window --space 4
+alt + shift - 0x0E : yabai -m window --space 5 # .
+alt + shift - 0x0D : yabai -m window --space 6 # ,
+# alt + shift - p    : yabai -m window --space 5
+
+
+# # Change layout
+alt - 0x12 : yabai -m space --layout bsp   # & 1
+alt - 0x13 : yabai -m space --layout float # [ 2
+alt - 0x14 : yabai -m space --layout stack # { 3
+# alt - 0x21 : yabai -m space --layout float # @ ]
+# alt - 0x1E : yabai -m space --layout bsp   # / [
+
+# Focus window
+ralt - tab : yabai -m window --focus recent # tab
+ralt - j   : yabai -m window --focus next
+ralt - k   : yabai -m window --focus prev
+
+# Swap window
+ralt + shift - j : yabai -m window --swap next
+ralt + shift - k : yabai -m window --swap prev
+# TODO: Work on me ;(
+#
+# alt + shift - j : yabai_window_cycle_clockwise.sh
+# alt + shift - k : yabai_window_cycle_counterclockwise.sh
+
+# # Window toggle
+alt - 0x1E : yabai -m window --toggle float             # / [
+alt - 0x21 : yabai -m window --toggle sticky            # @ ]
+alt - 0x2A : yabai -m window --toggle split             # \ \
+alt - 0x1B : yabai -m window --toggle zoom-fullscreen   # ] -
+alt - 0x18 : yabai -m window --toggle native-fullscreen # # +
+
+# Open Sesame
+ralt - 0x24 : alacritty # Return
+ralt + shift - 0x24 : alacritty --title=neovim -e tmux new-session -A -s neovim # Return
+ralt - a : open -a /Applications/Alacritty.app/
+ralt - b : open -a /Applications/Arc.app/
+ralt - n : open -a /Applications/Notion.app/
+ralt - m : open -a /Applications/Beeper.app/

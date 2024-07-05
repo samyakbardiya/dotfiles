@@ -1,0 +1,34 @@
+# vim:ft=zsh
+setopt promptsubst
+
+PROMPT=""
+RPROMPT=""
+
+# dashed line
+#PROMPT+="$FG[008]${(r:$COLUMNS::-:)}${RESET}"$'\n'
+
+# username for ssh session
+[[ -n "$SSH_CLIENT" ]] && PROMPT+="${BOLD_RED}%n${WHITE}@${RED}%M${RESET} "
+#PROMPT+="${BOLD_RED}%n${RESET} "
+
+# present dir from home
+PROMPT+="${YELLOW}%3(~|../|)%2~${RESET} "
+# > if normal user, # if sudo
+PROMPT+="%(!|${BOLD_RED}#${RESET}|${BOLD_BLUE}>${RESET}) "
+
+# right prompt -- with error code and time taken
+function preexec() {
+	timer=$(($(date +%s)))
+}
+function precmd() {
+	if [ $timer ]; then
+		now=$(($(date +%s)))
+		elapsed=$(($now - $timer))
+		minutes=$((elasped / 60))
+		seconds=$((elapsed % 60))
+		[[ $seconds -lt 10 ]] && seconds="0${seconds}"
+		time_taken="${minutes}:${seconds}"
+		export RPROMPT="%(?||${BOLD_RED}[%?]${RESET}) $FG[007]${time_taken}${RESET}"
+		unset timer
+	fi
+}
