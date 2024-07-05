@@ -5,16 +5,16 @@ import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 [window]
 dynamic_padding = true     # Spread additional padding evenly around the terminal content.
 decorations = "buttonless"
-opacity = 1                # 0.8
+opacity = 0.9
 blur = true
 startup_mode = "Maximized"
 option_as_alt = "OnlyLeft"
 
 [font]
 # normal = { family = "Input Mono", style = "Regular" }
-# normal = { family = "InputMono Nerd Font", style = "Regular" }
+normal = { family = "InputMono Nerd Font", style = "Regular" }
 # normal = { family = "MonaspiceNe Nerd Font", style = "Regular" }
-normal = { family = "FiraCode Nerd Font", style = "Regular" }
+# normal = { family = "FiraCode Nerd Font", style = "Regular" }
 size = 16
 builtin_box_drawing = true
 
