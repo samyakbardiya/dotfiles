@@ -70,6 +70,7 @@ yabai -m rule --add app="^MongoDB Compass$" space="^${space}"
 
 ## Space 5:thing
 space=5
+yabai -m rule --add app="^Notion Calendar$" space="^${space}"
 yabai -m rule --add app="^Notion$" space="^${space}"
 
 ## Space 6:social

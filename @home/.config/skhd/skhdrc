@@ -51,5 +51,8 @@ ralt - 0x24 : alacritty # Return
 ralt + shift - 0x24 : alacritty --title=neovim -e tmux new-session -A -s neovim # Return
 ralt - a : open -a /Applications/Alacritty.app/
 ralt - b : open -a /Applications/Arc.app/
-ralt - n : open -a /Applications/Notion.app/
+ralt - c : open -a /Applications/Notion\ Calendar.app/
+ralt - d : open -a /Applications/Discord.app/
 ralt - m : open -a /Applications/Beeper.app/
+ralt - n : open -a /Applications/Notion.app/
+ralt - t : open -a /Applications/Todoist.app/
