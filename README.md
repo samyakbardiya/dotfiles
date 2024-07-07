@@ -1,5 +1,5 @@
 # dotfiles
 
 ```sh
-stow -t ~ -S @home -v
+stow --dot-files --no-folding --target ~ --stow @home --verbose
 ```
