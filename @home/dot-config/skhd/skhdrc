@@ -1,24 +1,25 @@
 #
-#  ____  _  ___   _ ____
-# / ___|| |/ / | | |  _ \
-# \___ \| ' /| |_| | | | |
-#  ___) | . \|  _  | |_| |
-# |____/|_|\_\_| |_|____/
+#      _    _         _
+#  ___| | _| |__   __| |
+# / __| |/ / '_ \ / _` |
+# \__ \   <| | | | (_| |
+# |___/_|\_\_| |_|\__,_|
 #
 #
 # @samyakbardiya
+# vim:ft=conf
 
 ###########
 ## Spaces #
 ###########
 
 ## Focus space
-alt - u    : yabai -m space --focus 1
-alt - e    : yabai -m space --focus 2
-alt - o    : yabai -m space --focus 3
-alt - a    : yabai -m space --focus 4
-alt - 0x0E : yabai -m space --focus 5 # .
-alt - 0x0D : yabai -m space --focus 6 # ,
+lalt - u    : yabai -m space --focus 1
+lalt - e    : yabai -m space --focus 2
+lalt - o    : yabai -m space --focus 3
+lalt - a    : yabai -m space --focus 4
+lalt - 0x0E : yabai -m space --focus 5 # .
+lalt - 0x0D : yabai -m space --focus 6 # ,
 
 ## Move window to space
 alt + shift - u    : yabai -m window --space 1
@@ -72,6 +73,7 @@ ralt - a : open -a /Applications/Alacritty.app/
 ralt - b : open -a /Applications/Arc.app/
 ralt - c : open -a /Applications/Notion\ Calendar.app/
 ralt - d : open -a /Applications/Discord.app/
+ralt - e : wezterm -e yazi
 ralt - m : open -a /Applications/Beeper.app/
 ralt - n : open -a /Applications/Notion.app/
 ralt - t : open -a /Applications/Todoist.app/

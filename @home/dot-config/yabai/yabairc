@@ -1,21 +1,13 @@
 #
-# __   __    _           _
-# \ \ / /_ _| |__   __ _(_)
-#  \ V / _` | '_ \ / _` | |
-#   | | (_| | |_) | (_| | |
-#   |_|\__,_|_.__/ \__,_|_|
-#
+#              _           _
+#  _   _  __ _| |__   __ _(_)
+# | | | |/ _` | '_ \ / _` | |
+# | |_| | (_| | |_) | (_| | |
+#  \__, |\__,_|_.__/ \__,_|_|
+#  |___/
 #
 # @samyakbardiya
-
-## Spaces that should be created
-declare -a yabai_create_spaces=("banana" "web" "develop" "tool" "product" "social")
-
-## Get nuber of spaces that should be created
-yabai_create_spaces_count=${#yabai_create_spaces[@]}
-
-## Get number of existing spaces
-yabai_spaces=$(yabai -m query --spaces | jq length)
+# vim:ft=sh
 
 ## Load scripting additions
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
@@ -25,10 +17,40 @@ sudo yabai --load-sa
 # Config #
 ##########
 
-yabai -m config split_ratio 0.6
-yabai -m config focus_follows_mouse autoraise # possible: off, autofocus, autoraise
-yabai -m config window_shadow float
+## Gaps
+yabai -m config top_padding 5
+yabai -m config bottom_padding 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 5
 
+## split ratio
+yabai -m config auto_balance off
+yabai -m config split_ratio 0.6
+
+## Mouse support
+yabai -m config focus_follows_mouse autoraise # (options: off, autofocus, autoraise)
+yabai -m config mouse_follows_focus on
+
+## Window modifications
+yabai -m config window_shadow float # (options: on, off, float)
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+
+##########
+## Space #
+##########
+
+### Spaces that should be created
+#declare -a yabai_create_spaces=("banana" "web" "develop" "tool" "product" "social")
+#
+### Get nuber of spaces that should be created
+#yabai_create_spaces_count=${#yabai_create_spaces[@]}
+#
+### Get number of existing spaces
+#yabai_spaces=$(yabai -m query --spaces | jq length)
+#
 ### Destroy all spaces in reverse order, except of the first one
 #i=${yabai_spaces}
 #while [ "${i}" -ne 1 ]; do
@@ -56,6 +78,7 @@ yabai -m config window_shadow float
 
 ## Space 1:banana
 space=1
+yabai -m rule --add app="^Spotify$" space="^${space}"
 
 ## Space 2:web
 space=2
@@ -106,5 +129,3 @@ yabai -m rule --apply
 
 yabai -m config layout bsp
 yabai -m config --space 1 layout float
-
-# vim:ft=sh
