@@ -29,7 +29,8 @@ zmodule ssh       # Provides a convenient way to load ssh-agent.
 zmodule termtitle # Sets a custom terminal title.
 
 # Distro specific
-zmodule pacman # Adds aliases for the pacman package manager.
+zmodule homebrew # Adds aliases for Homebrew.
+zmodule pacman   # Adds aliases for the pacman package manager.
 
 # Community modules
 # zmodule joke/zim-starship # Sets up starship prompt in zsh.

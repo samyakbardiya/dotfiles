@@ -7,7 +7,6 @@
 #  |___/
 #
 # @samyakbardiya
-# vim:ft=sh
 
 ## Load scripting additions
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
@@ -30,7 +29,7 @@ yabai -m config split_ratio 0.6
 
 ## Mouse support
 yabai -m config focus_follows_mouse autoraise # (options: off, autofocus, autoraise)
-yabai -m config mouse_follows_focus on
+yabai -m config mouse_follows_focus off
 
 ## Window modifications
 yabai -m config window_shadow float # (options: on, off, float)
@@ -78,6 +77,7 @@ yabai -m config normal_window_opacity 0.9
 
 ## Space 1:banana
 space=1
+yabai -m rule --add app="^Jellyfin Media Player$" space="^${space}"
 yabai -m rule --add app="^Spotify$" space="^${space}"
 
 ## Space 2:web
@@ -104,6 +104,7 @@ yabai -m rule --add app="^Notion$" space="^${space}"
 space=6
 yabai -m rule --add app="^Beeper$" space="^${space}"
 yabai -m rule --add app="^Discord$" space="^${space}"
+yabai -m rule --add app="^Texts$" space="^${space}"
 
 ## Sticky Windows
 # yabai -m rule --add app="^Todoist$" sticky=on
@@ -129,3 +130,5 @@ yabai -m rule --apply
 
 yabai -m config layout bsp
 yabai -m config --space 1 layout float
+
+# vim:ft=sh

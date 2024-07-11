@@ -7,7 +7,6 @@
 #
 #
 # @samyakbardiya
-# vim:ft=conf
 
 ###########
 ## Spaces #
@@ -74,6 +73,8 @@ ralt - b : open -a /Applications/Arc.app/
 ralt - c : open -a /Applications/Notion\ Calendar.app/
 ralt - d : open -a /Applications/Discord.app/
 ralt - e : wezterm -e yazi
-ralt - m : open -a /Applications/Beeper.app/
+ralt - m : open -a /Applications/Texts.app/
 ralt - n : open -a /Applications/Notion.app/
 ralt - t : open -a /Applications/Todoist.app/
+
+# vim:ft=conf
