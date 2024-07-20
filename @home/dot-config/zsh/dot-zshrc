@@ -130,6 +130,7 @@ source ${ZIM_HOME}/init.zsh
 
 source ${ZDOTDIR}/aliasrc
 source ${ZDOTDIR}/functionrc
+source ${HOME}/Documents/ledger/bin/bashrc
 
 zmodload -F zsh/terminfo +p:terminfo
 

@@ -29,9 +29,7 @@ export BIN="$XDG_BIN_HOME"
 export CONFIG="$XDG_CONFIG_HOME"
 export CACHE="$XDG_CACHE_HOME"
 export DATA="$XDG_DATA_HOME"
-export SCRIPT="$HOME/scripts"
-
-export LEDGER_FILE_CURRENT="$HOME/papers/ledger/2024-25.journal"
+export SCRIPT="$HOME/code/scripts"
 
 
 ########
@@ -39,9 +37,10 @@ export LEDGER_FILE_CURRENT="$HOME/papers/ledger/2024-25.journal"
 ########
 
 # binaries
-export PATH="${PATH}:${SCRIPT:-$HOME/scripts}"
-export PATH="${PATH}:${SCRIPT:-$HOME/scripts}/crt"
-export PATH="${PATH}:${SCRIPT:-$HOME/scripts}/statusbar"
+export PATH="${PATH}:${SCRIPT:-$HOME/code/scripts}"
+export PATH="${PATH}:${SCRIPT:-$HOME/code/scripts}/crt"
+export PATH="${PATH}:${SCRIPT:-$HOME/code/scripts}/hledger"
+export PATH="${PATH}:${HOME}/Documents/ledger/bin/bashrc"
 export PATH="${PATH}:${XDG_BIN_HOME:-$HOME/.local/bin}"
 export PATH="${PATH}:${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins/t-smart-tmux-session-manager/bin"
 export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/applications"
@@ -113,7 +112,6 @@ export FZF_DEFAULT_OPTS=" \
 # export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 # export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 # alias adb='HOME="$XDG_DATA_HOME"/android adb'
-alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
 alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
@@ -135,7 +133,6 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
-export LEDGER_FILE="$HOME/papers/ledger/hledger.journal"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"

@@ -17,11 +17,13 @@
 [push]
   autosetupremote = true
 
-; [commit]
-;   gpgsign = true
+[commit]
+  gpgsign = true
 
 [includeIf "gitdir:~/code/"]
   path = ~/.config/git/config_personal
 
 [includeIf "gitdir:~/work/"]
   path = ~/.config/git/config_work
+
+# vim:ft=gitconfig

@@ -20,7 +20,7 @@ alias doas='doas --'
 
 # clear -x
 alias cx='clear -x'
-alias cxx='clear'
+alias cX='clear'
 
 # emacs
 alias e="emacsclient --no-wait -a 'emacs --fg-daemon'"
@@ -228,6 +228,12 @@ alias mvnt='mvn test'
 alias mvntc='mvn tomcat:run'
 alias mvntc7='mvn tomcat7:run'
 alias mvn-updates='mvn versions:display-dependency-updates'
+
+
+#=========#
+# unalias #
+#=========#
+unalias gh
 
 
 # vim:ft=zsh

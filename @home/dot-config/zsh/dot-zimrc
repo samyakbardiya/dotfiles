@@ -61,7 +61,6 @@ zmodule ohmyzsh/ohmyzsh --root plugins/aliases # aliases cheatsheet
 zmodule ohmyzsh/ohmyzsh --root plugins/dotenv  # Automatically load your project ENV variables from .env
 zmodule ohmyzsh/ohmyzsh --root plugins/mvn     # many useful aliases
 zmodule ohmyzsh/ohmyzsh --root plugins/thefuck # The Fuck plugin
-# zmodule ohmyzsh/ohmyzsh --root plugins/tmux    # provides aliases for tmux
 
 # zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found # command not found
 # zmodule ohmyzsh/ohmyzsh --root plugins/docker            # adds auto-completion and aliases
@@ -80,6 +79,7 @@ zmodule ohmyzsh/ohmyzsh --root plugins/thefuck # The Fuck plugin
 # zmodule ohmyzsh/ohmyzsh --root plugins/ripgrep           # adds completion
 # zmodule ohmyzsh/ohmyzsh --root plugins/rsync             # adds aliases
 # zmodule ohmyzsh/ohmyzsh --root plugins/systemd           # provides many useful aliases
+# zmodule ohmyzsh/ohmyzsh --root plugins/tmux              # provides aliases for tmux
 # zmodule ohmyzsh/ohmyzsh --root plugins/vscode            # provides useful aliases
 
 ################
