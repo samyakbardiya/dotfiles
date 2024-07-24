@@ -12,9 +12,9 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-##########
-# Config #
-##########
+###########
+## Config #
+###########
 
 ## Gaps
 yabai -m config top_padding 5
@@ -38,39 +38,39 @@ yabai -m config window_shadow float # (options: on, off, float)
 ## Space #
 ##########
 
-### Spaces that should be created
-#declare -a yabai_create_spaces=("banana" "web" "develop" "tool" "product" "social")
-#
-### Get nuber of spaces that should be created
-#yabai_create_spaces_count=${#yabai_create_spaces[@]}
-#
-### Get number of existing spaces
-#yabai_spaces=$(yabai -m query --spaces | jq length)
-#
-### Destroy all spaces in reverse order, except of the first one
-#i=${yabai_spaces}
-#while [ "${i}" -gt 1 ]; do
-#  yabai -m space "${i}" --destroy
-#  i=$((i - 1))
-#done
-#
-### Create spaces
-#i=1
-#while [ "${i}" -lt "${yabai_create_spaces_count}" ]; do
-#  i=$((i + 1))
-#  yabai -m space --create
-#done
-#
-### Create spaces and label them
-#i=0
-#for name in "${yabai_create_spaces[@]}"; do
-#  i=$((i + 1))
-#  yabai -m space ${i} --label "${name}"
-#done
+## Spaces that should be created
+declare -a yabai_create_spaces=("banana" "web" "develop" "tool" "product" "social")
 
-#########
-# Rules #
-#########
+## Get nuber of spaces that should be created
+yabai_create_spaces_count=${#yabai_create_spaces[@]}
+
+## Get number of existing spaces
+yabai_spaces=$(yabai -m query --spaces | jq length)
+
+## Destroy all spaces in reverse order, except of the first one
+i=${yabai_spaces}
+while [ "${i}" -gt 1 ]; do
+  yabai -m space "${i}" --destroy
+  i=$((i - 1))
+done
+
+## Create spaces
+i=1
+while [ "${i}" -lt "${yabai_create_spaces_count}" ]; do
+  i=$((i + 1))
+  yabai -m space --create
+done
+
+## Create spaces and label them
+i=0
+for name in "${yabai_create_spaces[@]}"; do
+  i=$((i + 1))
+  yabai -m space ${i} --label "${name}"
+done
+
+##########
+## Rules #
+##########
 
 ## Space 1:banana
 space=1
@@ -80,7 +80,7 @@ yabai -m rule --add app="^Transmission Remote GUI$" space="^${space}"
 
 ## Space 2:web
 space=2
-yabai -m rule --add app="^Arc$" space="^${space}"
+# yabai -m rule --add app="^Arc$" space="^${space}"
 
 ## Space 3:develop
 space=3
@@ -91,6 +91,7 @@ yabai -m rule --add app="^alacritty$" title="^tmux$" space="^${space}"
 
 ## Space 4:tool
 space=4
+yabai -m rule --add app="^Beekeeper-Studio$" space="^${space}"
 yabai -m rule --add app="^Insomnia$" space="^${space}"
 yabai -m rule --add app="^MongoDB Compass$" space="^${space}"
 
@@ -104,25 +105,34 @@ space=6
 yabai -m rule --add app="^Beeper$" space="^${space}"
 yabai -m rule --add app="^Discord$" space="^${space}"
 yabai -m rule --add app="^Texts$" space="^${space}"
+yabai -m rule --add app="^Spark Desktop$" space social
 
 ## Sticky Windows
-# yabai -m rule --add app="^Todoist$" sticky=on
+yabai -m rule --add app="^Todoist$" sticky=on manage=off
+
+## Native Fullscreen
+yabai -m rule --add app="^streamio$" manage=off native-fullscreen=on
 
 ## Unmanaged applications
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Arc$" manage=off
 yabai -m rule --add app="^Numi$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^System.*einstellungen$" manage=off
 yabai -m rule --add app="^System.*informationen$" manage=off
-yabai -m rule --add app="^Todoist$" manage=off
 
 ## Unmanaged windows of specific applications
-yabai -m rule --add app="^Arc$" title="^Samyak$" manage=off
+# yabai -m rule --add app="^Arc$" title="^Samyak$" manage=off # Arc settings
 yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
 
 ## Apply all rules
 yabai -m rule --apply
+
+############
+## Signals #
+############
+yabai -m signal --add event=window_created app="^Arc$" action="~/.config/yabai/scripts/yabai_signal_window_created_arc.sh"
+# yabai -m signal --add event=dock_did_restart action="~/.config/yabai/scripts/yabai_signal_dock_did_restart.sh"
 
 ###############
 # Post Config #
@@ -130,5 +140,6 @@ yabai -m rule --apply
 
 yabai -m config layout bsp
 yabai -m config --space 1 layout float
+yabai -m config --space 3 layout stack
 
 # vim:ft=sh

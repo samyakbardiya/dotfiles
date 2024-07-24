@@ -20,6 +20,9 @@
 [commit]
   gpgsign = true
 
+[includeIf "gitdir:~/.config/"]
+  path = ~/.config/git/config_personal
+
 [includeIf "gitdir:~/code/"]
   path = ~/.config/git/config_personal
 

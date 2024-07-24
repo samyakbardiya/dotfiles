@@ -28,6 +28,7 @@ config.use_resize_increments = false
 ----------
 config.font_size = 16
 config.font = wezterm.font_with_fallback({
+	"InputMono Nerd Font",
 	"Input Mono",
 	-- "MonaspiceNe Nerd Font",
 	-- "Fira Code",
