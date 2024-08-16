@@ -1,9 +1,8 @@
-[init]
-  defaultbranch = main
+[commit]
+  gpgsign = true
 
-[user]
-  name = Samyak Bardiya
-  email = <>
+[core]
+  excludesfile = ~/.config/git/ignore
 
 [diff]
   tool = nvimdiff
@@ -14,16 +13,23 @@
 [difftool "nvimdiff"]
   cmd = nvim -d "$LOCAL" "$REMOTE"
 
+[init]
+  defaultbranch = main
+
 [push]
   autosetupremote = true
 
-[commit]
-  gpgsign = true
+[user]
+  name = Samyak Bardiya
+  email = <>
 
 [includeIf "gitdir:~/.config/"]
   path = ~/.config/git/config_personal
 
 [includeIf "gitdir:~/code/"]
+  path = ~/.config/git/config_personal
+
+[includeIf "gitdir:~/Documents/"]
   path = ~/.config/git/config_personal
 
 [includeIf "gitdir:~/work/"]

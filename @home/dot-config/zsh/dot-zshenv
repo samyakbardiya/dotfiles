@@ -7,7 +7,6 @@
 #
 #
 # @samyakbardiya
-# vim:ft=zsh
 
 ###################
 # XDG Directories #
@@ -40,12 +39,13 @@ export SCRIPT="$HOME/code/scripts"
 export PATH="${PATH}:${SCRIPT:-$HOME/code/scripts}"
 export PATH="${PATH}:${SCRIPT:-$HOME/code/scripts}/crt"
 export PATH="${PATH}:${SCRIPT:-$HOME/code/scripts}/hledger"
-export PATH="${PATH}:${HOME}/Documents/ledger/bin/bashrc"
+export PATH="${PATH}:${HOME}/Documents/ledger/bin"
 export PATH="${PATH}:${XDG_BIN_HOME:-$HOME/.local/bin}"
 export PATH="${PATH}:${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins/t-smart-tmux-session-manager/bin"
 export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/applications"
 export PATH="${PATH}:${XDG_CONFIG_HOME:-$HOME/.config}/emacs/bin"
 export PATH="${PATH}:${XDG_CONFIG_HOME}/yabai/scripts"
+export PATH="${PATH}:${GOPATH:-$HOME/.local/share/go}/bin"
 
 # dart & flutter
 export FLUTTER_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/fvm/default"
@@ -156,3 +156,4 @@ export XCURSOR_PATH="/usr/share/icons:$XDG_DATA_HOME/icons"
 # TEMP #
 ########
 
+# vim:ft=zsh

@@ -72,6 +72,30 @@ done
 ## Rules #
 ##########
 
+## Layer & Sub-layer
+yabai -m rule --add app="^Code$" sub-layer=normal
+yabai -m rule --add app="^Sublime Text$" sub-layer=normal
+yabai -m rule --add app="^Zed$" sub-layer=normal
+yabai -m rule --add app="^alacritty$" sub-layer=normal
+
+## Sticky Windows
+yabai -m rule --add app="^Todoist$" manage=off
+
+## Native Fullscreen
+yabai -m rule --add app="^streamio$" manage=off native-fullscreen=on
+
+## Unmanaged applications
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Arc$" manage=off
+yabai -m rule --add app="^Numi$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^System.*informationen$" manage=off
+
+## Unmanaged windows of specific applications
+# yabai -m rule --add app="^Arc$" title="^Samyak$" manage=off # Arc settings
+yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
+
 ## Space 1:banana
 space=1
 yabai -m rule --add app="^Jellyfin Media Player$" space="^${space}"
@@ -84,10 +108,11 @@ space=2
 
 ## Space 3:develop
 space=3
+yabai -m rule --add app="^Code$" space="^${space}"
 yabai -m rule --add app="^VSCode$" space="^${space}"
-yabai -m rule --add app="^alacritty$" title="^neovim$" space="^${space}"
-yabai -m rule --add app="^alacritty$" title="^t$" space="^${space}"
-yabai -m rule --add app="^alacritty$" title="^tmux$" space="^${space}"
+yabai -m rule --add app="^alacritty$" title="^neovim$" space="^${space}" sub-layer=normal
+yabai -m rule --add app="^alacritty$" title="^t$" space="^${space}" sub-layer=normal
+yabai -m rule --add app="^alacritty$" title="^tmux$" space="^${space}" sub-layer=normal
 
 ## Space 4:tool
 space=4
@@ -106,24 +131,6 @@ yabai -m rule --add app="^Beeper$" space="^${space}"
 yabai -m rule --add app="^Discord$" space="^${space}"
 yabai -m rule --add app="^Texts$" space="^${space}"
 yabai -m rule --add app="^Spark Desktop$" space social
-
-## Sticky Windows
-yabai -m rule --add app="^Todoist$" sticky=on manage=off
-
-## Native Fullscreen
-yabai -m rule --add app="^streamio$" manage=off native-fullscreen=on
-
-## Unmanaged applications
-yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^Arc$" manage=off
-yabai -m rule --add app="^Numi$" manage=off
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^System.*informationen$" manage=off
-
-## Unmanaged windows of specific applications
-# yabai -m rule --add app="^Arc$" title="^Samyak$" manage=off # Arc settings
-yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
 
 ## Apply all rules
 yabai -m rule --apply

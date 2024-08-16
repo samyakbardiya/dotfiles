@@ -44,8 +44,10 @@ alt - 0x14 : yabai -m space --layout stack # { 3
 
 ## Focus window
 ralt - tab : yabai -m window --focus recent # tab
-ralt - j   : yabai -m window --focus next
-ralt - k   : yabai -m window --focus prev
+ralt - v   : yabai -m window --focus next
+ralt - w   : yabai -m window --focus prev
+ralt + rcmd - v : yabai -m window --raise last
+ralt + rcmd - w : yabai -m window --lower last
 
 ## Swap window
 ralt + shift - j : yabai -m window --swap next
@@ -74,8 +76,8 @@ ralt - c : open -a Notion\ Calendar
 ralt - d : open -a Discord
 ralt - e : wezterm -e yazi
 ralt - f : open -a Finder
-ralt - m : open -a Beeper
-ralt + ctrl - m : open -a Texts
+ralt - m : open -a Texts
+ralt + shift - m : open -a Spark\ Desktop
 ralt - n : open -a Notion
 ralt - t : open -a Todoist
 

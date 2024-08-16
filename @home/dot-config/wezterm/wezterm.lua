@@ -1,35 +1,30 @@
 local wezterm = require("wezterm")
+
 local config = {}
 
 -------------
 -- OPTIONS --
 -------------
-config.color_scheme = "Catppuccin Mocha"
--- config.color_scheme = "Gruvbox dark, medium (base16)"
 
+config.color_scheme = "Catppuccin Mocha" -- "Gruvbox dark, medium (base16)"
 config.command_palette_font_size = 12.0
--- config.command_palette_rows = 10
-
 config.cursor_thickness = 2.0
-
 config.default_cursor_style = "SteadyUnderline"
-
 config.hide_tab_bar_if_only_one_tab = true
-
 config.switch_to_last_active_tab_when_closing_tab = false
-
 config.underline_position = -4.0
 config.underline_thickness = 2.0
-
 config.use_resize_increments = false
+-- config.command_palette_rows = 10
 
 ----------
 -- FONT --
 ----------
 config.font_size = 16
 config.font = wezterm.font_with_fallback({
-	"InputMono Nerd Font",
-	"Input Mono",
+	-- "InputMono Nerd Font",
+	-- "Input Mono",
+	"Monaspace Neon", -- calming
 	-- "MonaspiceNe Nerd Font",
 	-- "Fira Code",
 	-- { family = "FiraCode Nerd Font", harfbuzz_features = { "ss02", "zero" } },
