@@ -4,8 +4,10 @@
     "light": "Catppuccin Latte - No Italics",
     "dark": "Catppuccin Mocha - No Italics"
   },
-  "buffer_font_family": "InputMono Nerd Font",
+  "buffer_font_family": "Input Mono",
+  "buffer_font_fallbacks": ["Symbols Nerd Font"],
   "buffer_font_size": 16,
+  "buffer_font_weight": 400,
   "buffer_line_height": "standard",
   "ui_font_family": "Input Sans",
   "ui_font_size": 14,
@@ -18,9 +20,7 @@
     // "background_coloring": "indent_aware"
   },
   "vertical_scroll_margin": 4,
-  "inlay_hints": {
-    "enabled": true
-  },
+  "inlay_hints": { "enabled": true },
   "project_panel": {
     // "dock": "right",
     "indent_size": 12,
@@ -38,35 +38,33 @@
     "enable_preview_from_file_finder": true,
     "enable_preview_from_code_navigation": true
   },
-  "telemetry": {
-    "metrics": false
-  },
+  "telemetry": { "metrics": false },
   "vim": {
     "use_smartcase_find": true
   },
-  "line_indicator_format": "short"
+  "line_indicator_format": "short",
 
-  // "languages": {
-  //   "JavaScript": {
-  //     "format_on_save": {
-  //       "external": {
-  //         "command": "prettier",
-  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
-  //       }
-  //     },
-  //     "code_actions_on_format": {
-  //       "source.fixAll.eslint": true
-  //     }
-  //   }
-  // },
+  "languages": {
+    "JavaScript": {
+      "format_on_save": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    }
+  },
 
-  // "lsp": {
-  //   "eslint": {
-  //     "settings": {
-  //       "codeActionOnSave": {
-  //         "rules": ["import/order"]
-  //       }
-  //     }
-  //   }
-  // }
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "codeActionOnSave": {
+          "rules": ["import/order"]
+        }
+      }
+    }
+  }
 }

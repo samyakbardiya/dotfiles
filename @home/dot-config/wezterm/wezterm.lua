@@ -17,19 +17,33 @@ config.underline_thickness = 2.0
 config.use_resize_increments = false
 -- config.command_palette_rows = 10
 
+--------------
+-- LIGATURE --
+--------------
+-- ss01: == === =/= != !== /= /== ~~ =~ !~
+-- ss02: >= <=
+-- ss03: -> <- => <!-- --> <~ <~~ ~> ~~> <~>
+-- ss04: </ /> </> /\ \/
+-- ss05: |> <|
+-- ss06: ## ###
+-- ss07: *** /* */ /*/ (* *) (*)
+-- ss08: .= .- ..<
+local ligature = { "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08", "ss12", "zero" }
+
 ----------
 -- FONT --
 ----------
 config.font_size = 16
 config.font = wezterm.font_with_fallback({
-	-- "InputMono Nerd Font",
 	-- "Input Mono",
-	"Monaspace Neon", -- calming
-	-- "MonaspiceNe Nerd Font",
+	-- "Monaspace Neon", -- calming
 	-- "Fira Code",
-	-- { family = "FiraCode Nerd Font", harfbuzz_features = { "ss02", "zero" } },
+	-- { family = "Input", harfbuzz_features = { "ss12" } }, -- ===
+	{ family = "Monaspace Neon", harfbuzz_features = ligature },
+	-- { family = "Fira Code", harfbuzz_features = ligature },
 	{ family = "Symbols Nerd Font", scale = 0.75 },
 })
+-- config.cell_width = 0.69
 
 ------------
 -- WINDOW --

@@ -1,38 +1,56 @@
+[include]
+    path = "~/.config/catppuccin/delta/catppuccino.gitconfig"
+
 [commit]
-  gpgsign = true
+    gpgsign = true
 
 [core]
-  excludesfile = ~/.config/git/ignore
+    excludesfile = ~/.config/git/ignore
+    pager = delta
 
 [diff]
-  tool = nvimdiff
+    colorMoved = default
 
-[difftool]
-  prompt = false
-
-[difftool "nvimdiff"]
-  cmd = nvim -d "$LOCAL" "$REMOTE"
+[delta]
+    features = catppuccin-mocha
+    navigate = true
 
 [init]
-  defaultbranch = main
+    defaultbranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    conflictstyle = diff3
 
 [push]
-  autosetupremote = true
+    autosetupremote = true
+
+[rerere]
+    enabled = true
 
 [user]
-  name = Samyak Bardiya
-  email = <>
+    name = Samyak Bardiya
+    email = <>
 
 [includeIf "gitdir:~/.config/"]
-  path = ~/.config/git/config_personal
+    path = ~/.config/git/config_personal
 
 [includeIf "gitdir:~/code/"]
-  path = ~/.config/git/config_personal
+    path = ~/.config/git/config_personal
 
 [includeIf "gitdir:~/Documents/"]
-  path = ~/.config/git/config_personal
+    path = ~/.config/git/config_personal
 
 [includeIf "gitdir:~/work/"]
-  path = ~/.config/git/config_work
+    path = ~/.config/git/config_work
+
+; [diff]
+;   tool = nvimdiff
+; [difftool]
+;   prompt = false
+; [difftool "nvimdiff"]
+;   cmd = nvim -d "$LOCAL" "$REMOTE"
 
 # vim:ft=gitconfig

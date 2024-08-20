@@ -7,7 +7,6 @@
 #
 #
 # @samyakbardiya
-# vim:ft=zsh
 
 #######
 # zsh #
@@ -42,19 +41,26 @@ zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
 zstyle ':zim:completion' dumpfile ${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}
 
 ### fzf-tab
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # set list-colors to enable filename colorizing
+zstyle ':completion:*' menu no # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':fzf-tab*' fzf-min-height 20
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' popup-min-size 120 20 # WxH
-zstyle ':fzf-tab*' fzf-min-height 20
+zstyle ':fzf-tab:*' switch-group '<' '>' # switch group using `<` and `>`
+zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' fzf-preview 'brew info $word'
 zstyle ':fzf-tab:complete:cd:*' fzf-min-height 30
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
 zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
 zstyle ':fzf-tab:complete:cht.sh:argument-1' fzf-preview 'cht.sh $word'
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+zstyle ':fzf-tab:complete:tldr:argument-1' fzf-preview 'tldr --color always $word'
 
+# zstyle ':fzf-tab:complete:*' fzf-preview 'eza $realpath'
 # zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 
 ### fzf-tab-source
-zstyle ':fzf-tab:sources' config-directory /the/directory/containing/your/source.zsh
+# zstyle ':fzf-tab:sources' config-directory /the/directory/containing/your/source.zsh
 
 ### fzf-zsh-plugin
 export FZF_PREVIEW_ADVANCED=true
@@ -75,9 +81,9 @@ zstyle ':zim:pacman' priv_cmd 'doas'
 # set the titles to show the command name typed by the user while the command
 # is being executed and then the current directory name after the command ended
 # (i.e. before each prompt)
-zstyle ':zim:termtitle' hooks 'preexec' 'precmd'
-zstyle ':zim:termtitle:preexec' format '${${(A)=1}[1]}'
-zstyle ':zim:termtitle:precmd'  format '%1~'
+# zstyle ':zim:termtitle' hooks 'preexec' 'precmd'
+# zstyle ':zim:termtitle:preexec' format '${${(A)=1}[1]}'
+# zstyle ':zim:termtitle:precmd'  format '%1~'
 
 ### zim
 # use degit instead of git
@@ -154,3 +160,5 @@ bindkey -M emacs '^N' history-substring-search-down
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 eval "$(jenv init -)"
 eval "$(zoxide init zsh --cmd d)"
+
+# vim:ft=zsh

@@ -7,7 +7,6 @@
 #       |_|
 #
 # @samyak039
-# vim:ft=zsh
 
 
 ############
@@ -32,6 +31,7 @@ export VSCODE="code"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 eval "$(jenv init -)"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval "$(zoxide init zsh --cmd d)"
@@ -41,3 +41,5 @@ eval "$(zoxide init zsh --cmd d)"
 ##########
 [[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
 [[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 2 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
+
+# vim:ft=zsh
