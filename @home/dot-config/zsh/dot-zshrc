@@ -47,11 +47,11 @@ zstyle ':fzf-tab*' fzf-min-height 20
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' popup-min-size 120 20 # WxH
 zstyle ':fzf-tab:*' switch-group '<' '>' # switch group using `<` and `>`
-zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' fzf-preview 'brew info $word'
+# zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' fzf-preview 'HOMEBREW_COLOR=true brew info $word'
 zstyle ':fzf-tab:complete:cd:*' fzf-min-height 30
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
-zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+zstyle ':fzf-tab:complete:cd:*' popup-pad 120 0
 zstyle ':fzf-tab:complete:cht.sh:argument-1' fzf-preview 'cht.sh $word'
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
 zstyle ':fzf-tab:complete:tldr:argument-1' fzf-preview 'tldr --color always $word'
@@ -155,10 +155,5 @@ bindkey -M emacs '^N' history-substring-search-down
 # load tools #
 ##############
 
-# eval "$(pyenv virtualenv-init -)"
-# [ -d "${PHPENV_ROOT}" ] && eval "$(phpenv init -)"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-eval "$(jenv init -)"
-eval "$(zoxide init zsh --cmd d)"
 
 # vim:ft=zsh

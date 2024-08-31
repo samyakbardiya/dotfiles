@@ -5,7 +5,7 @@ import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 [window]
 dynamic_padding = true     # Spread additional padding evenly around the terminal content.
 decorations = "buttonless"
-opacity = 0.69
+opacity = 0.8
 blur = true
 startup_mode = "Maximized"
 option_as_alt = "OnlyLeft"
