@@ -17,6 +17,8 @@ coreutils
 curl
 ddcutil
 debugedit
+docker
+docker-compose
 dust
 efibootmgr
 entr
@@ -30,6 +32,11 @@ figlet
 file
 filesystem
 findutils
+firefox-developer-edition
+firefox-developer-edition-i18n-en-gb
+firefox-developer-edition-i18n-en-us
+firefox-developer-edition-i18n-hi-in
+firefox-developer-edition-i18n-ja
 flex
 fzf
 gawk
@@ -40,7 +47,9 @@ git
 git-delta
 gitui
 glibc
+gnupg
 go
+google-chrome-dev
 grep
 groff
 grub

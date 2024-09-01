@@ -2,7 +2,7 @@
     path = "~/.config/catppuccin/delta/catppuccino.gitconfig"
 
 [commit]
-    gpgsign = false
+    gpgsign = true
 
 [core]
     excludesfile = ~/.config/git/ignore
@@ -37,6 +37,9 @@
 [includeIf "gitdir:~/.config/"]
     path = ~/.config/git/config_personal
 
+[includeIf "gitdir:~/.local/bin"]
+    path = ~/.config/git/config_personal
+
 [includeIf "gitdir:~/code/"]
     path = ~/.config/git/config_personal
 
@@ -45,12 +48,5 @@
 
 [includeIf "gitdir:~/work/"]
     path = ~/.config/git/config_work
-
-; [diff]
-;   tool = nvimdiff
-; [difftool]
-;   prompt = false
-; [difftool "nvimdiff"]
-;   cmd = nvim -d "$LOCAL" "$REMOTE"
 
 # vim:ft=gitconfig

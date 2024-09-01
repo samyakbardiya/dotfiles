@@ -2,7 +2,7 @@ arch-efiboot
 cb
 lohit-fonts
 tex-gyre-math-fonts
-ttf-devanagarifonts
+thorium-browser-bin
 ttf-kannada-font
 ttf-mac-fonts
 ttf-meslo
@@ -11,3 +11,4 @@ ttf-monaco
 ttf-ms-fonts
 ttf-nerd-fonts-input
 ttf-symbola
+zen-browser-optimized-bin
