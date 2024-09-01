@@ -2,7 +2,7 @@
     path = "~/.config/catppuccin/delta/catppuccino.gitconfig"
 
 [commit]
-    gpgsign = true
+    gpgsign = false
 
 [core]
     excludesfile = ~/.config/git/ignore

@@ -1,0 +1,13 @@
+arch-efiboot
+cb
+lohit-fonts
+tex-gyre-math-fonts
+ttf-devanagarifonts
+ttf-kannada-font
+ttf-mac-fonts
+ttf-meslo
+ttf-meslo-nerd-font-powerlevel10k
+ttf-monaco
+ttf-ms-fonts
+ttf-nerd-fonts-input
+ttf-symbola

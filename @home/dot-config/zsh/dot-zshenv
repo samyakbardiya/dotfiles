@@ -76,6 +76,8 @@ export CHROME_EXECUTABLE="/usr/bin/brave-beta" # Brave -> Chrome
 
 # nodejs
 export NVM_DIR="$XDG_DATA_HOME/nvm"
+# [ -s "/usr/share/nvm" ] && export NVM_DIR="/usr/share/nvm"
+# [ -s "$XDG_DATA_HOME/nvm" ] && export NVM_DIR="$XDG_DATA_HOME/nvm"
 # source /usr/share/nvm/init-nvm.sh
 
 # PNPM
@@ -115,7 +117,7 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 # export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 # export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 # alias adb='HOME="$XDG_DATA_HOME"/android adb'
-alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
+# alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 export ANDROID_HOME="$XDG_DATA_HOME/android/sdk"

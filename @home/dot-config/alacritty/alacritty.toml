@@ -11,7 +11,7 @@ startup_mode = "Maximized"
 option_as_alt = "OnlyLeft"
 
 [font]
-size = 16
+size = 8
 builtin_box_drawing = true
 
 [font.normal]
