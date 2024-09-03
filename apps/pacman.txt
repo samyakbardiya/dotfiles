@@ -1,5 +1,6 @@
 adobe-source-code-pro-fonts
 adobe-source-sans-fonts
+advcpmv
 archlinux-keyring
 autoconf
 automake
@@ -8,6 +9,7 @@ bat
 bat-extras
 binutils
 bison
+brave-beta-bin
 btop
 bzip2
 chafa
@@ -17,6 +19,7 @@ coreutils
 curl
 ddcutil
 debugedit
+discord
 docker
 docker-compose
 dust
@@ -70,6 +73,7 @@ ledger
 lib32-pipewire
 libertinus-font
 libinput
+libreoffice-still
 libtool
 licenses
 linux
@@ -153,9 +157,11 @@ ttf-opensans
 ttf-roboto
 ttf-ubuntu-font-family
 unzip
+usbutils
 util-linux
 wget
 which
+xcape
 xdg-user-dirs
 xdotool
 xf86-input-libinput
