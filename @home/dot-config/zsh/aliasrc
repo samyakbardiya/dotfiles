@@ -50,6 +50,9 @@ alias qrsvg="qrencode -t PNG -o qr.svg"
 # zoxide
 alias zw="source zoxide_tmux_window.sh"
 
+# Zellij
+alias zs="zellij-switch.sh"
+
 # pacman | paru
 alias pacsyu="doas pacman -Sy && doas powerpill -Su && paru -Su"
 alias pacsyunc="doas pacman -Sy --noconfirm && doas powerpill -Su --noconfirm && paru -Su --noconfirm"
@@ -154,6 +157,12 @@ alias dclF="docker compose logs -f --tail 0"
 alias dcpull="docker compose pull"
 alias dcstart="docker compose start"
 alias dck="docker compose kill"
+
+#-----#
+# git #
+#-----#
+
+unalias gpf
 
 #----------#
 # git-flow #

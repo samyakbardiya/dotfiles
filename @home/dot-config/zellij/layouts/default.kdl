@@ -1,0 +1,44 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zjstatus" {
+                hide_frame_for_single_pane "false"
+                border_enabled  "false"
+
+                format_left   "{tabs}"
+                format_center ""
+                format_right  " {mode} {session} " // {swap_layout}
+                format_space  "--"
+
+                mode_normal "#[bg=000]  "
+                mode_locked "#[bg=001]  "
+                mode_scroll "#[bg=010]  "
+                mode_search "#[bg=003]  "
+                mode_tmux   "#[bg=016]  "
+
+                // formatting for inactive tabs
+                tab_normal              "#[fg=255,bg=000] {name} {floating_indicator}| {index} "
+                tab_normal_fullscreen   "#[fg=255,bg=000] {name} {fullscreen_indicator}| {index} "
+                tab_normal_sync         "#[fg=255,bg=000] {name} {sync_indicator}| {index} "
+
+                // formatting for the current active tab
+                tab_active              "#[fg=000,bg=016,bold] {name} {floating_indicator}| {index} "
+                tab_active_fullscreen   "#[fg=000,bg=016,bold] {name} {fullscreen_indicator}| {index} "
+                tab_active_sync         "#[fg=000,bg=016,bold] {name} {sync_indicator}| {index} "
+
+                // separator between the tabs
+                tab_separator           " "
+
+                // format when renaming a tab
+                tab_rename              "#[fg=#eba0ac,bg=#181825] {name} {floating_indicator} #{index} "
+
+                // indicators
+                tab_sync_indicator       "@@ "
+                tab_fullscreen_indicator "[] "
+                tab_floating_indicator   "** "
+
+            }
+        }
+        children
+    }
+}

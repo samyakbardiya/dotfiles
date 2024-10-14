@@ -54,3 +54,5 @@
 ;   cmd = nvim -d "$LOCAL" "$REMOTE"
 
 # vim:ft=gitconfig
+[pull]
+	rebase = false

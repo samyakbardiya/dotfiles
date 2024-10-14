@@ -46,6 +46,7 @@ export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/applications"
 export PATH="${PATH}:${XDG_CONFIG_HOME:-$HOME/.config}/emacs/bin"
 export PATH="${PATH}:${XDG_CONFIG_HOME}/yabai/scripts"
 export PATH="${PATH}:${GOPATH:-$HOME/.local/share/go}/bin"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"  # make brew's curl the default
 
 # dart & flutter
 export FLUTTER_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/fvm/default"
@@ -66,6 +67,9 @@ export PATH="${PATH}:${ANDROID_SDK_ROOT}/tools/bin"
 # `cmdline-tolos/bin` AFTER `tools/bin` only. need to override the above one
 export PATH="${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin"
 
+# brew
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
 ###############
 # DEVELOP ENV #
 ###############
@@ -74,18 +78,22 @@ export _JAVA_AWT_WM_NONREPARENTING=1 # android studio
 
 export CHROME_EXECUTABLE="/usr/bin/brave-beta" # Brave -> Chrome
 
-# nodejs
-export NVM_DIR="$XDG_DATA_HOME/nvm"
+export LDFLAGS="-L/opt/homebrew/opt/mysql-client/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql-client/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql-client/lib/pkgconfig"
+
+# # nodejs
+# export NVM_DIR="$XDG_DATA_HOME/nvm"
 # source /usr/share/nvm/init-nvm.sh
 
 # PNPM
 export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
 export PATH="${PNPM_HOME}:${PATH}"
 
-# python
-export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+# # python
+# export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# # eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 
 # PHP
 export PHPENV_ROOT="$XDG_DATA_HOME/phpenv"
