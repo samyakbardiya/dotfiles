@@ -26,15 +26,20 @@ export VSCODE="code"
 #########
 # EVALS #
 #########
-#
-# [ $(arch) = "arm64" ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-# eval "$(jenv init -)"
-# eval "$(pyenv init --path)"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-# eval "$(zoxide init zsh --cmd d)"
+
+# macOS
+if [ $(uname) = "Darwin" ]; then
+    [ $(arch) = "arm64" ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)"
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+    eval "$(pyenv virtualenv-init -)"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+fi
+
+[ -s "/usr/share/nvm" ] && source "/usr/share/nvm/nvm.sh"
+eval "$(jenv init -)"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(zoxide init zsh --cmd d)"
 
 ##########
 # STARTX #
