@@ -134,7 +134,7 @@ source ${ZIM_HOME}/init.zsh
 
 source ${ZDOTDIR}/aliasrc
 source ${ZDOTDIR}/functionrc
-source ${HOME}/Documents/ledger/bin/bashrc
+# source ${HOME}/Documents/ledger/bin/bashrc
 
 zmodload -F zsh/terminfo +p:terminfo
 
@@ -153,7 +153,7 @@ bindkey -M emacs '^N' history-substring-search-down
 # load tools #
 ##############
 
-[ $(arch) = "arm64" ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)"
+# [ $(arch) = "arm64" ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)"
 
 eval "$(zoxide init zsh --cmd d)"
 
