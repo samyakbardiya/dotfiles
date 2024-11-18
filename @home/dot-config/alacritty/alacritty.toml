@@ -2,16 +2,20 @@
 
 import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
+[shell]
+program = "tmux"
+args = ["new-session", "-A", "-s", "¯⧵_(ツ)_/¯"]
+
 [window]
 dynamic_padding = true     # Spread additional padding evenly around the terminal content.
 decorations = "buttonless"
-opacity = 0.8
+opacity = 0.9
 blur = true
 startup_mode = "Maximized"
 option_as_alt = "OnlyLeft"
 
 [font]
-size = 16
+size = 15
 builtin_box_drawing = true
 
 [font.normal]
