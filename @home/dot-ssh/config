@@ -10,22 +10,13 @@ Host _*
 ## Identities #
 ###############
 
-Host github.com
-    AddKeysToAgent yes
-    UseKeychain yes
-    IdentityFile ~/.ssh/id_ed25519_039_github
-
-Host bitbucket.org
-    AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_ed25519_ct_bitbucket
-
-Host ssh.dev.azure.com
-    AddKeysToAgent yes
-    IdentityFile ~/.ssh/work/id_rsa_azure
-
 #############
 ## Personal #
 #############
+
+Host github.com
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_ed25519_github
 
 Host *latitude7490
     HostName 192.168.0.39
@@ -36,6 +27,18 @@ Host *latitude7490
 #########
 ## Work #
 #########
+
+Host bitbucket.org
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_ed25519_ct_bitbucket
+
+Host gitlab.com
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/work-tp/id_ed25519_gitlab
+
+Host ssh.dev.azure.com
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/work/id_rsa_azure
 
 #===============#
 ## AI Dashboard #
@@ -116,3 +119,5 @@ Host venues_dev
     User ubuntu
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/work/venues/venues.pem
+
+# vim:ft=sshconfig
