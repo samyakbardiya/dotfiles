@@ -32,23 +32,14 @@
 
 [user]
     name = Samyak Bardiya
-    email = <>
+    email = <mail@samyakbardiya.dev>
 
-[includeIf "gitdir:~/.config/"]
-    path = ~/.config/git/config_personal
+[includeIf "gitdir:~/work-ct/"]
+    path = ~/.config/git/config_work_ct
 
-[includeIf "gitdir:~/.local/bin"]
-    path = ~/.config/git/config_personal
-
-[includeIf "gitdir:~/code/"]
-    path = ~/.config/git/config_personal
-
-[includeIf "gitdir:~/Documents/"]
-    path = ~/.config/git/config_personal
-
-[includeIf "gitdir:~/work/"]
-    path = ~/.config/git/config_work
+[includeIf "gitdir:~/work-tp/"]
+    path = ~/.config/git/config_work_tp
 
 # vim:ft=gitconfig
 [pull]
-	rebase = false
+    rebase = false

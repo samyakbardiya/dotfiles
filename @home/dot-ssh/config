@@ -6,10 +6,6 @@ Host _*
     RequestTTY yes
     RemoteCommand tmux new-session -A -s zero
 
-###############
-## Identities #
-###############
-
 #############
 ## Personal #
 #############
@@ -112,12 +108,24 @@ Host *newgen_one
     LocalForward 8080 localhost:8080
     LocalForward 9990 localhost:9990
 
+#========#
 ## Venue #
+#========#
 
-Host venues_dev
+Host *venues_dev
     HostName 44.221.37.8
     User ubuntu
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/work/venues/venues.pem
+
+#===================#
+## Wave Hospitality #
+#===================#
+
+Host *htv_temp
+    HostName ec2-3-79-23-77.eu-central-1.compute.amazonaws.com
+    User ubuntu
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/work-tp/wave-hospitality/temp-hospitality-server.pem
 
 # vim:ft=sshconfig
