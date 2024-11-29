@@ -30,6 +30,11 @@ alias hla="hledger-iadd --file $LEDGER_FILE_CURRENT --completion-engine fuzzy"
 alias hlc="hledger check -s ordereddate"
 alias hlr="hledger areg"
 
+# Lazy-{Git,Docker}
+alias ld="lazydocker"
+alias lg="lazygit"
+alias gu="gitui"
+
 # # leetcode-cli
 # alias ll="leetcode"
 # alias lld="leetcode data"

@@ -23,6 +23,11 @@ export VSCODE="code"
 # export TERM="screen-256color"
 # export VISUAL="emacsclient -c -s doom -a 'emacs'"
 
+#######
+# ENV #
+#######
+export GITLAB_NPM_TOKEN="$(pass work-tp/env/GITLAB_NPM_TOKEN)"
+
 #########
 # EVALS #
 #########

@@ -1,5 +1,3 @@
-arch-efiboot
-cb
 lohit-fonts
 tex-gyre-math-fonts
 ttf-kannada-font

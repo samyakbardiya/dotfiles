@@ -1,4 +1,5 @@
-alias cx='clear -x'
 alias cX='clear'
+alias cx='clear -x'
 
-alias lzd='lazydocker'
+alias ld='lazydocker'
+alias lg='lazygit'

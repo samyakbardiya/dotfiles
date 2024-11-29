@@ -22,7 +22,8 @@
     diffFilter = delta --color-only
 
 [merge]
-    conflictstyle = diff3
+    ; conflictstyle = diff3
+    tool = nvimdiff
 
 [push]
     autosetupremote = true

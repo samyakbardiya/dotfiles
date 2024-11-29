@@ -26,7 +26,7 @@ Host *latitude7490
 
 Host bitbucket.org
     AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_ed25519_ct_bitbucket
+    IdentityFile ~/.ssh/work-ct/id_ed25519_bitbucket
 
 Host gitlab.com
     AddKeysToAgent yes
@@ -34,7 +34,7 @@ Host gitlab.com
 
 Host ssh.dev.azure.com
     AddKeysToAgent yes
-    IdentityFile ~/.ssh/work/id_rsa_azure
+    IdentityFile ~/.ssh/work-ct/id_rsa_azure
 
 #===============#
 ## AI Dashboard #
