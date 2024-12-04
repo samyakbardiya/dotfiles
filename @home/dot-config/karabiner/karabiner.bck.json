@@ -75,19 +75,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["right_command"]
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "file_paths": [
-                                            "/alacritty$"
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "right_command"
                                         ]
                                     }
                                 ]
@@ -104,18 +94,8 @@
                                 "to": [
                                     {
                                         "key_code": "down_arrow",
-                                        "modifiers": ["fn"]
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "file_paths": [
-                                            "/alacritty$"
+                                        "modifiers": [
+                                            "right_command"
                                         ]
                                     }
                                 ]
@@ -132,18 +112,8 @@
                                 "to": [
                                     {
                                         "key_code": "up_arrow",
-                                        "modifiers": ["fn"]
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "file_paths": [
-                                            "/alacritty$"
+                                        "modifiers": [
+                                            "right_command"
                                         ]
                                     }
                                 ]
@@ -159,19 +129,9 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
-                                        "modifiers": ["right_command"]
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "file_paths": [
-                                            "/alacritty$"
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "right_command"
                                         ]
                                     }
                                 ]
@@ -195,11 +155,14 @@
                                     {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "file_paths": [
-                                            "/alacritty$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.github\\.wez\\.wezterm$"
                                         ]
                                     }
                                 ]
@@ -218,11 +181,14 @@
                                     {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "file_paths": [
-                                            "/alacritty$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.github\\.wez\\.wezterm$"
                                         ]
                                     }
                                 ]
@@ -241,11 +207,14 @@
                                     {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "file_paths": [
-                                            "/alacritty$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.github\\.wez\\.wezterm$"
                                         ]
                                     }
                                 ]
@@ -264,15 +233,18 @@
                                     {
                                         "type": "frontmost_application_if",
                                         "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
                                             "^com\\.apple\\.Terminal$",
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "file_paths": [
-                                            "/alacritty$"
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.github\\.wez\\.wezterm$"
                                         ]
                                     }
                                 ]
-                            }
+                            },
                         ]
                     },
                     {

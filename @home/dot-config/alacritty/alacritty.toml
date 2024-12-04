@@ -1,8 +1,9 @@
 # man 5 alacritty
 
+[general]
 import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
-[shell]
+[terminal.shell]
 program = "tmux"
 args = ["new-session", "-A", "-s", "¯⧵_(ツ)_/¯"]
 
