@@ -9,58 +9,27 @@
 # @samyak039
 
 
-############
-# DEFAULTS #
-############
-export BROWSER="firefox-developer-edition"
-export BROWSER_ALT="brave-beta"
-export EDITOR="nvim"
-export READER="zathura"
-export TERMINAL="alacritty"
-export TERMINAL_ALT="wezterm"
-export VSCODE="code"
-# export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
-# export TERM="screen-256color"
-# export VISUAL="emacsclient -c -s doom -a 'emacs'"
-
-#######
-# ENV #
-#######
+##################
+## ENV Variables #
+##################
 if [ -n "$(command -v pass)" ]; then
     export GITLAB_NPM_TOKEN="$(pass work-tp/env/GITLAB_NPM_TOKEN)"
 fi
 
-#########
-# EVALS #
-#########
+##########
+## EVALS #
+##########
 
-# macOS
-if [ $(uname) = "Darwin" ]; then
-    [ $(arch) = "arm64" ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)"
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-    eval "$(pyenv virtualenv-init -)"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-fi
-
-[ -s "/usr/share/nvm" ] && source "/usr/share/nvm/nvm.sh"
-eval "$(jenv init -)"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
 eval "$(zoxide init zsh --cmd d)"
 
-##########
-# STARTX #
-##########
-# [[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
-# [[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 2 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
+## macOS homebrew
+if [ $(uname) = "Darwin" ]; then
+    if [ $(arch) = "arm64" ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
+fi
 
-########
-# TMUX #
-########
-
-# if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-# if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ]; then
-#     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
-# fi
 
 # vim:ft=zsh

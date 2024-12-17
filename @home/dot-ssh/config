@@ -43,7 +43,7 @@ Host ssh.dev.azure.com
 Host *ai_dash
     HostName ec2-18-204-159-82.compute-1.amazonaws.com
     User ubuntu
-    IdentityFile ~/.ssh/work/samyak-ct.pem
+    IdentityFile ~/.ssh/work-ct/samyak-ct.pem
 
 #=======#
 ## AAIR #
@@ -53,37 +53,37 @@ Host *ai_dash
 Host *aair
     HostName 3.109.140.146
     User ubuntu
-    IdentityFile ~/.ssh/work/aair/new_bgs_key_dev_mumbai.pem
+    IdentityFile ~/.ssh/work-ct/aair/new_bgs_key_dev_mumbai.pem
 
 # prod instance
 Host *aair_prod
     HostName 13.233.32.148
     User ubuntu
-    IdentityFile ~/.ssh/work/aair/new_bgs_key_dev_mumbai.pem
+    IdentityFile ~/.ssh/work-ct/aair/new_bgs_key_dev_mumbai.pem
 
 # misc instance == prod
 Host *aair_misc
     HostName ec2-13-233-32-148.ap-south-1.compute.amazonaws.com
     User ubuntu
-    IdentityFile ~/.ssh/work/aair/new_bgs_key_dev_mumbai.pem
+    IdentityFile ~/.ssh/work-ct/aair/new_bgs_key_dev_mumbai.pem
 
 # mongo-dev instance
 Host *aair_mongo
     HostName 43.205.163.26
     User bitnami
-    IdentityFile ~/.ssh/work/aair/new_bgs_key_dev_mumbai.pem
+    IdentityFile ~/.ssh/work-ct/aair/new_bgs_key_dev_mumbai.pem
     LocalForward 27017 localhost:27017
-    ControlPath ~/.ssh/work/aair/control_path.ctl
+    ControlPath ~/.ssh/work-ct/aair/control_path.ctl
 
 #================#
 ## Brilliant Pet #
 #================#
 
-Host _bp_prod
+Host bp_prod
     HostName 54.84.226.185
     Port 22
     User ubuntu
-    IdentityFile ~/.ssh/work/brilliant_pet/brlpet.pem
+    IdentityFile ~/.ssh/work-ct/brilliant_pet/brlpet.pem
 
 #=========#
 ## Lekhha #
@@ -93,7 +93,7 @@ Host *lekhha
     HostName 192.168.30.5
     User Dev-BackEnd-User
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/work/lekhha/Nirmal-Gaur-Backend-User.pem
+    IdentityFile ~/.ssh/work-ct/lekhha/Nirmal-Gaur-Backend-User.pem
 
 #============#
 ## NewgenONE #
@@ -103,7 +103,7 @@ Host *newgen_one
     HostName 13.233.206.195
     User ec2-user
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/work/newgen-one/newgen-one-key.pem
+    IdentityFile ~/.ssh/work-ct/newgen-one/newgen-one-key.pem
     LocalForward 5901 localhost:5901
     LocalForward 8080 localhost:8080
     LocalForward 9990 localhost:9990
@@ -116,7 +116,7 @@ Host *venues_dev
     HostName 44.221.37.8
     User ubuntu
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/work/venues/venues.pem
+    IdentityFile ~/.ssh/work-ct/venues/venues.pem
 
 #===================#
 ## Wave Hospitality #

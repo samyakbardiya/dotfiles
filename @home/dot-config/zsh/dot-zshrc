@@ -8,9 +8,9 @@
 #
 # @samyakbardiya
 
-#######
-# zsh #
-#######
+########
+## zsh #
+########
 
 ## p10K
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
@@ -32,9 +32,9 @@ WORDCHARS=${WORDCHARS//[\/]} # Remove path separator from WORDCHARS.
 
 unsetopt beep # beep-beep
 
-###########################
-# pre zimfw customization #
-###########################
+############################
+## pre zimfw customization #
+############################
 
 ### completion
 zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
@@ -103,9 +103,9 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red,bold"
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets cursor root)
 
 
-#########
-# zimfw #
-#########
+##########
+## zimfw #
+##########
 ZIM_HOME=${XDG_CONFIG_HOME:-$HOME/.config}/zim
 
 # Download zimfw plugin manager if missing.
@@ -128,9 +128,9 @@ fi
 source ${ZIM_HOME}/init.zsh
 
 
-#####################
-# post zimfw config #
-#####################
+######################
+## post zimfw config #
+######################
 
 source ${ZDOTDIR}/aliasrc
 source ${ZDOTDIR}/functionrc
@@ -149,43 +149,22 @@ bindkey -M emacs '^N' history-substring-search-down
 [[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
 
 
-##############
-# load tools #
-##############
+############################
+## Development Environment #
+############################
 
-# [ $(arch) = "arm64" ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)"
-
-eval "$(zoxide init zsh --cmd d)"
-
+lazyload jenv -- '
+    eval "$(jenv init -)"
+'
 lazyload nvm -- '
-    export NVM_DIR="$XDG_DATA_HOME/nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 '
-
-lazyload jenv -- 'eval "$(jenv init -)"'
-
 lazyload pyenv -- '
-    export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init --path)"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 '
 
-# if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ]; then
-#     exec tmux new-session -A -s ${USER} >/dev/null 2>&1
-# fi
-
-## EVALUATE ##
-
-# [ $(arch) = "arm64" ] && eval "$(/opt/homebrew/bin/brew shellenv)" || eval "$(/usr/local/bin/brew shellenv)"
-# # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-# # eval "$(jenv init -)"
-# # eval "$(pyenv init --path)"
-# # eval "$(pyenv init -)"
-# # eval "$(pyenv virtualenv-init -)"
-# eval "$(zoxide init zsh --cmd d)"
 
 # vim:ft=zsh

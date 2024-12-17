@@ -1,9 +1,17 @@
 # ZSH Configuration
 
-File loading order:
+## ZSH config-file load order
 
-1. .zshenv
-2. .zprofile
-3. .zshrc
-4. .zlogin
-5. .zlogout
+| File            | Login | Non-Login | Script |
+| --------------- | :---: | :-------: | :----: |
+| `/etc/zshenv`   |   A   |     A     |   A    |
+| `~/.zshenv`     |   B   |     B     |   B    |
+| `/etc/zprofile` |   C   |           |        |
+| `~/.zprofile`   |   D   |           |        |
+| `/etc/zshrc`    |   E   |     C     |        |
+| `~/.zshrc`      |   F   |     D     |        |
+| `/etc/zlogin`   |   G   |           |        |
+| `~/.zlogin`     |   H   |           |        |
+| **_WORK_**      |       |           |        |
+| `~/.zlogout`    |   I   |           |        |
+| `/etc/zlogout`  |   J   |           |        |

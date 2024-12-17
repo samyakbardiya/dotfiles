@@ -131,8 +131,10 @@ yabai -m rule --add app="^Notion$" space="^${space}"
 space=6
 yabai -m rule --add app="^Beeper$" space="^${space}"
 yabai -m rule --add app="^Discord$" space="^${space}"
-yabai -m rule --add app="^Texts$" space="^${space}"
 yabai -m rule --add app="^Spark Desktop$" space social
+yabai -m rule --add app="^Telegram$" space social
+yabai -m rule --add app="^Texts$" space="^${space}"
+yabai -m rule --add app="^WhatsApp$" space social
 
 ## Apply all rules
 yabai -m rule --apply
