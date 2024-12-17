@@ -28,6 +28,11 @@ export CONFIG="$XDG_CONFIG_HOME"
 export DATA="$XDG_DATA_HOME"
 export SCRIPT="$HOME/code/scripts"
 
+## macOS Directories
+if [ $(uname) = "Darwin" ]; then
+  # https://stackoverflow.com/a/5084892
+  export XDG_RUNTIME_DIR=$TMPDIR
+fi
 
 #########################
 ## Default applications #
