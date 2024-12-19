@@ -22,6 +22,9 @@ fi
 
 eval "$(zoxide init zsh --cmd d)"
 
+## Development
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 ## macOS homebrew
 if [ $(uname) = "Darwin" ]; then
     if [ $(arch) = "arm64" ]; then
