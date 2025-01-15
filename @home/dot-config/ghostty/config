@@ -1,0 +1,16 @@
+font-family = "InputMono Nerd Font"
+font-size = 16
+
+theme = catppuccin-mocha
+
+cursor-style = block
+cursor-style-blink = false
+
+mouse-hide-while-typing = true
+
+# background-opacity = 0.8
+# background-blur-radius = 100
+
+command = tmux new-session -A -s ¯⧵_(ツ)_/¯
+
+window-padding-balance = true

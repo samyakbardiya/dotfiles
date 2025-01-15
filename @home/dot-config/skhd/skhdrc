@@ -62,6 +62,7 @@ ralt + shift - k : yabai -m window --swap prev
 
 ## Toggle window view
 alt - 0x1E : yabai -m window --toggle split             # / [
+alt - space : yabai -m window --toggle split
 alt - 0x21 : yabai -m window --toggle sticky            # @ ]
 alt - 0x2A : yabai -m window --toggle float             # \ \
 alt - 0x18 : yabai -m window --toggle zoom-parent   # ! -
