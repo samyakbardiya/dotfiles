@@ -25,6 +25,9 @@
     ; conflictstyle = diff3
     tool = nvimdiff
 
+[pull]
+    rebase = false
+
 [push]
     autosetupremote = true
 
@@ -42,5 +45,3 @@
     path = ~/.config/git/config_work_tp
 
 # vim:ft=gitconfig
-[pull]
-    rebase = false
