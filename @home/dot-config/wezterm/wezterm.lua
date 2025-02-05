@@ -32,8 +32,8 @@ config.font_size = 14
 config.font = wezterm.font_with_fallback({
 	-- { family = "Fira Code", harfbuzz_features = ligature },
 	{ family = "Monaspace Neon", harfbuzz_features = ligature },
-	{ family = "Input Mono", harfbuzz_features = { "ss12" } },
-	{ family = "Symbols Nerd Font", scale = 1.10 },
+	-- { family = "Input Mono", harfbuzz_features = { "ss12" } },
+	{ family = "Symbols Nerd Font Mono", scale = 1.00 },
 })
 
 -- Tab Bar
@@ -41,8 +41,6 @@ config.hide_tab_bar_if_only_one_tab = true
 config.switch_to_last_active_tab_when_closing_tab = false
 
 -- Window
--- config.window_background_opacity = 0.1
--- config.win32_system_backdrop = "Mica"
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.window_frame = {
@@ -59,14 +57,14 @@ config.window_padding = {
 -- Key Bindings
 config.keys = {
 	{ key = "a", mods = "CTRL|SHIFT", action = wezterm.action.ActivateCopyMode },
+	{ key = "F11", action = wezterm.action.ToggleFullScreen },
 }
 
 -- Init
-config.default_prog = {'wsl', '--', 'tmux', "new-session", "-A", "-s", "0_O"}
+config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_O" }
 wezterm.on("gui-startup", function(cmd)
 	local tab, pane, window = mux.spawn_window(cmd or {})
 	window:gui_window():toggle_fullscreen()
-	-- window:gui_window():maximize()
 end)
 
 return config
