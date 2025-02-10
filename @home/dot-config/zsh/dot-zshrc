@@ -153,14 +153,8 @@ bindkey -M emacs '^N' history-substring-search-down
 ## Development Environment #
 ############################
 
-[ $(uname) = "Linux" ] && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 lazyload jenv -- '
     eval "$(jenv init -)"
-'
-lazyload nvm -- '
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 '
 lazyload pyenv -- '
     eval "$(pyenv init --path)"

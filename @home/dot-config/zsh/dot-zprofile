@@ -23,7 +23,8 @@ fi
 eval "$(zoxide init zsh --cmd d)"
 
 ## Development
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+eval "$(fnm env --use-on-cd --shell zsh)"
+source <(fnm completions --shell zsh) > /dev/null 2>&1
 
 ## macOS homebrew
 if [ $(uname) = "Darwin" ]; then

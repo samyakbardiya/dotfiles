@@ -35,7 +35,6 @@ zmodule kiesman99/zim-zoxide # Sets up zoxide in zsh.
 
 zmodule ohmyzsh/ohmyzsh --root plugins/aliases # aliases cheatsheet
 zmodule ohmyzsh/ohmyzsh --root plugins/dotenv  # Automatically load your project ENV variables from .env
-zmodule ohmyzsh/ohmyzsh --root plugins/mvn     # many useful aliases
 zmodule ohmyzsh/ohmyzsh --root plugins/thefuck # The Fuck plugin
 
 ### Third Party Modules ###################################
