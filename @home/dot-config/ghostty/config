@@ -1,16 +1,57 @@
-font-family = "InputMono Nerd Font"
+# Font settings
+font-family = "MonaspiceAr NF"
+font-family = default
 font-size = 16
+font-thicken = true
 
+# Font features
+font-feature = "calt"
+font-feature = "ss01" 
+font-feature = "ss02"
+font-feature = "ss03"
+font-feature = "ss04"
+font-feature = "ss05"
+font-feature = "ss06"
+font-feature = "ss07"
+font-feature = "ss08"
+font-feature = "ss09"
+font-feature = "liga"
+
+# Font feature descriptions
+# ss01 # === !== =!= =/= /== /= #= == != ~~ =~ !~      
+# ss02 # >= <=                                         
+# ss03 # <--> <-> <!-- <-- --> <- -> <~> <~~ ~~> <~ ~> 
+# ss04 # </ /> </> <>                                  
+# ss05 # [| |] /\ \/ |> <|                             
+# ss06 # ### +++ &&&                                   
+# ss07 # -:- =:= :>: :<: ::> <:: :: :::                
+# ss08 # ..= ..- ..< .= .-                             
+# ss09 # <=> <<= =>> =<< >>= => << >>                  
+
+# Theme settings
 theme = catppuccin-mocha
 
+# Cursor settings
 cursor-style = block
 cursor-style-blink = false
 
+# Mouse settings
 mouse-hide-while-typing = true
 
+# Command settings
+command = /opt/homebrew/bin/tmux new-session -A -s 0_o
+
+# Window settings
 # background-opacity = 0.8
 # background-blur-radius = 100
+window-padding-x = 3
+window-padding-y = 9,0
+window-padding-balance = false
+window-title-font-family = "MonaspiceKr NF"
+macos-titlebar-style = hidden
 
-command = tmux new-session -A -s ¯⧵_(ツ)_/¯
+# Other settings
+confirm-close-surface = false
+bold-is-bright = true
 
-window-padding-balance = true
+# vim:ft=config

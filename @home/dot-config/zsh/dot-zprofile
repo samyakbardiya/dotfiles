@@ -20,12 +20,6 @@ fi
 ## EVALS #
 ##########
 
-eval "$(zoxide init zsh --cmd d)"
-
-## Development
-eval "$(fnm env --use-on-cd --shell zsh)"
-source <(fnm completions --shell zsh) > /dev/null 2>&1
-
 ## macOS homebrew
 if [ $(uname) = "Darwin" ]; then
     if [ $(arch) = "arm64" ]; then
@@ -38,6 +32,12 @@ else
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
 fi
+
+eval "$(zoxide init zsh --cmd d)"
+
+## Development
+eval "$(fnm env --use-on-cd --shell zsh)"
+source <(fnm completions --shell zsh) > /dev/null 2>&1
 
 
 # vim:ft=zsh

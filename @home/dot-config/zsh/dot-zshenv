@@ -67,6 +67,7 @@ export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/applications"
 
 ## brew
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+# export PATH="/opt/homebrew/opt/gnu-getopt/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 
@@ -180,6 +181,8 @@ export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 export WAVE_HTV_API="$HOME/work-tp/wave-hospitality/htv-api"
 export WAVE_HTV_CLI="$HOME/work-tp/wave-hospitality/htv-cli"
 
-export GITLAB_NPM_TOKEN=$(pass work-tp/env/GITLAB_NPM_TOKEN)
+if [[ -n "$(command -v pass)" ]]; then
+    export GITLAB_NPM_TOKEN=$(pass work-tp/env/GITLAB_NPM_TOKEN)
+fi
 
 # vim:ft=zsh

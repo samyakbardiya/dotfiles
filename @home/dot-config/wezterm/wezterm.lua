@@ -61,7 +61,7 @@ config.keys = {
 }
 
 -- Init
-config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_O" }
+config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o" }
 wezterm.on("gui-startup", function(cmd)
 	local tab, pane, window = mux.spawn_window(cmd or {})
 	window:gui_window():toggle_fullscreen()
