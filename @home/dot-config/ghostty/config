@@ -54,4 +54,6 @@ macos-titlebar-style = hidden
 confirm-close-surface = false
 bold-is-bright = true
 
+macos-option-as-alt = true
+
 # vim:ft=config
