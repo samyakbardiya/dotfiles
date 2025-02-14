@@ -1,5 +1,10 @@
 [diff]
+command = "delta"
 pager = "delta"
+
+[git]
+autoCommit = true
+autoPush = true
 
 [merge]
 command = "nvimdiff"
