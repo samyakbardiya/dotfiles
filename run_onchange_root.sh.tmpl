@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+cd "$(chezmoi execute-template '{{ .chezmoi.sourceDir }}')" || exit
+
+# HACK: Add `chezmoi` to NOPASS
+
+# {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
+sudo chezmoi execute-template --output=/etc/zsh/zprofile \
+  <__root__/etc/zsh/zprofile
+
+# {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
+sudo chezmoi execute-template --output=/etc/zsh/zshenv \
+  <__root__/etc/zsh/zshenv
+
+# vim:ft=sh

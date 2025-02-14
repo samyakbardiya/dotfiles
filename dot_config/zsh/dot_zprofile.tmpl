@@ -21,17 +21,17 @@ fi
 ##########
 
 ## macOS homebrew
-if [ $(uname) = "Darwin" ]; then
-    if [ $(arch) = "arm64" ]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-        eval "$(/usr/local/bin/brew shellenv)"
-    fi
+{{ if eq .chezmoi.os "darwin" -}}
+if [ $(arch) = "arm64" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
-    if [ -d '/home/linuxbrew/.linuxbrew' ]; then
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    fi
+    eval "$(/usr/local/bin/brew shellenv)"
 fi
+{{ else if eq .chezmoi.os "linux" -}}
+if [ -d '/home/linuxbrew/.linuxbrew' ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+{{ end -}}
 
 eval "$(zoxide init zsh --cmd d)"
 

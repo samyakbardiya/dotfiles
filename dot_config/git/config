@@ -1,5 +1,5 @@
 [include]
-    path = "~/.config/catppuccin/delta/catppuccino.gitconfig"
+    path = "~/.config/catppuccin/delta/catppuccin.gitconfig"
 
 [commit]
     gpgsign = true
