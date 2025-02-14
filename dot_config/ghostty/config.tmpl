@@ -1,0 +1,52 @@
+theme = catppuccin-mocha
+
+bold-is-bright = true
+
+confirm-close-surface = false
+
+cursor-color = #cdd6f4
+cursor-style = block
+cursor-style-blink = false
+cursor-text = #11111b
+
+font-family = "MonaspiceAr NF"
+font-family = default
+font-size = 16
+font-thicken = true
+
+font-feature = "calt"
+font-feature = "ss01" 
+font-feature = "ss02"
+font-feature = "ss03"
+font-feature = "ss04"
+font-feature = "ss05"
+font-feature = "ss06"
+font-feature = "ss07"
+font-feature = "ss08"
+font-feature = "ss09"
+font-feature = "liga"
+# ss01 # === !== =!= =/= /== /= #= == != ~~ =~ !~      
+# ss02 # >= <=                                         
+# ss03 # <--> <-> <!-- <-- --> <- -> <~> <~~ ~~> <~ ~> 
+# ss04 # </ /> </> <>                                  
+# ss05 # [| |] /\ \/ |> <|                             
+# ss06 # ### +++ &&&                                   
+# ss07 # -:- =:= :>: :<: ::> <:: :: :::                
+# ss08 # ..= ..- ..< .= .-                             
+# ss09 # <=> <<= =>> =<< >>= => << >>                  
+
+mouse-hide-while-typing = true
+
+window-padding-balance = false
+window-padding-x = 3
+window-padding-y = 9,0
+window-title-font-family = "MonaspiceKr NF"
+
+# OS Specific
+{{ if eq .chezmoi.os "darwin" -}}
+command = /opt/homebrew/bin/tmux new-session -A -s 0_o
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+{{ end -}}
+
+# vim:ft=config

@@ -1,0 +1,77 @@
+#
+#        _
+#    ___(_)_ __ ___  _ __ ___
+#   |_  / | '_ ` _ \| '__/ __|
+#  _ / /| | | | | | | | | (__
+# (_)___|_|_| |_| |_|_|  \___|
+#
+#
+# @samyakbardiya
+# vim:ft=zsh
+
+### modules ##############################################
+
+# Behaviour
+zmodule environment # Sets sane Zsh built-in environment options.
+zmodule input       # Applies correct bindkeys for input events.
+zmodule run-help    # Figures out where to get the best help, and gets it.
+
+# Productivity
+zmodule utility # Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule archive # Provides archive and unarchive functions for easy archive manipulation.
+zmodule fzf     # Configures fzf for faster fetching of files and directories names.
+zmodule git     # Provides handy git aliases and functions.
+zmodule ssh     # Provides a convenient way to load ssh-agent.
+# zmodule termtitle # Sets a custom terminal title.
+
+# Distro specific
+zmodule homebrew # Adds aliases for Homebrew.
+zmodule pacman   # Adds aliases for the pacman package manager.
+
+# Community modules
+zmodule kiesman99/zim-zoxide # Sets up zoxide in zsh.
+
+### oh-my-zsh! ###########################################
+
+zmodule ohmyzsh/ohmyzsh --root plugins/aliases # aliases cheatsheet
+zmodule ohmyzsh/ohmyzsh --root plugins/dotenv  # Automatically load your project ENV variables from .env
+zmodule ohmyzsh/ohmyzsh --root plugins/thefuck # The Fuck plugin
+
+### Third Party Modules ###################################
+
+zmodule Freed-Wu/fzf-tab-source           # collection of fzf-tab completion sources
+zmodule romkatv/powerlevel10k --use degit #  A Zsh theme
+zmodule sobolevn/wakatime-zsh-plugin      # Track how much time you have spent in your terminal using Wakatime
+zmodule unixorn/fzf-zsh-plugin            # ZSH plugin to enable fzf searches of a lot more stuff
+zmodule wfxr/forgit                       # utility tool powered by fzf for using git interactively
+zmodule zsh-users/zsh-autosuggestions     # [Anywhere] Fish-like autosuggestions for Zsh.
+zmodule djui/alias-tips                   # plugin to help remembering those aliases you defined once
+zmodule skx/sysadmin-util                 # Tools for Linux/Unix sysadmins.
+zmodule unixorn/git-extra-commands        # collection of git utilities
+zmodule qoomon/zsh-lazyload               # lazy load commands and speed up start up time of zsh
+
+# FIXME:
+zmodule peterhurford/git-it-on.zsh               # Quickly navigate GitHub from the command line.
+zmodule unixorn/bitbucket-git-helpers.plugin.zsh # Add some git helper scripts for dealing with repos on bitbucket
+zmodule unixorn/tumult.plugin.zsh                # collection of macOS-specific functions and scripts
+
+# zmodule marlonrichert/zsh-autocomplete # Real-time type-ahead completion for Zsh
+# zmodule oldratlee/hacker-quotes        # print a hacker quote randomly when open a terminal
+
+################
+# late modules #
+################
+
+# NOTE: These modules must be loaded after the completion module. Order matters here.
+#           - completions
+#           - fzf-tab
+#           - syntax-highlighting
+#           - history-substring-search
+
+zmodule completion                                 # Enables and configures smart and extensive tab completion.
+zmodule Aloxaf/fzf-tab                             # Replace zsh's default completion selection menu with fzf
+zmodule zdharma-continuum/fast-syntax-highlighting # Feature-rich syntax highlighting for ZSH
+zmodule zsh-users/zsh-completions --fpath src      #  Additional completion definitions for Zsh. # TODO: See if these are needed
+zmodule zsh-users/zsh-history-substring-search     # Fish-like history search (up arrow) for Zsh.
+
+# vim:ft=sh

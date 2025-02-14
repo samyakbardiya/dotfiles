@@ -1,0 +1,47 @@
+[include]
+    path = "~/.config/catppuccin/delta/catppuccino.gitconfig"
+
+[commit]
+    gpgsign = true
+
+[core]
+    excludesfile = ~/.config/git/ignore
+    pager = delta
+
+[diff]
+    colorMoved = default
+
+[delta]
+    features = catppuccin-mocha
+    navigate = true
+
+[init]
+    defaultbranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    ; conflictstyle = diff3
+    tool = nvimdiff
+
+[pull]
+    rebase = false
+
+[push]
+    autosetupremote = true
+
+[rerere]
+    enabled = true
+
+[user]
+    name = Samyak Bardiya
+    email = <mail@samyakbardiya.dev>
+
+[includeIf "gitdir:~/work-ct/"]
+    path = ~/.config/git/config_work_ct
+
+[includeIf "gitdir:~/work-tp/"]
+    path = ~/.config/git/config_work_tp
+
+# vim:ft=gitconfig
