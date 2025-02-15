@@ -1,5 +1,5 @@
 # dotfiles
 
 ```sh
-chezmoi init samyakbardiya --apply --ssh
+chezmoi init samyakbardiya --apply
 ```
