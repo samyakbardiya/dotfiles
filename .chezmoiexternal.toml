@@ -1,3 +1,7 @@
+##########
+## FILES #
+##########
+
 [".config/alacritty/catppuccin-mocha.toml"]
 type = "file"
 url = "https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml"
@@ -26,4 +30,13 @@ refreshPeriod = "168h"
 [".config/yazi/theme.toml"]
 type = "file"
 url = "https://github.com/catppuccin/yazi/raw/refs/heads/main/themes/mocha/catppuccin-mocha-blue.toml"
+refreshPeriod = "168h"
+
+#############
+## GIT-REPO #
+#############
+
+[".config/tmux/plugins/tpm"]
+type = "git-repo"
+url = "https://github.com/tmux-plugins/tpm"
 refreshPeriod = "168h"
