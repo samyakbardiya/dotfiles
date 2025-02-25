@@ -6,5 +6,14 @@ return {
         notifier = {
             top_down = false,
         },
+        picker = {
+            sources = {
+                ---@class snacks.picker.explorer.Config
+                explorer = {
+                    -- auto_close = true,
+                    hidden = true,
+                },
+            },
+        },
     },
 }

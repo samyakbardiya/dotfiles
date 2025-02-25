@@ -40,15 +40,16 @@ zmodule ohmyzsh/ohmyzsh --root plugins/thefuck # The Fuck plugin
 ### Third Party Modules ###################################
 
 zmodule Freed-Wu/fzf-tab-source           # collection of fzf-tab completion sources
+zmodule atuinsh/atuin                     # Magical shell history
+zmodule djui/alias-tips                   # plugin to help remembering those aliases you defined once
+zmodule qoomon/zsh-lazyload               # lazy load commands and speed up start up time of zsh
 zmodule romkatv/powerlevel10k --use degit #  A Zsh theme
+zmodule skx/sysadmin-util                 # Tools for Linux/Unix sysadmins.
 zmodule sobolevn/wakatime-zsh-plugin      # Track how much time you have spent in your terminal using Wakatime
 zmodule unixorn/fzf-zsh-plugin            # ZSH plugin to enable fzf searches of a lot more stuff
+zmodule unixorn/git-extra-commands        # collection of git utilities
 zmodule wfxr/forgit                       # utility tool powered by fzf for using git interactively
 zmodule zsh-users/zsh-autosuggestions     # [Anywhere] Fish-like autosuggestions for Zsh.
-zmodule djui/alias-tips                   # plugin to help remembering those aliases you defined once
-zmodule skx/sysadmin-util                 # Tools for Linux/Unix sysadmins.
-zmodule unixorn/git-extra-commands        # collection of git utilities
-zmodule qoomon/zsh-lazyload               # lazy load commands and speed up start up time of zsh
 
 # FIXME:
 zmodule peterhurford/git-it-on.zsh               # Quickly navigate GitHub from the command line.

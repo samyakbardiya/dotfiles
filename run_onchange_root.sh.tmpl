@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
 
-# HACK: Add `chezmoi` to NOPASS
-
 {{ if ne .chezmoi.os "windows" -}}
+
+# HACK: Add `chezmoi` to NOPASS
 
 cd "$(chezmoi execute-template '{{ .chezmoi.sourceDir }}')" || exit
 
-{{ if eq .chezmoi.os "darwin" -}}
+{{- if eq .chezmoi.os "darwin" -}}
 root_cmd="sudo"
-{{ else }}
+{{- else }}
 root_cmd="doas"
-{{ end -}}
+{{- end }}
+
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+# {{ include "__root__/etc/pacman.conf" | sha256sum }}
+$root_cmd chezmoi execute-template --output=/etc/pacman.conf \
+  <__root__/etc/pacman.conf
+{{- end }}
 
 # {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
 $root_cmd chezmoi execute-template --output=/etc/zsh/zprofile \
@@ -20,6 +26,6 @@ $root_cmd chezmoi execute-template --output=/etc/zsh/zprofile \
 $root_cmd chezmoi execute-template --output=/etc/zsh/zshenv \
   <__root__/etc/zsh/zshenv
 
-{{ end -}}
+{{- end }}
 
 # vim:ft=sh

@@ -2,6 +2,9 @@
 command = "delta"
 pager = "delta"
 
+[edit]
+apply = false
+
 [git]
 autoCommit = true
 autoPush = true

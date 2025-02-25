@@ -153,6 +153,8 @@ bindkey -M emacs '^N' history-substring-search-down
 ## Development Environment #
 ############################
 
+eval "$(atuin init zsh --disable-up-arrow)"
+
 lazyload jenv -- '
     eval "$(jenv init -)"
 '

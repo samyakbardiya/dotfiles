@@ -1,0 +1,6 @@
+enter_accept = false
+exit_mode = "return-query"
+inline_height = 20
+invert = true
+show_tabs = false
+style = "compact"
