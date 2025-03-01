@@ -5,9 +5,18 @@ pager = "delta"
 [edit]
 apply = false
 
-[git]
-autoCommit = true
-autoPush = true
+# [git]
+# autoCommit = true
+# autoPush = true
 
 [merge]
-command = "nvimdiff"
+command = "nvim"
+args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
+# args = [
+#   "-d",
+#   "-o2",
+#   "{{ .Destination }}",
+#   "{{ .Target }}",
+#   "-O",
+#   "{{ .Source }}",
+# ]
