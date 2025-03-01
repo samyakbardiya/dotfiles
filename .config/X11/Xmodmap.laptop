@@ -1,0 +1,7 @@
+! vim:ft=xmodmap
+clear control
+clear mod3
+keycode  37 = Hyper_L NoSymbol Hyper_L
+keycode  66 = Control_L NoSymbol Control_L
+add control = Control_L Control_R
+add mod3 = Hyper_L Hyper_R

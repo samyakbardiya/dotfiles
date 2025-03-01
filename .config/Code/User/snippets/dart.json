@@ -1,0 +1,68 @@
+{
+  // Place your snippets for dart here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Logg output to console"
+  // },
+
+  "log MESSAGE to console": {
+    "prefix": "cm",
+    "body": "Chronicle(StackTrace.current, '$1', [$1$2]);",
+    "description": "log MESSAGE to console"
+  },
+
+  "log ERROR to console": {
+    "prefix": "ce",
+    "body": "Chronicle(StackTrace.current, '$1', [$1$2] isError: true,);",
+    "description": "log ERROR to console"
+  },
+
+  "todo": {
+    "prefix": "td",
+    "body": "// TODO: $1",
+    "description": "TODO"
+  },
+
+  "fixme": {
+    "prefix": "fx",
+    "body": "// FIXME: $1",
+    "description": "FIXME"
+  },
+
+  "draw Border under Container()": {
+    "prefix": "drawBorder",
+    "body": "decoration: BoxDecoration(border: Border.all(color: Colors.$1)),",
+    "description": "draw Border under Container()"
+  },
+
+  "Riverpod: Consumer Stateful Widget": {
+    "prefix": "consumerStatefulW",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:flutter_riverpod/flutter_riverpod.dart';",
+      "",
+      "class ${TM_FILENAME_BASE/(_|^)(.)/${2:/upcase}/gm} extends ConsumerStatefulWidget {",
+      "\tconst ${TM_FILENAME_BASE/(_|^)(.)/${2:/upcase}/gm}({super.key});",
+      "",
+      "\t@override",
+      "\tConsumerState<${TM_FILENAME_BASE/(_|^)(.)/${2:/upcase}/gm}> createState() => _${TM_FILENAME_BASE/(_|^)(.)/${2:/upcase}/gm}State();",
+      "}",
+      "",
+      "class _${TM_FILENAME_BASE/(_|^)(.)/${2:/upcase}/gm}State extends ConsumerState<${TM_FILENAME_BASE/(_|^)(.)/${2:/upcase}/gm}> {",
+      "\t@override",
+      "\tWidget build(BuildContext context) {",
+      "\t\treturn ${1:Container()};",
+      "\t}",
+      "}"
+    ],
+    "description": "Riverpod: Consumer Stateful Widget"
+  }
+}

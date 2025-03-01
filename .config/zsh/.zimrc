@@ -1,0 +1,98 @@
+#
+#        _
+#    ___(_)_ __ ___  _ __ ___
+#   |_  / | '_ ` _ \| '__/ __|
+#  _ / /| | | | | | | | | (__
+# (_)___|_|_| |_| |_|_|  \___|
+#
+#
+# @samyakbardiya
+
+###########
+# modules #
+###########
+
+# Behaviour
+zmodule environment # Sets sane Zsh built-in environment options.
+zmodule input       # Applies correct bindkeys for input events.
+zmodule run-help    # Figures out where to get the best help, and gets it.
+
+# Productivity
+# zmodule exa       # Adds aliases and better defaults for exa.
+# zmodule magic-enter # Shown when there is no command and user presses ENTER.
+zmodule utility   # Utility aliases and functions. Adds colour to ls, grep and less.
+zmodule archive   # Provides archive and unarchive functions for easy archive manipulation.
+zmodule fzf       # Configures fzf for faster fetching of files and directories names.
+zmodule git       # Provides handy git aliases and functions.
+zmodule ssh       # Provides a convenient way to load ssh-agent.
+zmodule termtitle # Sets a custom terminal title.
+
+# Distro specific
+zmodule pacman # Adds aliases for the pacman package manager.
+
+# Community modules
+# zmodule joke/zim-starship # Sets up starship prompt in zsh.
+
+################
+# 3rd modulets #
+################
+
+# zmodule marlonrichert/zsh-autocomplete    # Real-time type-ahead completion for Zsh
+# zmodule oldratlee/hacker-quotes           # print a hacker quote randomly when open a terminal
+zmodule Aloxaf/fzf-tab                    # Replace zsh's default completion selection menu with fzf
+zmodule Freed-Wu/fzf-tab-source           # collection of fzf-tab completion sources
+zmodule romkatv/powerlevel10k --use degit #  A Zsh theme
+zmodule sobolevn/wakatime-zsh-plugin      # Track how much time you have spent in your terminal using Wakatime
+zmodule unixorn/fzf-zsh-plugin            # ZSH plugin to enable fzf searches of a lot more stuff
+zmodule wfxr/forgit                       # utility tool powered by fzf for using git interactively
+zmodule zsh-users/zsh-autosuggestions     # [Anywhere] Fish-like autosuggestions for Zsh.
+
+# # wakatime: Track how much time you have spent in your terminal!
+# zmodule wbingli/zsh-wakatime # without project detection
+# # zmodule sobolevn/wakatime-zsh-plugin # with project detection
+
+##############
+# oh-my-zsh! #
+##############
+
+zmodule ohmyzsh/ohmyzsh --root plugins/aliases # aliases cheatsheet
+zmodule ohmyzsh/ohmyzsh --root plugins/dotenv  # Automatically load your project ENV variables from .env
+zmodule ohmyzsh/ohmyzsh --root plugins/mvn     # many useful aliases
+zmodule ohmyzsh/ohmyzsh --root plugins/thefuck # The Fuck plugin
+# zmodule ohmyzsh/ohmyzsh --root plugins/tmux    # provides aliases for tmux
+
+# zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found # command not found
+# zmodule ohmyzsh/ohmyzsh --root plugins/docker            # adds auto-completion and aliases
+# zmodule ohmyzsh/ohmyzsh --root plugins/docker-compose    # provides completion
+# zmodule ohmyzsh/ohmyzsh --root plugins/emacs             # provides aliases
+# zmodule ohmyzsh/ohmyzsh --root plugins/flutter           # provides completion and useful aliases
+# zmodule ohmyzsh/ohmyzsh --root plugins/git-escape-magic  # zle tweak for git command line arguments
+# zmodule ohmyzsh/ohmyzsh --root plugins/git-extras        # provides completion  # TODO: Try me
+# zmodule ohmyzsh/ohmyzsh --root plugins/git-flow          # adds completion and aliases
+# zmodule ohmyzsh/ohmyzsh --root plugins/git-flow-avh      # adds completion
+# zmodule ohmyzsh/ohmyzsh --root plugins/isodate           # some aliases for common Date commands
+# zmodule ohmyzsh/ohmyzsh --root plugins/jira              # command line tools for interacting with Atlassian's JIRA
+# zmodule ohmyzsh/ohmyzsh --root plugins/npm               # provides completion as well as adding many useful aliases
+# zmodule ohmyzsh/ohmyzsh --root plugins/nvm               # adds autocompletions
+# zmodule ohmyzsh/ohmyzsh --root plugins/pyenv             # loads pyenv-virtualenv
+# zmodule ohmyzsh/ohmyzsh --root plugins/ripgrep           # adds completion
+# zmodule ohmyzsh/ohmyzsh --root plugins/rsync             # adds aliases
+# zmodule ohmyzsh/ohmyzsh --root plugins/systemd           # provides many useful aliases
+# zmodule ohmyzsh/ohmyzsh --root plugins/vscode            # provides useful aliases
+
+################
+# late modules #
+################
+
+# NOTE: These modules must be loaded after the completion module.
+# NOTE: Order matters here.
+# NOTE: completions > syntax-highlighting > history-substring-search
+
+# zmodule zsh-users/zsh-completions --fpath src #  Additional completion definitions for Zsh. # TODO: See if these are needed
+# zmodule zsh-users/zsh-syntax-highlighting      # Fish-like syntax highlighting for Zsh. # TODO: See if `fast-syntax` is better
+
+zmodule completion                                 # Enables and configures smart and extensive tab completion.
+zmodule zdharma-continuum/fast-syntax-highlighting # Feature-rich syntax highlighting for ZSH
+zmodule zsh-users/zsh-history-substring-search     # Fish-like history search (up arrow) for Zsh.
+
+# vim:ft=sh

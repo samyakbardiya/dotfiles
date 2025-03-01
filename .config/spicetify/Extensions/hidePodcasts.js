@@ -1,0 +1,1 @@
+../gitRepo/spicetify-hide-podcasts/hidePodcasts.js

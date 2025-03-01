@@ -1,0 +1,7 @@
+#+TITLE: Compile - Run - Test
+#+AUTHOR: Samyak Bardiya
+
+A script to easily Compile, Run, or Test your code.
+
+* TODO
+- add option to output DIFF with the output file.

@@ -1,0 +1,75 @@
+#!/bin/bash
+# vim: expandtab:
+
+_usage="
+$(basename $0) is a dmenu script to open all configuration file of any packages mentioned below
+"
+[[ -n $1 ]] && echo "$_usage" &&  exit ;
+
+_dmenu="dmenu -l 10 -c -bw 3 -p config"
+_edit="$TERMINAL -e nvim -p"
+_config=$(tail -n +16 $0 | head -n -1 | shuf | $_dmenu | cut -d '|' -f2)
+
+[[ -n $_config ]] && eval "$VISUAL $_config"
+
+config_files="
+Xresources          | $CONFIG/X11/Xresources
+alacritty           | $CONFIG/alacritty/alacritty.yml
+alias               | $CONFIG/aliasrc
+check_display       | $SCRIPT/check_display
+check_net           | $SCRIPT/check_net
+darkreader          | $DATA/qutebrowser/greasemonkey/darkreader.js
+directories         | $CONFIG/directories
+dmenu_edit_config   | $SCRIPT/dmenu_edit_config
+dmenu_power         | $SCRIPT/dmenu_power
+doas                | $CONFIG/doas.conf
+doom-emacs          | $CONFIG/doom/
+dosbox              | $CONFIG/dosbox/dosbox.conf
+dunst               | $CONFIG/dunst/dunstrc
+flexget             | $CONFIG/flexget
+gentleman           | $SCRIPT/gentleman
+greasemonkey        | $DATA/qutebrowser/greasemonkey/
+grub                | /etc/default/grub /etc/grub.d/
+gruvbox-material    | $HOME/org/xtra/gruvbox-material.txt
+i3                  | $CONFIG/i3/config
+i3blocks            | $CONFIG/i3blocks/{config,*}
+killnotify          | $SCRIPT/killnotify
+lf                  | $CONFIG/lf/lfrc
+lofi                | $SCRIPT/lofi
+mime                | $CONFIG/mimeapps.list
+mpd                 | $CONFIG/mpd/mpd.conf
+mpv                 | $CONFIG/mpv/{mpv,input}.conf
+ncmpcpp             | $CONFIG/ncmpcpp/{config,bindings}
+neofetch            | $CONFIG/neofetch/config.conf
+neovim              | $CONFIG/nvim/
+pacman              | $CONFIG/etc/pacman.conf
+paru                | $CONFIG/paru/paru.conf
+picom               | $CONFIG/picom/picom.conf
+qtile               | $CONFIG/qtile/{config.py,autostart.sh}
+qutebrowser         | $CONFIG/qutebrowser/
+redshift            | $CONFIG/redshift/redshift.conf
+rofi                | $CONFIG/rofi/config.rasi
+set-display         | $SCRIPT/set-display
+set-keymap          | $SCRIPT/set-keymap
+simpleClock         | $CONFIG/startpages/simpleClock
+sort_download_dir   | $SCRIPT/sort_download_dir
+starship            | $CONFIG/starship.toml
+statusbar/          | $BIN/statusbar
+sxhkd               | $CONFIG/sxhkd/sxhkdrc
+templates           | $HOME/template/
+transmission-daemon | $CONFIG/transmission-daemon/settings.json
+transmission-remote | $CONFIG/transmission-remote-gtk/config.json
+transmission-rss    | $CONFIG/transmission-rss/config.yml
+tremc               | $CONFIG/tremc/settings.cfg
+tridactyl           | $CONFIG/tridactyl/tridactylrc
+tty-screen          | $CONFIG/issue
+tuir                | $CONFIG/tuir/{tuir.cfg,mailcap}
+update-mirrorlist   | $BIN/update-mirrorlist
+userscripts         | $DATA/qutebrowser/userscripts/
+vifm                | $CONFIG/vifm/vifmrc
+xinitrc             | $CONFIG/X11/xinitrc
+xmodmap             | $CONFIG/X11/Xmodmap*
+xprofile            | $CONFIG/X11/profile
+zathura             | $CONFIG/zathura/zathurarc
+zsh                 | $CONFIG/zsh/{.zshrc,prompt}
+"

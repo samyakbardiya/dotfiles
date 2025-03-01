@@ -1,0 +1,7 @@
+#!/bin/sh
+
+down=$XDG_DOWNLOAD_DIR
+config=$XDG_CONFIG_HOME
+
+echo $down
+echo $config

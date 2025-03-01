@@ -1,0 +1,57 @@
+[submodule "/home/samyak039/.config/emacs"]
+	path = /home/samyak039/.config/emacs
+	url = git@github.com:doomemacs/doomemacs.git
+[submodule ".local/share/doomemacs"]
+	path = .local/share/doomemacs
+	url = git@github.com:doomemacs/doomemacs.git
+[submodule "code/dwm"]
+	path = code/dwm
+	url = git@github.com:samyak039/dwm.git
+[submodule "code/dmenu"]
+	path = code/dmenu
+	url = git@github.com:samyak039/dmenu.git
+[submodule "code/dwmblocks"]
+	path = code/dwmblocks
+	url = git@github.com:samyak039/dwmblocks.git
+[submodule "code/st"]
+	path = code/st
+	url = git@github.com:samyak039/st.git
+[submodule ".local/scripts"]
+	path = .local/scripts
+	url = git@github.com:samyak039/scripts.git
+[submodule ".local/share/librewolf/profile/chrome/cascade"]
+	path = .local/share/librewolf/profile/chrome/cascade
+	url = git@github.com:andreasgrafen/cascade.git
+[submodule ".local/share/librewolf/profile/chrome/Firefox-UI-Fix"]
+	path = .local/share/librewolf/profile/chrome/Firefox-UI-Fix
+	url = git@github.com:black7375/Firefox-UI-Fix.git
+[submodule ".local/share/mozilla/firefox/CustomProfile/chrome/cascade"]
+	path = .local/share/mozilla/firefox/CustomProfile/chrome/cascade
+	url = git@github.com:andreasgrafen/cascade.git
+[submodule ".local/share/mozilla/firefox/CustomProfile/chrome/Firefox-UI-Fix"]
+	path = .local/share/mozilla/firefox/CustomProfile/chrome/Firefox-UI-Fix
+	url = git@github.com:black7375/Firefox-UI-Fix.git
+[submodule ".local/share/librewolf/profile/chrome/FlyingFox"]
+	path = .local/share/librewolf/profile/chrome/FlyingFox
+	url = git@github.com:akshat46/FlyingFox.git
+[submodule "code/scroll"]
+	path = code/scroll
+	url = git@github.com:samyak039/scroll.git
+[submodule ".local/share/mozilla/firefox/profile/chrome/Firefox-UI-Fix"]
+	path = .local/share/mozilla/firefox/profile/chrome/Firefox-UI-Fix
+	url = git@github.com:black7375/Firefox-UI-Fix.git
+[submodule ".local/share/mozilla/firefox/arkenfox"]
+	path = .local/share/mozilla/firefox/arkenfox
+	url = git@github.com:arkenfox/user.js.git
+[submodule "image/walls"]
+	path = image/walls
+	url = git@gitlab.com:samyak039/wallpaper.git
+[submodule ".local/share/ledger"]
+	path = .local/share/ledger
+	url = git@gitlab.com:samyak039/ledger.git
+[submodule ".local/share/mozilla/firefox/profile/chrome/firefox-csshacks"]
+	path = .local/share/mozilla/firefox/profile/chrome/firefox-csshacks
+	url = git@github.com:MrOtherGuy/firefox-csshacks.git
+[submodule ".local/share/keepassxc"]
+	path = .local/share/keepassxc
+	url = git@github.com:samyak039/keepassxc.git

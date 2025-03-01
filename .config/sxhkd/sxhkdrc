@@ -1,0 +1,159 @@
+# vim:ft=sxhkdrc
+
+# KEYBOARD LAYOUT
+shift + F1
+    set-keymap ; notify-send -a 'Keyboard Layout' 'DVORAK'
+shift + F2
+    setxkbmap in eng ; notify-send -a 'Keyboard Layout' 'QWERTY'
+
+# DISPLAY
+shift + F6
+    pkill -USR1 redshift
+shift + F7
+    set-display
+
+# IFTTT bulb
+# shift + F11
+#     notify-send -a 'IFTTT' 'Study OFF' "`curl -X POST https://maker.ifttt.com/trigger/study_off/with/key/c0sQxa1JbI032R1GOWzzgX`"
+#     #notify-send -a 'IFTTT' 'Study OFF' "`curl -X POST https://maker.ifttt.com/trigger/study_off/with/key/$IFTTT_WEBHOOK`"
+# shift + F12
+#     notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/c0sQxa1JbI032R1GOWzzgX`"
+#     #notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/$IFTTT_WEBHOOK`"
+
+# Screenshot
+Print
+    flameshot gui
+Print + shift
+    flameshot screen
+Print + control
+    flameshot screen --clipboard
+Print + control + shift
+    flameshot gui --clipboard --delay 3000
+
+# brightness
+# XF86MonBrightness{Down,Up}
+#     # xbacklight -{dec,inc} 10
+#     # light -{U,A} 5
+#     brightnessctl s {10%-,+10%}
+super + {F11,F12}
+    brightnessctl set {'10%-','+10%'}
+super + hyper + {Down,Up}
+    brightnessctl s {'10%-','+10%'}
+
+# volume
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+    pamixer --allow-boost -{t,d,i} 5 && pkill -RTMIN+10 blocks
+super + {F1,F2,F3}
+    pamixer --allow-boost -{t,d,i} 5 && pkill -RTMIN+10 blocks
+# super + F4
+#     microphone-toggle.sh
+XF86AudioMicMute
+    pamixer --default-source -t && pkill -RTMIN+10 blocks
+
+# media control (music)
+XF86Audio{Stop,Prev,Play,Next}
+    playerctl -p 'mpv,spotify,%any' -i 'mpd' {stop,previous,play-pause,next} && pkill -RTMIN+10 i3blocks
+control + XF86Audio{Stop,Prev,Play,Next}
+    mpc {stop,prev,toggle,next} && pkill -RTMIN+10 i3blocks
+super + {F5,F6,F7,F8}
+    playerctl -p 'mpv,spotify,%any' -i 'mpd' {stop,previous,play-pause,next} && pkill -RTMIN+10 i3blocks
+super + control + {F5,F6,F7,F8}
+    mpc {stop,prev,toggle,next} && pkill -RTMIN+10 i3blocks
+
+# toggle trackpad
+XF86Search
+    toggle_trackpad.sh
+
+# notification
+super + BackSpace
+    dunstctl close
+super + ctrl + BackSpace
+    dunstctl close-all
+super + backslash
+    dunstctl context
+super + ctrl + backslash
+    dunstctl history-pop
+super + ctrl + shift + BackSpace
+    dunstctl set-paused true
+super + ctrl + bar
+    dunstctl set-paused false
+#super + shift + BackSpace
+#    killall -SIGUSR1 dunst
+#super + shift + backslash
+#    killall -SIGUSR2 dunst
+
+
+super + d
+    rofi -show drun
+super + shift + d
+    rofi -combi-modi drun,run -show combi
+super + shift + control + d
+    dmenu_run_history_i -c -l 20 -bw 3 -p run
+super + s
+    $TERMINAL
+# calming
+super + shift + s
+    $TERMINAL_ALT
+
+# hyper keybinding / application keybinding
+hyper + apostrophe
+    rofimoji
+hyper + period
+    $TERMINAL_ALT -e yazi
+hyper + Return
+    $TERMINAL
+hyper + a
+    pavucontrol
+hyper + b
+    firefox-developer-edition -P profile
+hyper + shift + b
+    brave-beta --profile-directory="Default"
+hyper + shift + ctrl + b
+    brave-beta --profile-directory="CT"
+hyper + c
+    notion-calendar-elecrtron
+hyper + d
+    discord
+hyper + e
+    $TERMINAL --class neovim -e tmux new-session -A -s neovim
+hyper + shift + e
+    $TERMINAL_ALT -e --class neovim tmux new-session -A -s neovim
+# hyper + shift + e
+#     emacsclient -c -a 'emacs --fg-daemon'
+# hyper + alt + e
+#     emacsclient --eval "emacs-everywhere"
+hyper + h
+    $TERMINAL -e btop
+hyper + k
+    keepmenu
+hyper + shift + k
+    keepassxc
+hyper + m
+    beeper --default-frame
+hyper + n
+    notion-app
+hyper + p
+    thunar
+hyper + q
+    qalculate-gtk
+hyper + r
+    $TERMINAL -e tremc -X
+hyper + s
+    spotify-tray
+hyper + t
+    dex "$XDG_DATA_HOME/applications/$(ls $XDG_DATA_HOME/applications | awk '/appimagekit/ && /Todoist/')" &
+hyper + u
+    rofimoji
+hyper + v
+    code-insiders
+hyper + w
+    zapzap
+hyper  + BackSpace
+    rofi-powermenu.sh
+
+hyper + space
+    notify-send "SXHKD" "SXHKD_SHELL: ${SXHKD_SHELL}"
+
+# restart scripts or daemon
+alt + shift + control + s
+    killnotify sxhkd "config reloaded" && SXHKD_SHELL="/bin/sh" sxhkd &

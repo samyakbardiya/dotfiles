@@ -1,0 +1,10 @@
+#!/bin/ash
+
+#XDG_MUSIC_DIR="$HOME/audio"
+_dir_music="$HOME/audio"
+_dir_looseless="$_dir_music/music"
+_dir_lossy="$_dir_music/lossy"
+
+[[ -d $dir_lossy ]] && echo 1 || echo 2
+
+

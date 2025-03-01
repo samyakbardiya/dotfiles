@@ -1,0 +1,64 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+[Backquote]",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+[Backquote]",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+alt+o",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.view.explorer",
+        "workbench.action.terminal.focus",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
+  },
+  {
+    "key": "shift+alt+e",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.view.explorer",
+        "workbench.debug.action.toggleRepl",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.view.debug",
+        "workbench.debug.action.toggleRepl",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
+  }
+  // {
+  //   "key": "space",
+  //   "command": "vspacecode.space",
+  //   "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
+  // },
+  // Trigger vspacecode when sidebar is in focus
+  // {
+  //   "key": "space",
+  //   "command": "vspacecode.space",
+  //   "when": "sideBarFocus && !inputFocus && !whichkeyActive"
+  // },
+  // {
+  //   "key": "ctrl+shift+t",
+  //   "command": "-workbench.action.reopenClosedEditor"
+  // },
+  // {
+  //   "key": "ctrl+shift+t",
+  //   "command": "workbench.view.extension.test"
+  // },
+]

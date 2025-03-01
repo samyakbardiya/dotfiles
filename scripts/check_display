@@ -1,0 +1,14 @@
+#!/bin/sh
+
+internal=LVDS1
+external=HDMI1
+
+if xrandr | grep "$external disconnected"; then
+    notify-send "Display" "Single Dispaly Mode"
+    xrandr --output "$internal" --auto
+    xrandr --output "$external" --off
+else
+    notify-send "Dispaly" "Dual Display Mode"
+    xrandr --output "$internal" --primary --auto
+    xrandr --output "$external" --auto --right-of "$internal"
+fi

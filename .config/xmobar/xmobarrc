@@ -1,0 +1,57 @@
+Config
+    { -- appearance
+      font = "MonaspiceNe Nerd Font Bold 12"
+    , bgColor = "#282828"
+    , fgColor = "#EBDBB2"
+    , position = BottomW L 90
+    , --
+      -- layout
+      sepChar = "%"
+    , alignSep = "}{"
+    , template = "%XMonadLog% }{ %cpu% | %memory% * %swap% | %date% "
+    , --
+      -- general behavior
+      --
+      ---- send to bottom of window stack on start
+      lowerOnStart = True
+    , -- start with window unmapped (hidden)
+      hideOnStart = False
+    , -- show on all desktops
+      allDesktops = True
+    , -- set the Override Redirect flag (Xlib)
+      overrideRedirect = True
+    , -- choose widest display (multi-monitor)
+      pickBroadest = False
+    , -- enable/disable hiding (True = disabled)
+      persistent = True
+    , --
+      -- plugins
+      --   Numbers can be automatically colored according to their value. xmobar
+      --   decides color based on a three-tier/two-cutoff system, controlled by
+      --   command options:
+      --     --Low sets the low cutoff
+      --     --High sets the high cutoff
+      --
+      --     --low sets the color below --Low cutoff
+      --     --normal sets the color between --Low and --High cutoffs
+      --     --High sets the color above --High cutoff
+      --
+      --   The --template option controls how the plugin is displayed. Text
+      --   color can be set by enclosing in <fc></fc> tags. For more details
+      --   see http://projects.haskell.org/xmobar/#system-monitor-plugins.
+      commands =
+        [ Run Cpu ["-L", "3", "-H", "50", "--high", "red", "--normal", "green"] 10
+        , Run
+            Alsa
+            "default"
+            "Master"
+            ["--template", "<volumestatus>", "--suffix", "True", "--", "--on", ""]
+        , Run Memory ["--template", "Mem: <usedratio>%"] 10
+        , Run Swap [] 10
+        , Run Date "%Y-%m-%d %a <fc=#D79921>%H:%M:%S</fc>" "date" 10
+        , Run XMonadLog
+        , Run UnsafeStdinReader
+        ]
+    }
+
+-- vim:ft=haskell

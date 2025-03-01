@@ -1,0 +1,79 @@
+schedules:
+#  - tasks: "*"
+#    interval:
+#      minutes: 1
+  - tasks: tomodachi-game
+    schedule:
+      day_of_week: tue
+      hour: "*/1"
+  - tasks: [kaguya-sama--s03, spy-x-family--s01]
+    schedule:
+      day_of_week: sat
+      hour: "*/1"
+  - tasks: one-piece
+    schedule:
+      day_of_week: sun
+      hour: "*/1"
+
+tasks:
+  one-piece:
+    rss:
+      url: https://feed.animetosho.org/rss2?only_tor=1&aid=69
+      all_entries: no
+    template:
+      - judas
+      - torrent
+    transmission:
+      path: /home/samyak039/video/show/one_piece/
+  kaguya-sama--s03:
+    rss:
+      url: https://feed.animetosho.org/rss2?only_tor=1&aid=15806
+      all_entries: no
+    template:
+      - judas
+      - torrent
+    transmission:
+      path: /home/samyak039/video/show/kaguya_sama/
+  spy-x-family--s01:
+    rss:
+      url: https://feed.animetosho.org/rss2?only_tor=1&aid=16947
+      all_entries: no
+    template:
+      - judas
+      - torrent
+    transmission:
+      path: /home/samyak039/video/show/spy_x_family/
+  tomodachi-game--s01:
+    rss:
+      url: https://feed.animetosho.org/rss2?only_tor=1&aid=16948
+      all_entries: no
+    template:
+      - asw
+      - torrent
+    transmission:
+      path: /home/samyak039/video/show/tomodachi_game/
+
+
+templates:
+  animetosho:
+    rss:
+      url: https://feed.animetosho.org/rss2
+      all_entries: no
+  anime:
+    series:
+      - Spy X Family
+      - One Piece
+  asw:
+    regexp:
+      accept:
+        - ASW
+  judas:
+    regexp:
+      accept:
+        - Judas
+  torrent:
+    transmission:
+      host: localhost
+      port: 9091
+      username: samyak039
+      password: seedbox

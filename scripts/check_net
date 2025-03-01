@@ -1,0 +1,22 @@
+#!/bin/bash
+
+_usage="
+$(basename $0)
+"
+
+log="$CACHE/check_net"
+[[ -e $log ]] || touch $log
+echo "--------------------------------------------------------------------------------" >> $log
+
+while true; do
+	d="$(date +%F-%a--%T | sed "s/ /_/g")"
+	ping -c 1 8.8.8.8 > /dev/null
+	if [[ $? -eq 0 ]] ; then
+		l="CON"
+	else
+		l="DIS"
+		#notify-send -a "ping" -u critical "NO INTERNET" "$d"
+	fi
+	printf "%s -- %s\n" $l $d | tee -a $log
+	sleep 10s
+done

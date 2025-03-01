@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) setsid -f "$TERMINAL" -e pulsemixer ;;
+	2) pamixer -t ;;
+	4) pamixer --allow-boost -i 5; pkill -RTMIN+10 blocks ;;
+	5) pamixer --allow-boost -d 5; pkill -RTMIN+10 blocks ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+printf "<span "
+[ $(pamixer --get-mute) = true ] && printf "foreground='#B85651' "
+printf ">VOL:"
+[ $(pamixer --get-mute) = true ] && printf "MUT" || printf "$(pamixer --get-volume)"
+printf "</span>"

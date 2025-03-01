@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+# script to auto download from the watch-dir and move the torrrent file after
+# starting the download
+
+# directories to be used
+watch_dir="$(xdg-user-dir DOWNLOAD)/torrent"
+trash_dir="$watch_dir/.torrent"
+
+# checking if dir exists or not; if not then create them
+[ -d $watch_dir ] || mkdir $watch_dir
+[ -d $trash_dir ] || mkdir $trash_dir
+
+# check if any new file in created or moved to the watch_dir
+# if yes, then start the torrent and move the .torrent file to the trash_dir
+inotifywait -m $watch_dir -e create -e moved_to |
+    while read file_path action file_name; do
+        [ ${file_name##*.} = "torrent" ] &&
+            transmission-remote -n 'samyak039:seedbox' -a $file_path/$file_name &&
+                mv "$file_path/$file_name" "$trash_dir" &&
+                notify-send -a "Transmission" -u normal "torrent STARTED" "$file_name" ||
+                    notify-send -a "Transmission" -u critical "torrent FAILED" "$file_name"
+    done

@@ -1,0 +1,1 @@
+/home/samyak039/.config/autostart.sh

@@ -1,0 +1,22 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system>								<dir>					<type>		<options> 																									<dump>	<pass>
+
+# /dev/sda2 LABEL=root
+UUID=6c454a98-ddc7-4a1b-87ae-c14f6774bfb1	/         				ext4      	rw,relatime																									0		1
+
+# /dev/sda1 LABEL=BOOT
+UUID=F22E-DF3F      						/boot     				vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0 		2
+
+# /dev/sda3 LABEL=home
+UUID=d097df8a-6348-43dd-892d-2d70583bbdbd	/home     				ext4		rw,relatime																									0 		2
+
+# /dev/sda6 LABEL=image
+UUID=6765031873795F6B						/home/samyak039/image	ntfs-3g		uid=1000,gid=1000,umask=022,dmask=022,fmask=133																0		0
+
+# /dev/sda5 LABEL=shitOS
+#UUID=D278E9A378E98697						/shitos   				ntfs-3g    	ro,nosuid,nodev,user_id=0,group_id=0,allow_other,blksize=4096												0		0
+
+# swap file
+/swapfile									none					swap		default	    																								0		0

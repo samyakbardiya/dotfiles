@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# url of the latest mirrorlist
+_url_artix="https://gitea.artixlinux.org/packagesA/artix-mirrorlist/raw/branch/master/trunk/mirrorlist"
+_url_arch="https://archlinux.org/mirrorlist/all"
+# dir
+_dir="$DATA/pacman-mirrorlist"
+# complete mirrorlist
+_mirrorlist_artix="$_dir/mirrorlist-artix"
+_mirrorlist_arch="$_dir/mirrorlist-arch"
+# speed list
+_nine_artix="$_dir/n9_mirrorlist-artix"
+_nine_arch="$_dir/n9_mirrorlist-arch"
+
+# get the latest mirrorlist from there respective servers
+echo "=> Downloading the latest mirrorlist"
+wget -nv $_url_artix -O $_mirrorlist_artix || exit 91
+wget -nv $_url_arch -O $_mirrorlist_arch   || exit 92
+#curl $_url_arch -o $_mirrorlist_arch
+#curl $_url_artix -o $_mirrorlist_artix
+
+# select all countries in arch
+echo "=> Selecting all the servers."
+sed -i 's/^#Server/Server/' $_mirrorlist_artix
+sed -i 's/^#Server/Server/' $_mirrorlist_arch
+
+## backup old mirrorlist
+echo "=> Backing-up the old files"
+[[ -e $_nine_artix ]] && mv $_nine_artix "$_nine_artix-backup_$(date +%F)"
+[[ -e $_nine_arch ]]  && mv $_nine_arch "$_nine_arch-backup_$(date +%F)"
+
+# rank mirrors top 9
+echo "=> Mirroring Artix Linux"
+[[ -e $_mirrorlist_artix ]] && rankmirrors -n 9 $_mirrorlist_artix > "$_nine_artix" &&
+	notify-send "rankmirror" "Artix mirrorlist updated at $_date"
+echo "=> Mirroring Arch Linux"
+[[ -e $_mirrorlist_arch ]] && rankmirrors -n 9 $_mirrorlist_arch > "$_nine_arch" &&
+	notify-send "rankmirror" "Arch mirrorlist updated at $_date"
+
+echo "=> Mirrored at $(date +%F-%a--%T)"

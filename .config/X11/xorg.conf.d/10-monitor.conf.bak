@@ -1,0 +1,12 @@
+Section "Monitor"
+    Identifier  "HDMI1"
+    Option      "PreferredMode" "1920x1080"
+    Option      "Position" "0 0"
+    Option      "Primary" "true"
+EndSection
+
+Section "Monitor"
+    Identifier  "LVDS1"
+    Option      "PreferredMode" "1366x768"
+    Option      "Position" "277 1080"
+EndSection

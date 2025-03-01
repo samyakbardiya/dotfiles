@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pgrep -x transmission-daemon > /dev/null || transmission-daemon
+
+transmission-remote --add "$@"

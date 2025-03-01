@@ -1,0 +1,3 @@
+#!/bin/sh
+# bitwarden-dmenu (https://github.com/andykais/bitwarden-dmenu)
+bitwarden-dmenu --clear-clipboard 60 --dmenu-args="-i -l 15 -c -bw 3 -p search" --dmenu-pswd-args="-c -bw 5 -p bitwarden" --session-timeout="3600" --sync-vault-after 3600 --on-error="notify-send 'Bitwarden' 'ERROR'"

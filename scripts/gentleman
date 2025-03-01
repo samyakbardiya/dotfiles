@@ -1,0 +1,18 @@
+#!/bin/sh
+
+_usage="
+$(basename $0) is a dmenu script to open any man page you want.
+"
+[[ $1 = '-h' ]] && echo "$_usage" &&  exit ;
+
+_dmenu="dmenu -l 20 -c -bw 3 -p man"
+_open="$TERMINAL -e man"
+
+if [[ -z $1 ]]; then
+    _config=$(man -k . | rg -e '\(1\)' -e '\(5\)' | shuf | $_dmenu | awk '{print $1}')
+else
+    _config=$(man -k . | rg -e "\($1\)" | $_dmenu | awk '{print $1}')
+fi
+#_config=$(man -k . | rg -e '\(3\)' | shuf | $_dmenu | awk '{print $1}')
+
+[[ -n $_config ]] && eval "$_open $_config"

@@ -1,0 +1,17 @@
+#
+#  _  __
+# | |/ _|_ __ ___
+# | | |_| '__/ __|
+# | |  _| | | (__
+# |_|_| |_|  \___|
+#
+#
+# @samyak039
+
+# basic vars
+set icons
+set period 1
+set preview true
+set scrolloff 3
+set shell zsh
+set color256

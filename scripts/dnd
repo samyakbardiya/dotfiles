@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $(dunstctl is-paused) = "false" ]
+then
+    i3-msg -q bar hidden_state show bar-1
+    dunstctl set-paused true
+    echo "DND"
+else
+    i3-msg -q bar hidden_state hide bar-1
+    dunstctl set-paused false
+    echo ""
+fi

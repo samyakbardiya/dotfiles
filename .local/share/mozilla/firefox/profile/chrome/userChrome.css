@@ -1,0 +1,44 @@
+/*###################*/
+/* Firefox CSS Hacks */
+/*###################*/
+
+/* @import url("firefox-csshacks/chrome/autohide_toolbox.css"); */
+@import url("firefox-csshacks/chrome/compact_extensions_panel.css");
+@import url("firefox-csshacks/chrome/compact_proton.css");
+@import url("firefox-csshacks/chrome/custom_menupopup_check_icons.css");
+@import url("firefox-csshacks/chrome/dark_checkboxes_and_radios.css");
+@import url("firefox-csshacks/chrome/hide_tabs_toolbar.css");
+@import url("firefox-csshacks/chrome/hide_urlbar_first_row.css");
+@import url("firefox-csshacks/chrome/iconized_main_menu.css");
+@import url("firefox-csshacks/chrome/linux_gtk_window_control_patch.css");
+@import url("firefox-csshacks/chrome/loading_indicator_bouncing_line.css");
+@import url("firefox-csshacks/chrome/minimal_in-UI_scrollbars.css");
+@import url("firefox-csshacks/chrome/overlay_fullscreen_toolbars.css");
+@import url("firefox-csshacks/chrome/overlay_sidebar_header.css");
+@import url("firefox-csshacks/chrome/privatemode_indicator_as_menu_button.css");
+@import url("firefox-csshacks/chrome/proton_dark_light_notifications.css");
+@import url("firefox-csshacks/chrome/urlbar_connection_type_text_colors.css");
+@import url("firefox-csshacks/chrome/urlbar_container_color_border.css");
+@import url("firefox-csshacks/chrome/window_control_force_linux_system_style.css");
+
+/* @import url("GruvFox/chrome/userChrome.css"); */
+
+/* @import url("firefox-csshacks/chrome/toolbars_below_content.css"); */
+/* @import url("firefox-csshacks/chrome/urlbar_popup_full_width.css"); */
+
+:root {
+  /* autohide_toolbox */
+  --uc-autohide-toolbox-delay: 300ms !important;
+}
+
+/* https://github.com/mbnuqw/sidebery/wiki/Firefox-Styles-Snippets-(via-userChrome.css)#dynamic-native-tabs */
+#main-window[titlepreface*="​"] #sidebar-splitter {
+  display: none !important;
+}
+
+/* @import url("firefox-csshacks/chrome/autohide_sidebar.css"); */
+/* #sidebar-box { */
+/*   --uc-sidebar-width: 32px !important; */
+/*   --uc-sidebar-hover-width: 300px !important; */
+/*   --uc-autohide-sidebar-delay: 300ms !important; */
+/* } */

@@ -1,0 +1,81 @@
+#!/bin/sh
+#         _       _ _
+#   __  _(_)_ __ (_) |_ _ __ ___
+#   \ \/ / | '_ \| | __| '__/ __|
+#  _ >  <| | | | | | |_| | | (__
+# (_)_/\_\_|_| |_|_|\__|_|  \___|
+#
+#
+# @samyak039
+
+xrdb -merge "$XDG_CONFIG_HOME/X11/Xresources"
+
+# start some nice programs
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+	for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
+		[ -x "$f" ] && . "$f"
+	done
+	unset f
+fi
+xsetroot -cursor_name left_ptr
+
+# # Set up an icon tray
+# trayer --edge top --align right --SetDockType true --SetPartialStrut true \
+# 	--expand true --width 10 --transparent true --tint 0x5f5f5f --height 18 &
+
+# Power Management
+xfce4-power-manager &
+
+if [ -x /usr/bin/nm-applet ]; then
+	nm-applet --sm-disable &
+fi
+
+#########################
+# priority applications #
+#########################
+dwmblocks &
+
+###########
+# scripts #
+###########
+set-display
+set-keymap && SXHKD_SHELL="/bin/sh" sxhkd &
+sort_download_dir.sh &
+# work-life-balance.sh &
+
+##########################
+# background application #
+##########################
+blueman-applet &
+dunst &
+easyeffects --gapplication-service &
+# emacs --daemon &
+flameshot &
+/usr/bin/kdeconnectd &
+# mpDris2 &
+nm-applet &
+picom --daemon &
+polkit-dumb-agent &
+redshift &
+syncthing --no-browser &
+thunar --daemon &
+transmission-daemon &
+unclutter --timeout 3 --ignore-scrolling &
+
+#############
+# huge apps #
+#############
+# $BROWSER &
+beeper --default-frame --hidden &
+# morgen &
+# notion-app &
+# spotify-tray &
+# dex "$XDG_DATA_HOME/applications/$(ls $XDG_DATA_HOME/applications | awk '/appimagekit/ && /Todoist/')" &
+# rclone mount work: ~/work-drive --daemon &
+
+##################
+# Window Manager #
+##################
+
+[ "$XDG_VTNR" -eq 1 ] && exec dwm 2>>"$CACHE/dwm.log"
+[ "$XDG_VTNR" -eq 2 ] && exec xmonad 2>>"$CACHE/xmonad.log"

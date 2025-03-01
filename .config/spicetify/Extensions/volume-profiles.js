@@ -1,0 +1,1 @@
+../gitRepo/Volume-Profiles-Spicetify-Extension-v2/dist/volume-profiles.js

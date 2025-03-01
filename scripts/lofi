@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# setting URLs
+url_chilledcow_sleep="https://youtu.be/DWcJFNfaw9c";
+url_chilledcow_study="https://youtu.be/5qap5aO4i9A";
+url_relaxedguy_brown="https://youtu.be/hXetO_bYcMo?t=10";
+
+# help menu
+__usage="\033[1mUsage\033[0m: $(basename $0) [N]
+\033[1mLoFi Audio\033[0m:
+	1 = \033[1mChilledCow \033[0m - lofi hip hop radio  : \033[1msleep/chill\033[0m
+	2 = \033[1mChilledCow \033[0m - lofi hip hop radio  : \033[1mrelax/study\033[0m
+	3 = \033[1mRelaxed Guy\033[0m - brown noise blocker : \033[1msleep/study/tinntun/insomnia\033[0m
+\033[1mDependencies\033[0m: mpv, youtube-dl"
+
+# if not 1 then exit after printing usage
+[[ $# -ne 1 ]] && echo -e "$__usage" >&2 && exit 1
+
+# if $1
+case $1 in
+	-h | --help) echo -e "$__usage" && exit ;;
+	1) url="$url_chilledcow_sleep" ;;
+	2) url="$url_chilledcow_study" ;;
+	3) url="$url_relaxedguy_brown" ;;
+	*) echo -e "$__usage" >&2 && exit 2 ;;
+esac
+
+#echo "$url"
+[[ -n "$url" ]] &&
+mpv --no-resume-playback --no-video --force-window=no\
+	--term-osd-bar --term-osd-bar-chars="[-|-]" \
+	--profile=sw-fast --ytdl "$url"
+

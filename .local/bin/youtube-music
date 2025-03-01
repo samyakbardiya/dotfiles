@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /opt/firefox/firefox -new-window music.youtube.com --class "Firefox Beta" --name "Firefox Beta" "$@"

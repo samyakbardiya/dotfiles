@@ -1,0 +1,24 @@
+#!/bin/bash
+
+_dmenu="dmenu -c -g 3 -bw 3 -p power"
+_choose=$(tail -n +21 $0 | head -n -1 | $_dmenu | cut -d '|' -f2)
+
+#case $_choose in
+#	poweroff)
+#		systemctl poweroff
+#		;;
+#	halt)
+#		systemctl halt
+#		;;
+#	reboot)
+#		systemctl reboot
+#		;;
+#esac
+
+#systemctl "$_choose"
+
+_power_options="
+poweroff
+halt
+reboot
+"

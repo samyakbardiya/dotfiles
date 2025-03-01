@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#title=$(playerctl metadata title)
+#artist=" -  $(playerctl metadata artist)"
+state=$(playerctl status)
+music=$(playerctl metadata -f '{{title}} - {{artist}}')
+
+if [ "$state" = "Playing" ]; then
+    icon=">> "
+    #echo -n ">> "
+elif [ "$state" = "Paused" ]; then
+    icon="|| "
+    #echo -n "|| "
+fi
+
+if [ "$state" != "Stopped" ]; then
+    echo $icon $music
+fi

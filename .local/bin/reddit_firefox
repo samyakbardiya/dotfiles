@@ -1,0 +1,4 @@
+#!/bin/sh
+# vim:ft=sh
+
+exec /usr/lib/firefox/firefox -new-window reddit.com --class "Firefox" --name "Firefox" "$@"

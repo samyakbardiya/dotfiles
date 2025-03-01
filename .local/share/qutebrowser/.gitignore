@@ -1,0 +1,8 @@
+qtwebengine_dictionaries/
+sessions/
+webengine/
+adblock-cache.dat
+blocked-hosts
+cmd-history
+history.sqlite
+state

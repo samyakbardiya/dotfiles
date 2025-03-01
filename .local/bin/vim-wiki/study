@@ -1,0 +1,6 @@
+#!/bin/sh
+# to open vimwiki for study
+lastDir=$PWD
+cd ~/wiki/study
+nvim index.wiki
+cd $lastDir

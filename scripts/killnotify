@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+killall $1 && notify-send -a $1 "$1" "$2"

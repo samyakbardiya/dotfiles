@@ -1,0 +1,6 @@
+#!/bin/sh
+# to open vimwiki for college
+lastDir=$PWD
+cd ~/wiki/college
+nvim index.md
+cd $lastDir

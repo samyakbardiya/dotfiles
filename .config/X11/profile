@@ -1,0 +1,171 @@
+# 
+#                                   _     ___ ____   ___  
+#                                  | |   / _ \___ \ / _ \ 
+#   ___  __ _ _ __ ___  _   _  __ _| | _| | | |__) | (_) |      Samyak Bardiya
+#  / __|/ _` | '_ ` _ \| | | |/ _` | |/ / | | |__ < \__, |      --------------
+#  \__ \ (_| | | | | | | |_| | (_| |   <| |_| |__) |  / /       https://gitlab.com/samyak039
+#  |___/\__,_|_| |_| |_|\__, |\__,_|_|\_\\___/____/  /_/  
+#                       __/ |                            
+#                      |___/                             
+#
+####################################################################################################
+# Runs after login, sets all the Evironmental variables.
+# -*- sh-mode -*-
+
+
+####################################################################################################
+#       _INDEX
+####################################################################################################
+# 1. Path
+# 2. Default Programs
+# 3. Home directory clean up
+
+
+####################################################################################################
+#       _PATH
+####################################################################################################
+
+# path variable
+#export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+#export PATH="$PATH:$(du "$HOME/.local/script" | cut -f2 | paste -sd ':')"
+export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:${HOME}/.local/bin/luke_smith"
+export PATH="${PATH}:${HOME}/.local/bin/statusbar"
+export PATH="${PATH}:${HOME}/.local/bin/vim-wiki"
+export PATH="${PATH}:${HOME}/script"
+export PATH="${PATH}:${HOME}/script/crt"
+export PATH="${PATH}:${HOME}/script/statusbar"
+export PATH="${PATH}:${ANDROID_HOME:-/opt/android-sdk}/cmdline-tools/latest/bin"
+export PATH="${PATH}:${ANDROID_HOME:-/opt/android-sdk}/emulator"
+export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/doomemacs/bin"
+export PATH="${PATH}:${JAVA_HOME:-/usr/lib/jvm/default}/bin"
+export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/platform-tools"
+export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/tools/bin"
+export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/emulator"
+export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/tools"
+
+# locale
+export LANG="en_IN.UTF-8"
+export LC_COLLATE="C"
+# ssh
+# eval `ssh-agent -s`
+# ssh-add "$HOME"/.ssh/id_ed25519_github
+# ssh-add "$HOME"/.ssh/id_ed25519_gitlab
+# trap 'kill $SSH_AGENT_PID' EXIT
+
+####################################################################################################
+#       _DEFAULT PROGRAMS
+####################################################################################################
+
+export BROWSER="firefox"
+export EDITOR="nvim"
+export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
+#export MANPAGER="nvim -c 'set ft=man' -"
+export READER="zathura"
+export TERM="st-256color"
+export TERMINAL="alacritty"
+
+export XDG_SESSION_TYPE=X11
+export $(dbus-launch)
+
+####################################################################################################
+#       _HOME DIR CLEAN UP
+####################################################################################################
+
+export XDG_BIN_HOME="$HOME/.local/bin"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+export BIN=$XDG_BIN_HOME
+export CONFIG=$XDG_CONFIG_HOME
+export CACHE=$XDG_CACHE_HOME
+export DATA=$XDG_DATA_HOME
+export PROG="$HOME/.local/program"
+export SCRIPT="$HOME/.local/script"
+
+export ZDOTDIR="$CONFIG/zsh"
+
+export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android"
+export ANDROID_AVD_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
+export ANDROID_EMULATOR_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
+export ADB_VENDOR_KEY="${XDG_CONFIG_HOME:-$HOME/.config}/android"
+export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
+export CABAL_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/cabal/config"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export DOOMDIR="${XDG_CONFIG_HOME:-$HOME/.config/}/doom"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
+export NODE_REPL_HISTORY="${XDG_CONFIG_HOME:-$HOME/.config}/node_repl_history"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
+export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
+export STACK_ROOT="$XDG_DATA_HOME/stack"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # This line will break some DMs.
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+
+export DRACULA_THEME="$CONFIG/dracula-theme"
+
+export KODI_DATA=$XDG_DATA_HOME/kodi
+
+####################################################################################################
+#       _EXTRA
+####################################################################################################
+
+# Bitwarden
+export BW_SESSION="yKnWy0eKevH42GDqxPxCSnYoQKveJh1SIhNauz6+I19aFT9R+uqQ+6V+KNjlZ0p8NWAhAQKh0XfOAjQjjv2vlw=="
+
+# private 
+## IFTTT_WEBHOOK
+source $DATA/privateVAR
+
+# macOS
+export MACOS="$HOME/xyz/macOS-Simple-KVM"
+
+# Android Studio in DWM
+export _JAVA_AWT_WM_NONREPARENTING=1
+export CHROME_EXECUTABLE='/usr/bin/brave'
+export JAVA_HOME='/usr/lib/jvm/default'
+export ANDROID_SDK_ROOT='/opt/android-sdk'
+
+# colorful LESS
+export LESSHISTFILE=-
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# Mozilla Firefox
+export MOZ_USE_XINPUT2=1
+
+# qutebrowser readability-js
+# export NODE_PATH=$NODE_PATH:$(npm root -g)
+
+# qt
+export QT_QPA_PLATFORMTHEME=gtk2
+
+# bitwarden-cli
+#export CALCURSE_CALDAV_PASSWORD=$(pass show cloud/nextcloud.com)
+
+# college
+export SEM="$HOME/wiki/college/5sem"
+
+# lf icon
+export LF_ICONS="\ tw=:\ st=:\ ow=:\ dt=:\ di=:\ fi=:\ ln=:\ or=:\ ex=:\ *.c=:\ *.cc=:\ *.clj=:\ *.coffee=:\ *.cpp=:\ *.css=:\ *.d=:\ *.dart=:\ *.erl=:\ *.exs=:\ *.fs=:\ *.go=:\ *.h=:\ *.hh=:\ *.hpp=:\ *.hs=:\ *.html=:\ *.java=:\ *.jl=:\ *.js=:\ *.json=:\ *.lua=:\ *.md=:\ *.php=:\ *.pl=:\ *.pro=:\ *.py=:\ *.rb=:\ *.rs=:\ *.scala=:\ *.ts=:\ *.vim=:\ *.cmd=:\ *.ps1=:\ *.sh=:\ *.bash=:\ *.zsh=:\ *.fish=:\ *.tar=:\ *.tgz=:\ *.arc=:\ *.arj=:\ *.taz=:\ *.lha=:\ *.lz4=:\ *.lzh=:\ *.lzma=:\ *.tlz=:\ *.txz=:\ *.tzo=:\ *.t7z=:\ *.zip=:\ *.z=:\ *.dz=:\ *.gz=:\ *.lrz=:\ *.lz=:\ *.lzo=:\ *.xz=:\ *.zst=:\ *.tzst=:\ *.bz2=:\ *.bz=:\ *.tbz=:\ *.tbz2=:\ *.tz=:\ *.deb=:\ *.rpm=:\ *.jar=:\ *.war=:\ *.ear=:\ *.sar=:\ *.rar=:\ *.alz=:\ *.ace=:\ *.zoo=:\ *.cpio=:\ *.7z=:\ *.rz=:\ *.cab=:\ *.wim=:\ *.swm=:\ *.dwm=:\ *.esd=:\ *.jpg=:\ *.jpeg=:\ *.mjpg=:\ *.mjpeg=:\ *.gif=:\ *.bmp=:\ *.pbm=:\ *.pgm=:\ *.ppm=:\ *.tga=:\ *.xbm=:\ *.xpm=:\ *.tif=:\ *.tiff=:\ *.png=:\ *.svg=:\ *.svgz=:\ *.mng=:\ *.pcx=:\ *.mov=:\ *.mpg=:\ *.mpeg=:\ *.m2v=:\ *.mkv=:\ *.webm=:\ *.ogm=:\ *.mp4=:\ *.m4v=:\ *.mp4v=:\ *.vob=:\ *.qt=:\ *.nuv=:\ *.wmv=:\ *.asf=:\ *.rm=:\ *.rmvb=:\ *.flc=:\ *.avi=:\ *.fli=:\ *.flv=:\ *.gl=:\ *.dl=:\ *.xcf=:\ *.xwd=:\ *.yuv=:\ *.cgm=:\ *.emf=:\ *.ogv=:\ *.ogx=:\ *.aac=:\ *.au=:\ *.flac=:\ *.m4a=:\ *.mid=:\ *.midi=:\ *.mka=:\ *.mp3=:\ *.mpc=:\ *.ogg=:\ *.ra=:\ *.wav=:\ *.oga=:\ *.opus=:\ *.spx=:\ *.xspf=:\ *.pdf=:\ *.nix=:\ "
+
+####################################################################################################
+#       _STARTX
+####################################################################################################
+
+# auto run xinit on tty1 after login
+#[[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx
+[[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"

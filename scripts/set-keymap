@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# set layout
+xmodmap $XDG_CONFIG_HOME/X11/Xmodmap
+
+# increase key press raate
+xset r rate 250 50
+
+# make caps as escape + hyper_l | control_l
+killall xcape
+xcape -e 'Control_L=Escape'
+
+# laptop config if no keyboard connected
+# if [[ -z $(lsusb | grep Keyboard) ]]; then
+# 	xmodmap $XDG_CONFIG_HOME/X11/Xmodmap.laptop
+# 	notify-send Layout 'Laptop DVORAK'
+# else
+# 	xcape -e 'Hyper_L=Escape'
+# fi
+
+#[[ -z $(lsusb | rg -i Keyboard > /dev/null) ]] && echo 0 &&
+#	xmodmap $XDG_CONFIG_HOME/X11/Xmodmap.laptop && echo 1 &&
+#	xcape -e 'Control_L=Escape' || xcape -e 'Hyper_L=Escape' && echo 2
+
+# if want to set using setxkbmap
+#setxkbmap -model 'pc104' -layout 'us,in' -variant 'dvp,eng'
+#setxkbmap -option "grp:alt_space_toggle, grp_led:caps, grp_led:scroll, caps:escape, compose:sclk, shift:both_shiftlock keypad:pointerkeys, rupeesign:i1, altwin:swap_lalt_lwin, keypad:pointerkeys, terminate:ctrl_alt_bksp"

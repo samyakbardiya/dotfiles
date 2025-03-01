@@ -1,0 +1,14 @@
+#!/bin/bash
+
+music=$(mpc current)
+state=$(mpc --format "" | awk 'NR==2' | awk '{print $1}')
+if [ "$music" != "" ]
+then
+    if [ "$state" = "[playing]" ]
+    then
+        echo -n ">> "
+    else
+        echo -n "|| "
+    fi
+fi
+echo $music

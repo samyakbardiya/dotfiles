@@ -1,0 +1,42 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) notify-send "test" "test" ;;
+	2) notify-send "test" "test" ;;
+	3) notify-send "Battery" "$(acpi)" ;;
+	4) xbacklight -inc 10 ;;
+	5) xbacklight -dec 10 ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+for battery in /sys/class/power_supply/BAT?; do
+	capacity=$(cat "$battery"/capacity 2>/dev/null) || break
+	status=$(sed "s/Charging/\ CHR/;s/Discharging/\ DIS/;s/Full//;s/Not charging/\ NOT/;s/Unknown/\ UN/" "$battery"/status)
+
+	printf "<span "
+
+	[ "$status" = " CHR" ] || [ "$status" = "" ] && printf ""
+	if [[ "$status" = " DIS" ]]; then
+		if [[ "$capacity" -lt 15 ]]; then
+            printf "background='#B85651'"
+        elif [[ "$capacity" -lt 30 ]]; then
+            printf "foreground='#B85651'"
+        elif [[ "$capacity" -lt 40 ]]; then
+            printf "foreground='#BD6F3E'"
+        elif [[ "$capacity" -lt 60 ]]; then
+            printf "foreground='#C18F41'"
+        else
+            printf "foreground='#8F9A52'"
+        fi
+	fi
+
+	if [[ "$status" = " UN" ]]; then
+		printf "background='#D3869B'"
+	fi
+
+	printf ">BAT:%s" "$capacity"
+	printf "%s" "$status"
+	printf "</span>\n"
+
+done
+

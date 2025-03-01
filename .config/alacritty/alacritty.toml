@@ -1,0 +1,45 @@
+# man 5 alacritty
+
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+
+[window]
+dynamic_padding = true # Spread additional padding evenly around the terminal content.
+decorations = "None"   # Window decorations.
+opacity = 0.9
+# blur = true
+
+[font]
+# calming
+# normal = { family = "Input Mono", style = "Regular" }
+normal = { family = "InputMono Nerd Font", style = "Regular" }
+# normal = { family = "MonaspiceNe Nerd Font", style = "Regular" }
+# normal = { family = "FiraCode Nerd Font", style = "Regular" }
+size = 11
+builtin_box_drawing = true
+
+[selection]
+save_to_clipboard = true # selected text will be copied to the primary clipboard.
+
+[cursor]
+style = { shape = "Underline", blinking = "Never" }
+vi_mode_style = { shape = "Block", blinking = "Always" }
+unfocused_hollow = true
+thickness = 0.25
+
+[mouse]
+hide_when_typing = true # the cursor is temporarily hidden when typing
+bindings = [
+  { mouse = "Right", action = "ExpandSelection" },
+  { mouse = "Middle", mode = "~Vi", action = "PasteSelection" },
+]
+
+[hints]
+alphabet = "hutenosadigpc.r,l;" # Keys used for the hint labels.
+# enabled = [
+#   { command = "xdg-open", hyperlinks = true, post_processing = true, persist = false, mouse.enabled = true, binding = { key = "U", mods = "Control|Shift" }, regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+" }
+# ]
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Control", mode = "~Vi", action = "SpawnNewInstance" },
+]

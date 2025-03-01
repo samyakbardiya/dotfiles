@@ -1,0 +1,97 @@
+"
+"  _        _     _            _         _
+" | |_ _ __(_) __| | __ _  ___| |_ _   _| |_ __ ___
+" | __| '__| |/ _` |/ _` |/ __| __| | | | | '__/ __|
+" | |_| |  | | (_| | (_| | (__| |_| |_| | | | | (__
+"  \__|_|  |_|\__,_|\__,_|\___|\__|\__, |_|_|  \___|
+"                                  |___/
+"
+" @samyak039
+
+
+""""""""""""""""""
+" basic settings "
+""""""""""""""""""
+
+" make this file as main setting
+sanitize tridactyllocal tridactylsync
+
+colorscheme default
+
+set allowautofocus false
+set findcase sensitive
+set hintdelay 100
+set smoothscroll true
+set tabopencontaineraware true
+set newtab about:blank
+fixamo_quiet
+
+" move staturbar to right, not to overlap with tridactyl command line
+guiset_quiet statuspanel right
+
+" reddit -> old.reddit
+"autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
+
+" disable by default
+":autocmd DocStart monkeytype\.com mode ignore
+blacklistadd monkeytype\.com
+
+
+""""""""""""
+" commands "
+""""""""""""
+
+alias tabsort jsb browser.tabs.query({}).then(tabs => tabs.sort((t1, t2) => t1.url.localeCompare(t2.url)).forEach((tab, index) => browser.tabs.move(tab.id, {index})))
+alias tabuniq jsb browser.tabs.query({}).then(tabs => browser.tabs.remove(tabs.filter((tab, index) => tabs.slice(index + 1).find(t => t.url == tab.url)).map(tab => tab.id)))
+
+
+""""""""""
+" search "
+""""""""""
+
+" remove all search engines
+jsb Object.keys(tri.config.get("searchurls")).reduce((prev, u) => prev.catch(()=>{}).then(_ => tri.excmds.setnull("searchurls." + u)), Promise.resolve())
+
+" default search engine -> SearXNG
+set searchengine s
+
+" Add our own
+set searchurls.ain  https://amazon.in/s/field-keywords=%s
+set searchurls.aur  https://aur.archlinux.org/packages?K=%s
+set searchurls.aw   https://wiki.archlinux.org/?search=%s
+set searchurls.ddg  https://duckduckgo.com/html?q=%s
+set searchurls.g    https://google.com/search?q=%s
+set searchurls.g    https://wiki.gentoo.org/index.php?search=%s
+set searchurls.gh   https://github.com/search?q=%s
+set searchurls.gi   https://google.com/search?q=%s&tbm=isch
+set searchurls.imd  https://www.imdb.com/find?q=%s
+set searchurls.map  https://www.google.com/maps/search/%s
+set searchurls.r    https://old.reddit.com/r/%s
+set searchurls.s    https://searx.be/search?q=%s
+set searchurls.w    https://en.wikipedia.org/w/index.php?search=%s
+set searchurls.y    https://youtube.com/results?search_query=%s
+
+
+"""""""""""""""
+" keybindings "
+"""""""""""""""
+
+" unbinding some fatal commands
+"unbind <C-f>
+unbind <C-^>
+unbind y
+
+" move to the last active tab
+bind <C-$> tab #
+" setting sane J / K
+bind d stop
+bind gD composite tabduplicate; tabdetach
+bind gd tabdetach
+bind J tabnext
+bind K tabprev
+bind u undo tab
+bind U undo window
+
+
+" git ssh -> clipboard
+bind yg composite js "gfc " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+help_message="usage: videotogif [input-file] [start] [duration] .. [quality]"
+
+#[[ $1=="-h" || $1=="--help" ]] && echo $help_message && exit 0
+
+[[ $# -lt 3 ]] && echo $help_message && exit 1
+
+[[ -z $1 ]] && echo "dumb! input file?" && echo $help_message && exit 1
+[[ -z $2 ]] && echo "dumb! starting timestamp?" && echo $help_message && exit 1
+[[ -z $3 ]] && echo "dumb! duration?" && echo $help_message && exit 1
+
+[[ $# -eq 4 ]] && quality=$5 || quality='480'
+
+output="$1_$2.gif"
+
+#ffmpeg_vf="scale=$quality:-1, subtitles=$1"
+echo "scale=$quality:-1, subtitles=$1"
+#ffmpeg -v warning -i "$1" -ss "$2" -t "$3" -vf "$ffmpeg_vf" -r 10 "$output" #&&
+
+#notify-send -a "Video to GIF" "Completed" ||
+#notify-send -u critical -a "Video to GIF" "exited with error"

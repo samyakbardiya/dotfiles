@@ -1,0 +1,5 @@
+# KEYBOARD LAYOUT
+Prior
+    xdotool key 113 # left
+Next
+    xdotool key 114 # right

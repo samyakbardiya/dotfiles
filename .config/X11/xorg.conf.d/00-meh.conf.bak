@@ -1,0 +1,15 @@
+Section "InputClass"
+	Identifier "touchpad"
+	MatchIsTouchpad "on"
+	Driver "libinput"
+	Option "Tapping" "on"
+	Option "NaturalScrolling" "true"
+EndSection
+
+Section "InputClass"
+	Identifier "libinput"
+	MatchIsPointer "on"
+	Driver "libinput"
+	MatchProduct "PixArt"
+	Option "AccelSpeed" "-1"
+EndSection
