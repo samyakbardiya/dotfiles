@@ -6,9 +6,11 @@ Library/
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
-.config/Code
+.config/Code/
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}
+.config/AutoHotKey/
+.config/dual-key-remap/
 AppData/
 {{ end }}

@@ -22,11 +22,13 @@ type = "file"
 url = "https://github.com/catppuccin/delta/raw/refs/heads/main/catppuccin.gitconfig"
 refreshPeriod = "168h"
 
+{{ if eq .chezmoi.os "windows" -}}
 [".config/dual-key-remap/dual-key-remap.exe"]
 type = "archive-file"
 url = "https://github.com/ililim/dual-key-remap/releases/download/v0.7/dual-key-remap-v0.7.zip"
 executable = true
 path = "dual-key-remap-v0.7/dual-key-remap.exe"
+{{- end -}}
 
 [".config/gitui/theme.ron"]
 type = "file"
@@ -46,3 +48,5 @@ refreshPeriod = "168h"
 type = "git-repo"
 url = "https://github.com/tmux-plugins/tpm"
 refreshPeriod = "168h"
+
+# vim:ft=toml
