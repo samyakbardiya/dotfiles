@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
-
 {{ if ne .chezmoi.os "windows" -}}
+#!/usr/bin/env bash
 
 # HACK: Add `chezmoi` to NOPASS
 
@@ -29,6 +28,5 @@ $root_cmd chezmoi execute-template \
   --output=/etc/zsh/zshenv \
   <__root__/etc/zsh/zshenv
 
-{{- end }}
-
 # vim:ft=sh
+{{- end }}
