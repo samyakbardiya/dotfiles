@@ -1,0 +1,12 @@
+[
+  {
+    "key": "ctrl+oem_period",
+    "command": "-docs.write",
+    "when": "false"
+  },
+  {
+    "key": "ctrl+oem_period",
+    "command": "-docs.write",
+    "when": "editorTextFocus && config.docwriter.hotkey.windows == 'Ctrl + .' && editorLangId =~ /typescript|javascript|python|php|java|c|cpp|csharp|dart|ruby|go|rust/"
+  }
+]

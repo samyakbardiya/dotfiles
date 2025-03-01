@@ -1,2 +1,10 @@
 README.md
 __root__
+
+{{ if ne .chezmoi.os "linux" }}
+.config/Code
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+AppData
+{{ end }}

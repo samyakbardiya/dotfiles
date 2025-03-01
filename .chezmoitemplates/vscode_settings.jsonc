@@ -1,0 +1,524 @@
+{
+  //#############//
+  // PREFERENCES //
+  //#############//
+
+  "debug.confirmOnExit": "always",
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "debug.javascript.breakOnConditionalError": true,
+  "debug.openExplorerOnEnd": true,
+
+  "diffEditor.codeLens": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderIndicators": false,
+  "diffEditor.renderSideBySide": false,
+
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.codeLensFontSize": 10,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.cursorSurroundingLines": 5,
+  "editor.find.autoFindInSelection": "multiline",
+  "editor.fontFamily": "'InputMono Nerd Font', 'Input Mono', 'MonaSpiceNe Nerd Font', 'FiraCode Nerd Font', 'Symbols Nerd Font Mono'",
+  "editor.fontSize": 15,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.indentSize": "tabSize",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.fontSize": 10,
+  "editor.linkedEditing": true,
+  "editor.minimap.autohide": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.renderLineHighlight": "all",
+  "editor.renderLineHighlightOnlyWhenFocus": true,
+  "editor.rulers": [80],
+  "editor.scrollbar.horizontalScrollbarSize": 16,
+  "editor.scrollbar.verticalScrollbarSize": 16,
+  "editor.stickyTabStops": true,
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.preview": true,
+  "editor.suggest.shareSuggestSelections": true,
+  "editor.suggest.showStatusBar": true,
+  "editor.suggestFontSize": 10,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.tabSize": 4,
+  "editor.wordWrap": "off",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.incrementalNaming": "smart",
+  "explorer.openEditors.visible": 5,
+  "explorer.sortOrder": "type",
+  "explorer.sortOrderLexicographicOptions": "upper",
+  // "editor.lineDecorationsWidth": 0,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit",
+  },
+  "editor.quickSuggestions": {
+    "other": "inline",
+  },
+
+  "extensionAllowedProposedApi": [
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "ms-vscode-remote.remote-wsl",
+  ],
+
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
+  },
+
+  "files.autoSaveDelay": 10000,
+  "files.insertFinalNewline": true,
+  "files.simpleDialog.enable": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "*.journal": "ledger",
+    ".zimrc": "shellscript",
+    "*.toml": "properties",
+    "*.html": "html",
+    "*.js": "javascript",
+  },
+  "files.watcherExclude": {
+    "**/.fvm": true,
+    "**/node_modules": true,
+    "**/venv": true,
+  },
+
+  "git.autofetch": true,
+  "git.branchPrefix": "dev--",
+  "git.closeDiffOnOperation": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.fetchOnPull": true,
+  "git.followTagsWhenSync": true,
+  "git.ignoreRebaseWarning": true,
+  "git.mergeEditor": true,
+  "git.openRepositoryInParentFolders": "always",
+  "git.pullBeforeCheckout": true,
+  "git.showPushSuccessNotification": true,
+  "git.terminalGitEditor": true,
+  "git.timeline.showUncommitted": true,
+  "git.untrackedChanges": "separate",
+  "git.verboseCommit": true,
+  "git.ignoredRepositories": [
+    "fvm",
+    "/home/samyak/.local/share/fvm/versions/stable",
+    "/home/samyak/.local/share/fvm/",
+  ],
+  "git.repositoryScanIgnoredFolders": [
+    "node_modules",
+    "fvm",
+    "/home/samyak/.local/share/fvm/versions",
+  ],
+
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+
+  "notebook.stickyScroll.enabled": true,
+
+  "remote.autoForwardPortsSource": "hybrid",
+
+  "scm.countBadge": "focused",
+
+  "screencastMode.fontSize": 36,
+  "screencastMode.verticalOffset": 10,
+
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "search.exclude": {
+    "**/.fvm": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/venv": true,
+  },
+
+  "security.workspace.trust.enabled": false,
+
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.shellIntegration.enabled": false,
+  "terminal.integrated.shellIntegration.suggestEnabled": true,
+  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.tabs.enabled": false,
+
+  "window.autoDetectColorScheme": true,
+  "window.density.editorTabHeight": "compact",
+  "window.dialogStyle": "custom",
+  "window.menuBarVisibility": "toggle",
+  "window.title": "${dirty}${rootName}${separator}${remoteName}${separator}${activeEditorShort}${separator}${appName}",
+
+  "workbench.colorCustomizations": {},
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.enableExperiments": false,
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.startupEditor": "none",
+  "workbench.tree.expandMode": "doubleClick",
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always",
+
+  //#############//
+  // COLOR THEME //
+  //#############//
+
+  "catppuccin.bracketMode": "neovim",
+  "catppuccin.italicKeywords": false,
+  "catppuccin.italicComments": false,
+  "catppuccin-icons.hidesExplorerArrows": true,
+
+  "gruvboxMaterial.darkPalette": "original",
+  "gruvboxMaterial.darkWorkbench": "flat",
+  "gruvboxMaterial.diagnosticTextBackgroundOpacity": "12.5%",
+  "gruvboxMaterial.highContrast": true,
+  "gruvboxMaterial.italicComments": false,
+  "gruvboxMaterial.lightPalette": "original",
+  "gruvboxMaterial.lightWorkbench": "flat",
+
+  //############//
+  // EXTENSIONS //
+  //############//
+
+  "autoDocstring.includeName": true,
+  "autoDocstring.startOnNewLine": true,
+
+  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.showStatus": false,
+
+  "color-highlight.markRuler": false,
+
+  "customizeUI.activityBar": "top",
+  "customizeUI.listRowHeight": 20, // shrink rows to match XCode
+  "customizeUI.fontSizeMap": {
+    "13px": "11px",
+    "12px": "11px",
+    "window-title": "12px", // Window title font when using custom titlebar
+    "tab-title": "12px", // Used for editor tab titles
+    "monospace": "10.5px", // Used for monospace fonts in user interface
+    "menu": "13px", // Used for menu items (windows only)
+  },
+
+  "docwriter.progress.trackClasses": true,
+  "docwriter.progress.trackTypes": true,
+
+  "emmet.useInlineCompletions": true,
+  "emmet.includeLanguages": {
+    "django-html": "html",
+  },
+
+  "errorLens.enableOnDiffView": true,
+  "errorLens.fontSize": "10",
+  "errorLens.gutterIconSet": "defaultOutline",
+  "errorLens.gutterIconSize": "auto",
+  "errorLens.messageBackgroundMode": "message",
+  "errorLens.messageTemplate": "$message $count || $source $code",
+  "errorLens.padding": "4",
+  "errorLens.replaceLinebreaksSymbol": " || ",
+  "errorLens.scrollbarHackEnabled": true,
+  "errorLens.statusBarIconsEnabled": true,
+  "errorLens.exclude": [
+    "File '/home/samyak/ct/majik_kids/appwrite_nodejs/src/pages_collection\\.ts' not found\\.  The file is in the program because:    Matched by default include pattern '\\*\\*/\\*'",
+  ],
+
+  "git-graph.commitDetailsView.fileView.type": "File List",
+  "git-graph.date.format": "Relative",
+  "git-graph.dialog.addTag.pushToRemote": true,
+  "git-graph.enhancedAccessibility": true,
+  "git-graph.referenceLabels.alignment": "Branches (on the left) & Tags (on the right)",
+  "git-graph.repository.onLoad.scrollToHead": true,
+
+  "github.copilot.preferredAccount": "Cumulations007",
+  "github.gitProtocol": "ssh",
+
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.includeSingleLineSymbols": true,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.scopes": ["document", "containers", "blocks"],
+  "gitlens.currentLine.enabled": true,
+  "gitlens.currentLine.scrollable": false,
+  "gitlens.currentLine.uncommittedChangesFormat": " ${ago}",
+  "gitlens.defaultDateFormat": "YYYY, MMMM Do HH:mm",
+  "gitlens.defaultDateLocale": "en-IN",
+  "gitlens.defaultDateShortFormat": "YYYY/MM/D",
+  "gitlens.defaultGravatarsStyle": "retro",
+  "gitlens.defaultTimeFormat": "HH:mm",
+  "gitlens.graph.dimMergeCommits": true,
+  "gitlens.graph.showRemoteNames": true,
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.views.branches.branches.layout": "list",
+  "gitlens.virtualRepositories.enabled": false,
+  "gitlens.autolinks": [
+    {
+      "prefix": "MJK-",
+      "url": "https://cumulations.atlassian.net/browse/MJK-<num>",
+    },
+    {
+      "prefix": "MK-",
+      "url": "https://samyak-ct.atlassian.net/browse/MK-<num>",
+    },
+    {
+      "prefix": "WH-",
+      "url": "https://ppds.atlassian.net/browse/WH-<num>",
+    },
+  ],
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": true,
+    "remotes": true,
+    "stashes": true,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "repositories": false,
+    "searchAndCompare": true,
+    "launchpad": false,
+  },
+
+  // "indentRainbow.errorColor": "rgba(0,0,0,0)",
+  // "indentRainbow.indicatorStyle": "light",
+  // "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  // "indentRainbow.includedLanguages": ["python", "django-html", "shellscript"],
+
+  "leetcode.defaultLanguage": "cpp",
+  "leetcode.hint.commandShortcut": false,
+  "leetcode.hint.commentDescription": false,
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.problems.sortStrategy": "Acceptance Rate (Descending)",
+  "leetcode.workspaceFolder": "/home/samyak/learn/leetcode/",
+
+  "liveServer.settings.host": "0.0.0.0",
+
+  "material-icon-theme.hidesExplorerArrows": true,
+
+  "redhat.telemetry.enabled": false,
+
+  "rewrap.autoWrap.enabled": true,
+  "rewrap.reformat": true,
+
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.forceDownload": false,
+  "sync.quietSync": true,
+  "sync.gist": "979edd32ee6e33ad5eb730cd9523bd32",
+  "sync.forceUpload": true,
+
+  "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
+  "todo-tree.general.exportPath": "./todo-tree-%Y%m%d-%H%M.txt",
+  "todo-tree.general.showActivityBarBadge": true,
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+  "todo-tree.general.statusBar": "tags",
+  "todo-tree.highlights.useColourScheme": true,
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.tree.tooltipFormat": "${tag} ${after}\n${filepath}, line ${line}",
+  "todo-tree.general.tags": [
+    "BUG",
+    "FIXME",
+    "HACK",
+    "TODO",
+    "[ ]",
+    "[x]",
+    "NOTE",
+  ],
+
+  "turboConsoleLog.addSemicolonInTheEnd": true,
+  "turboConsoleLog.includeFileNameAndLineNum": true,
+
+  //######################
+  // LANGUAGE PREFERENCES
+  //######################
+
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  "cmake.configureOnOpen": false,
+  "cmake.showOptionsMovedNotification": false,
+
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "dart.experimentalRefactors": true,
+  "dart.flutterScreenshotPath": "~/image/screenshot/",
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "dart.previewCommitCharacters": true,
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "dart.renameFilesWithClasses": "prompt",
+  "dart.runPubGetOnNestedProjects": "below",
+  "dart.runPubGetOnPubspecChanges": "prompt",
+  "dart.showTodos": false,
+  "dart.devToolsLocation": {
+    "linux": "external",
+    "macos": "external",
+    "windows": "external",
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": "off",
+  },
+
+  "[django-html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+  },
+
+  "flake8.severity": {
+    "E": "Warning",
+    "F": "Information",
+  },
+
+  "isort.args": ["--profile", "black", "-l", "80"],
+  "isort.check": true,
+  "isort.severity": {
+    "E": "Information",
+  },
+
+  "[java]": {
+    "editor.rulers": [120],
+  },
+
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.rulers": [80, 100],
+  },
+  "[jinja-html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.print.imgToBase64": true,
+  "markdown.extension.theming.decoration.renderHardLineBreak": true,
+  "markdown.extension.theming.decoration.renderTrailingSpace": true,
+  "markdown.occurrencesHighlight.enabled": true,
+  "markdown.preview.breaks": true,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "off",
+  },
+
+  "npm.keybindingsChangedWarningShown": true,
+
+  "php.format.rules.arrayInitializersNewLineBeforeFirstElement": true,
+  "php.inlayHints.parameters.byReference": true,
+  "php.inlayHints.parameters.enabled": true,
+  "php.inlayHints.parameters.suppressNameMatchingValue": true,
+  "php.inlayHints.types.return": true,
+  "php.inlayHints.types.suppressVariableFromLiteral": false,
+  "php.inlayHints.types.variable": true,
+  "php.suggest.basic": true,
+  "php.validate.enable": true,
+
+  "[plaintext]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.wordWrap": "wordWrapColumn",
+  },
+
+  "prettier.proseWrap": "always",
+  "prettier.singleQuote": true,
+  "prettifySymbolsMode.revealOn": "selection",
+  "prettifySymbolsMode.substitutions": [
+    {
+      "language": "python",
+      "substitutions": [
+        {
+          "ugly": "lambda",
+          "pretty": "λ",
+        },
+      ],
+    },
+  ],
+
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.inlayHints.callArgumentNames": "off",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.typeCheckingMode": "off",
+  "python.diagnostics.sourceMapsEnabled": true,
+  "python.formatting.provider": "black",
+  "python.testing.unittestEnabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+    },
+  },
+
+  "svg.preview.mode": "svg",
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg",
+  },
+
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "jinja": "html",
+    "jinja-html": "html",
+  },
+
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.referencesCodeLens.showOnAllFunctions": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  "xml.format.maxLineWidth": 80,
+  "xml.format.splitAttributes": true,
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml",
+  },
+
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  //########
+  // Others
+  //########
+  "": ""
+}
