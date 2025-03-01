@@ -1,12 +1,18 @@
+interactive = true
+progress = true
+verbose = true
+
 [diff]
 command = "delta"
 pager = "delta"
 
 [edit]
 apply = false
+watch = false
 
-# [git]
-# autoCommit = true
+[git]
+autoAdd = true
+autoCommit = true
 # autoPush = true
 
 [merge]

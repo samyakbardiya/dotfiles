@@ -14,16 +14,19 @@ root_cmd="doas"
 
 {{ if eq .chezmoi.osRelease.id "arch" -}}
 # {{ include "__root__/etc/pacman.conf" | sha256sum }}
-$root_cmd chezmoi execute-template --output=/etc/pacman.conf \
+$root_cmd chezmoi execute-template \
+  --output=/etc/pacman.conf \
   <__root__/etc/pacman.conf
 {{- end }}
 
 # {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
-$root_cmd chezmoi execute-template --output=/etc/zsh/zprofile \
+$root_cmd chezmoi execute-template \
+  --output=/etc/zsh/zprofile \
   <__root__/etc/zsh/zprofile
 
 # {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
-$root_cmd chezmoi execute-template --output=/etc/zsh/zshenv \
+$root_cmd chezmoi execute-template \
+  --output=/etc/zsh/zshenv \
   <__root__/etc/zsh/zshenv
 
 {{- end }}
