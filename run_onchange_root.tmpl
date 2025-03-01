@@ -5,17 +5,19 @@
 
 cd "$(chezmoi execute-template '{{ .chezmoi.sourceDir }}')" || exit
 
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 root_cmd="sudo"
-{{- else }}
+{{- else -}}
 root_cmd="doas"
 {{- end }}
 
-{{ if eq .chezmoi.osRelease.id "arch" -}}
+{{ if eq .chezmoi.os "linux" -}}
+{{- if eq .chezmoi.osRelease.id "arch" -}}
 # {{ include "__root__/etc/pacman.conf" | sha256sum }}
 $root_cmd chezmoi execute-template \
   --output=/etc/pacman.conf \
   <__root__/etc/pacman.conf
+{{- end -}}
 {{- end }}
 
 # {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
