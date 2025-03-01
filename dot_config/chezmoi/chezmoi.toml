@@ -1,6 +1,3 @@
-progress = true
-verbose = true
-
 [diff]
 command = "delta"
 pager = "delta"

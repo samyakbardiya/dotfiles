@@ -1,0 +1,20 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range .homebrew.taps -}}
+tap {{ . | quote }}
+{{ end -}}
+{{ range .homebrew.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .homebrew.brews_linked -}}
+brew {{ . | quote }}, link: true
+{{ end -}}
+{{ range .homebrew.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+EOF
+
+# vim:ft=sh
+{{- end }}
