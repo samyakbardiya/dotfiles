@@ -18,7 +18,7 @@ $root_cmd chezmoi execute-template \
   --output=/etc/pacman.conf \
   <__root__/etc/pacman.conf
 {{- end -}}
-{{- end -}}
+{{- end }}
 
 # {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
 $root_cmd chezmoi execute-template \
