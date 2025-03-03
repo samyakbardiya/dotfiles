@@ -10,17 +10,17 @@ return {
     --     "dmmulroy/ts-error-translator.nvim",
     -- },
 
-    -- better formatted TypeScript errors
-    {
-        "OlegGulevskyy/better-ts-errors.nvim",
-        dependencies = { "MunifTanjim/nui.nvim" },
-        config = {
-            keymaps = {
-                toggle = "<leader>cp",
-                go_to_definitation = "<leader>c.",
-            },
-        },
-    },
+    -- -- better formatted TypeScript errors
+    -- {
+    --     "OlegGulevskyy/better-ts-errors.nvim",
+    --     dependencies = { "MunifTanjim/nui.nvim" },
+    --     config = {
+    --         keymaps = {
+    --             toggle = "<leader>cp",
+    --             go_to_definitation = "<leader>c.",
+    --         },
+    --     },
+    -- },
 
     --  Use treesitter to auto close and auto rename html tag
     {
