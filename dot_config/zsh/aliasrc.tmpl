@@ -8,21 +8,22 @@
 #
 # @samyak039
 
+##########
+# CUSTOM #
+##########
+
 # advcpmv
 alias c='advcp -igr'
 alias m='advmv -ig'
 
-# dotfile config
-alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfiles --work-tree=$HOME"
-
-# no confusion between `doas --option` or `cmd --option`
+# doas
 alias doas='doas --'
 
 # clear -x
 alias cx='clear -x'
 alias cX='clear'
 
-# Chezmoi
+# chezmoi
 alias ch='chezmoi'
 
 # emacs
@@ -83,43 +84,18 @@ alias hloct="hledger --strict -p oct"
 alias hlnov="hledger --strict -p nov"
 alias hldec="hledger --strict -p dec"
 
-# Lazy-{Git,Docker}
+# lazy{docker,git}
 alias ld="lazydocker"
 alias lg="lazygit"
+
+# gitui
 alias gu="gitui"
-
-# # leetcode-cli
-# alias ll="leetcode"
-# alias lld="leetcode data"
-# alias lls="leetcode stat"
-# llp() { leetcode pick $q; }
-# lle() { leetcode edit $q; }
-# llt() { leetcode test $q; }
-# llx() { leetcode exec $q; }
-
-# qrencode
-alias qrcode="qrencode -t UTF8"
-alias qrpng="qrencode -t PNG -o qr.png"
-alias qrsvg="qrencode -t PNG -o qr.svg"
-
-# # neovim
-# alias v="nvim"
-
-# zoxide
-alias zw="source zoxide_tmux_window.sh"
-
-# Zellij
-alias zs="zellij-switch.sh"
 
 # pacman | paru
 alias pacsyu="doas pacman -Sy && doas powerpill -Su && paru -Su"
 alias pacsyunc="doas pacman -Sy --noconfirm && doas powerpill -Su --noconfirm && paru -Su --noconfirm"
 
-
-#-----------#
-# eza | exa #
-#-----------#
-
+# eza
 alias _ls='/bin/ls'
 alias lR='eza --group-directories-first --icons -T'                         # Long format, recursive as a tree
 alias la='eza --group-directories-first --icons --all --all --long --git'     # Long format, git status
@@ -133,31 +109,22 @@ alias lt='eza --group-directories-first --icons --long --git -smodified'    # Lo
 alias lx='eza --group-directories-first --icons --long --git -sextension'   # Long format, sort by extension
 alias l='ll'
 
-# # exa
-# alias ls='exa --group-directories-first --icons --classify'
-# alias lr='ll -T'
-
-
-
-#---------------#
-# colorful life #
-#---------------#
-
+# ip
 alias ip='ip -c'
-
-#-----#
-# XDG #
-#-----#
 
 
 #####################
 # oh-my-zsh/plugins #
 #####################
 
-#--------#
-# docker #
-#--------#
+# date | isodate
+alias isodate="date +%Y-%m-%dT%H:%M:%S%z"
+alias isodate_utc="date -u +%Y-%m-%dT%H:%M:%SZ"
+alias isodate_basic="date -u +%Y%m%dT%H%M%SZ"
+alias unixstamp="date +%s"
+alias date_locale="date +"%c""
 
+# docker
 alias dbl='docker build'
 alias dcin='docker container inspect'
 alias dcls='docker container ls'
@@ -192,10 +159,7 @@ alias dvprune='docker volume prune'
 alias dxc='docker container exec'
 alias dxcit='docker container exec -it'
 
-#----------------#
 # docker compose #
-#----------------#
-
 alias dco="docker compose"
 alias dcb="docker compose build"
 alias dce="docker compose exec"
@@ -216,90 +180,10 @@ alias dcpull="docker compose pull"
 alias dcstart="docker compose start"
 alias dck="docker compose kill"
 
-#-----#
 # git #
-#-----#
-
 unalias gpf
 
-#----------#
-# git-flow #
-#----------#
-
-alias gcb='git checkout $(git config gitflow.prefix.bugfix)'
-alias gcd='git checkout $(git config gitflow.branch.develop)'
-alias gch='git checkout $(git config gitflow.prefix.hotfix)'
-alias gcr='git checkout $(git config gitflow.prefix.release)'
-alias gfl='git flow'
-alias gflb='git flow bugfix'
-alias gflbf='git flow bugfix finish'
-alias gflbfc='git flow bugfix finish ${$(git_current_branch)#bugfix/}'
-alias gflbp='git flow bugfix publish'
-alias gflbpc='git flow bugfix publish ${$(git_current_branch)#bugfix/}'
-alias gflbs='git flow bugfix start'
-alias gflf='git flow feature'
-alias gflff='git flow feature finish'
-alias gflffc='git flow feature finish ${$(git_current_branch)#feature/}'
-alias gflfp='git flow feature publish'
-alias gflfpc='git flow feature publish ${$(git_current_branch)#feature/}'
-alias gflfpll='git flow feature pull'
-alias gflfs='git flow feature start'
-alias gfli='git flow init'
-alias gflr='git flow release'
-alias gflrf='git flow release finish'
-alias gflrfc='git flow release finish ${$(git_current_branch)#release/}'
-alias gflrp='git flow release publish'
-alias gflrpc='git flow release publish ${$(git_current_branch)#release/}'
-alias gflrs='git flow release start'
-
-#---------#
-# isodate #
-#---------#
-
-alias isodate="date +%Y-%m-%dT%H:%M:%S%z"
-alias isodate_utc="date -u +%Y-%m-%dT%H:%M:%SZ"
-alias isodate_basic="date -u +%Y%m%dT%H%M%SZ"
-alias unixstamp="date +%s"
-alias date_locale="date +"%c""
-
-#-----#
-# mvn #
-#-----#
-
-alias mvnag='mvn archetype:generate'
-alias mvnboot='mvn spring-boot:run'
-alias mvnc='mvn clean'
-alias mvncd='mvn clean deploy'
-alias mvnce='mvn clean eclipse:clean eclipse:eclipse'
-alias mvnci='mvn clean install'
-alias mvncie='mvn clean install eclipse:eclipse'
-alias mvncini='mvn clean initialize'
-alias mvncist='mvn clean install -DskipTests'
-alias mvncisto='mvn clean install -DskipTests --offline'
-alias mvncom='mvn compile'
-alias mvncp='mvn clean package'
-alias mvnct='mvn clean test'
-alias mvncv='mvn clean verify'
-alias mvncvst='mvn clean verify -DskipTests'
-alias mvndp='mvn deploy'
-alias mvndocs='mvn dependency:resolve -Dclassifier=javadoc'
-alias mvndt='mvn dependency:tree'
-alias mvne='mvn eclipse:eclipse'
-alias mvnfmt='mvn fmt:format'
-alias mvnjetty='mvn jetty:run'
-alias mvnp='mvn package'
-alias mvnqdev='mvn quarkus:dev'
-alias mvns='mvn site'
-alias mvnsrc='mvn dependency:sources'
-alias mvnt='mvn test'
-alias mvntc='mvn tomcat:run'
-alias mvntc7='mvn tomcat7:run'
-alias mvn-updates='mvn versions:display-dependency-updates'
-
-#------#
-# yarn #
-#------#
-
+# yarn
 alias y="yarn"
 alias ya="yarn add"
 alias yad="yarn add --dev"
@@ -339,9 +223,33 @@ alias yws="yarn workspaces"
 alias yx="yarn tsx"
 alias yy="yarn why"
 
-#=========#
-# unalias #
-#=========#
+############
+# OS-BASED #
+############
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# OSX
+alias yc="pbcopy"
+
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+
+# WSL
+alias yc="clip.exe"
+
+{{-   else -}}
+
+# Linux
+alias yc="xclip"
+
+{{-   end -}}
+{{- end }}
+
+############
+# UN-ALIAS #
+############
+
 unalias gh
 
 
