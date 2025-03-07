@@ -64,9 +64,11 @@ config.keys = {
 {{ if eq .chezmoi.os "windows" -}}
 config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o" }
 {{ end -}}
+
 wezterm.on("gui-startup", function(cmd)
 	local tab, pane, window = mux.spawn_window(cmd or {})
-	window:gui_window():toggle_fullscreen()
+	-- window:gui_window():toggle_fullscreen()
+	window:gui_window():maximize()
 end)
 
 return config
