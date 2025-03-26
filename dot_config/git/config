@@ -33,7 +33,7 @@
     autosetupremote = true
 
 [rerere]
-    enabled = true
+    enabled = false
 
 [user]
     name = Samyak Bardiya
