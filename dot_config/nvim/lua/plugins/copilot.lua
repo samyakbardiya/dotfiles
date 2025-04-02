@@ -3,33 +3,25 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     build = ":Copilot auth",
-    opts = {
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-        filetypes = {
-            help = false,
-            ledger = false,
-            markdown = true,
-        },
-    },
     config = function()
-        local copilot = require("copilot")
-        copilot.setup({})
-
-        local function toggle_copilot()
-            if vim.g.copilot_enabled == true then
-                vim.cmd("Copilot disable")
-                vim.g.copilot_enabled = false
-                print("Copilot disabled")
-            else
-                vim.cmd("Copilot enable")
-                vim.g.copilot_enabled = true
-                print("Copilot enabled")
-            end
-        end
-        vim.api.nvim_create_user_command("ToggleCopilot", toggle_copilot, {})
+        Snacks.toggle({
+            name = "Github Copilot",
+            get = function()
+                if not vim.g.copilot_enabled then
+                    return false
+                end
+                return not require("copilot.client").is_disabled()
+            end,
+            set = function(state)
+                if state then
+                    require("copilot").setup()
+                    require("copilot.command").enable()
+                    vim.g.copilot_enabled = true
+                else
+                    require("copilot.command").disable()
+                    vim.g.copilot_enabled = false
+                end
+            end,
+        }):map("<leader>ux")
     end,
-    keys = {
-        { "<leader>uG", "<CMD>ToggleCopilot<CR>", desc = "Toggle Copilot" },
-    },
 }
