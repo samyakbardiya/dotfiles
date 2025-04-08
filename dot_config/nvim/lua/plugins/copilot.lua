@@ -3,10 +3,12 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     build = ":Copilot auth",
+    optional = true,
     opts = {
         copilot_model = "gpt-4o-copilot",
     },
     config = function()
+        require("copilot.api").status = require("copilot.status")
         require("copilot").setup()
         Snacks.toggle({
             name = "Github Copilot",
