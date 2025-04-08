@@ -103,4 +103,9 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+function wave_htv() {
+	wave-htv $* --verbose &&
+		lazydocker
+}
+
 # vim:ft=sh
