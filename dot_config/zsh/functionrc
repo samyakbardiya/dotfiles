@@ -104,6 +104,7 @@ function yy() {
 }
 
 function wave_htv() {
+	cd "$HOME/work-tp/wave-hospitality"
 	wave-htv $* --verbose &&
 		lazydocker
 }
