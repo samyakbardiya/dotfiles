@@ -84,7 +84,7 @@ Host *aair_mongo
 ## Brilliant Pet #
 #================#
 
-Host bp_prod
+Host *bp_prod
     HostName 54.84.226.185
     Port 22
     User ubuntu

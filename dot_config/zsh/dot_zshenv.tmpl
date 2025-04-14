@@ -53,6 +53,7 @@ export VSCODE="code"
 #########
 
 ## binaries
+export PATH="${PATH}:${BUN_INSTALL:-$HOME/.local/share/bun}/bin"
 export PATH="${PATH}:${GOPATH:-$HOME/.local/share/go}/bin"
 export PATH="${PATH}:${HOME}/code/ledger/bin"
 export PATH="${PATH}:${SCRIPT:-$HOME/code/scripts}"
@@ -137,6 +138,7 @@ alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 export ANDROID_HOME="$XDG_DATA_HOME/android/sdk"
 export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
 export ATOM_HOME="$XDG_DATA_HOME/atom"
+export BUN_INSTALL="$XDG_DATA_HOME/bun"
 export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal/config"
 export CABAL_DIR="$XDG_DATA_HOME/cabal"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
