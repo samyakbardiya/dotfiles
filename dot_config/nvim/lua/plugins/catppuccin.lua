@@ -29,7 +29,7 @@ return {
             neotree = true,
             noice = true,
             octo = true,
-            -- rainbow_delimiters = true,
+            rainbow_delimiters = true,
             snacks = { enabled = true },
             telescope = { enabled = true },
             treesitter = true,
@@ -40,7 +40,6 @@ return {
             --     enabled = true,
             --     color_mode = false, -- enable color for kind's texts, not just kind's icons
             -- },
-            -- ts_rainbow2 = true,
         },
     },
 }
