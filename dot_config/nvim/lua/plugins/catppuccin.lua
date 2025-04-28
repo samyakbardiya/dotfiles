@@ -29,7 +29,7 @@ return {
             neotree = true,
             noice = true,
             octo = true,
-            rainbow_delimiters = true,
+            -- rainbow_delimiters = true,
             snacks = { enabled = true },
             telescope = { enabled = true },
             treesitter = true,

@@ -14,11 +14,6 @@ Host github.com
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_ed25519_github
 
-Host gitlab.com
-    AddKeysToAgent yes
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519_gitlab
-
 Host *latitude7490
     HostName 192.168.0.39
     User samyak
