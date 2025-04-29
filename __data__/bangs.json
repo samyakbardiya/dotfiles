@@ -1,0 +1,31 @@
+{
+  "backupVersion": "1.2",
+  "settings": {
+    "bangSymbol": "!",
+    "searchEngines": {}
+  },
+  "bangs": [
+    {
+      "name": "Github Repo",
+      "bang": "gg",
+      "targets": [
+        {
+          "url": "https://github.com/{{{s}}}",
+          "baseUrl": "https://github.com",
+          "urlEncodeQuery": false
+        }
+      ]
+    },
+    {
+      "name": "PPDS Jira",
+      "bang": "ppds",
+      "targets": [
+        {
+          "url": "https://ppds.atlassian.net/jira/search?searchString={{{s}}}",
+          "baseUrl": "https://ppds.atlassian.net/",
+          "urlEncodeQuery": false
+        }
+      ]
+    }
+  ]
+}
