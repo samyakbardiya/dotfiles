@@ -87,7 +87,6 @@ yabai -m rule --add app="^streamio$" manage=off native-fullscreen=on
 ## Unmanaged applications
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^Arc$" manage=off
 yabai -m rule --add app="^Numi$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System.*informationen$" manage=off
@@ -104,7 +103,7 @@ yabai -m rule --add app="^Transmission Remote GUI$" space="^${space}"
 
 ## Space 2:web
 space=2
-# yabai -m rule --add app="^Arc$" space="^${space}"
+yabai -m rule --add app="^Arc$" space="^${space}"
 
 ## Space 3:develop
 space=3
@@ -142,7 +141,7 @@ yabai -m rule --apply
 ############
 ## Signals #
 ############
-yabai -m signal --add event=window_created app="^Arc$" action="~/.config/yabai/scripts/yabai_signal_window_created_arc.sh"
+# yabai -m signal --add event=window_created app="^Arc$" action="~/.config/yabai/scripts/yabai_signal_window_created_arc.sh"
 # yabai -m signal --add event=dock_did_restart action="~/.config/yabai/scripts/yabai_signal_dock_did_restart.sh"
 
 ###############
