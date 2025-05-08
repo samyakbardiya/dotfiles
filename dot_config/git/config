@@ -44,7 +44,7 @@
 
 [user]
     name = Samyak Bardiya
-    email = <mail@samyakbardiya.dev>
+    email = mail@samyakbardiya.dev
 
 [includeIf "gitdir:~/work-ct/"]
     path = ~/.config/git/config_work_ct
