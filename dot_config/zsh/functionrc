@@ -87,6 +87,13 @@ multiplexer_name_update() {
 }
 # chpwd_functions+=(multiplexer_name_update)
 
+function wave_htv() {
+	cd "$HOME/work-tp/wave-hospitality"
+	aws sts get-caller-identity >/dev/null || aws sso login
+	wave-htv $* --verbose &&
+		lazydocker
+}
+
 v() {
 	multiplexer_name_update
 	nvim "$@"
