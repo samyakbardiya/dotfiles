@@ -16,6 +16,11 @@
     features = catppuccin-mocha
     navigate = true
 
+; {{ if eq .chezmoi.os "darwin" -}}
+; [gpg]
+;     program = /opt/homebrew/bin/gpg
+; {{- end }}
+
 [init]
     defaultbranch = main
     templateDir = ~/.config/git/template

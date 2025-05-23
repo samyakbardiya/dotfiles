@@ -1,4 +1,4 @@
-simplified_ui true
+// simplified_ui true
 pane_frames false // TODO: false
 theme "catppuccin-mocha"
 default_layout "compact"

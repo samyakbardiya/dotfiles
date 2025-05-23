@@ -177,5 +177,13 @@ set -g @tea-alt-bind "false"
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 # run "${XDG_CONFIG_HOME}/tmux/plugins/tpm/tpm"
+
+
+{{ if eq .chezmoi.os "darwin" -}}
+set-environment -g PATH "/opt/homebrew/bin:/bin:/usr/bin"
+{{ end -}}
+
 set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins'
 run "${TMUX_PLUGIN_MANAGER_PATH}/tpm/tpm"
+
+# vim:ft=tmux
