@@ -1,0 +1,16 @@
+[profile 825169607534_PowerUserAccess]
+sso_session = TPV
+sso_account_id = 825169607534
+sso_role_name = PowerUserAccess
+region = eu-central-1
+output = json
+
+[profile localstack]
+region=us-east-1
+output=json
+endpoint_url = http://localhost:4566
+
+[sso-session TPV]
+sso_start_url = https://d-9967054bd3.awsapps.com/start/#
+sso_region = eu-central-1
+sso_registration_scopes = sso:account:access
