@@ -90,7 +90,6 @@ multiplexer_name_update() {
 function wave_htv() {
 	cd "$HOME/work-tp/wave-hospitality"
 	env | rg WAVE
-	aws sts get-caller-identity >/dev/null || aws sso login
 	wave-htv $* --verbose &&
 		lazydocker
 }
