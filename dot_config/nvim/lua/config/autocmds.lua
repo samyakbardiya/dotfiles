@@ -8,3 +8,10 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.omnifunc = "hledger#complete#omnifunc"
     end,
 })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = "*.njk",
+    callback = function()
+        vim.bo.filetype = "htmldjango"
+    end,
+})
