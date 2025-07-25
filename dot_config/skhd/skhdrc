@@ -22,6 +22,7 @@ lalt - 0x0D : yabai -m space --focus 6 # ,
 lalt - 0x0C : yabai -m space --focus prev # ;
 lalt - p    : yabai -m space --focus next
 lcmd - 0x32 : yabai -m space --focus last # $
+alt - tab  : yabai -m space --focus recent
 
 ## Move window to space
 alt + shift - u    : yabai -m window --space 1
@@ -44,45 +45,45 @@ alt - 0x14 : yabai -m space --layout stack # { 3
 ###########
 ## Window #
 ###########
-
+  
+  
 ## Focus window
-ralt - tab : yabai -m window --focus recent # tab
-ralt - v   : yabai -m window --focus next
-ralt - w   : yabai -m window --focus prev
-ralt + rcmd - v : yabai -m window --raise last
-ralt + rcmd - w : yabai -m window --lower last
+alt - v    : yabai -m window --focus next || yabai -m window --focus first
+alt - w    : yabai -m window --focus prev || yabai -m window --focus last
+alt - 0x35 : yabai -m window --focus recent
+# alt + rcmd - v : yabai -m window --raise last
+# alt + rcmd - w : yabai -m window --lower last
 
 ## Swap window
-ralt + shift - j : yabai -m window --swap next
-ralt + shift - k : yabai -m window --swap prev
+# alt + shift - j : yabai -m window --swap next
+# alt + shift - k : yabai -m window --swap prev
 # TODO: Work on me ;(
 #
 # alt + shift - j : yabai_window_cycle_clockwise.sh
 # alt + shift - k : yabai_window_cycle_counterclockwise.sh
 
 ## Toggle window view
-alt - 0x1E : yabai -m window --toggle split             # / [
-alt - space : yabai -m window --toggle split
-alt - 0x21 : yabai -m window --toggle sticky            # @ ]
+alt - 0x21 : yabai -m window --toggle sticky            # / [
+alt - 0x1E : yabai -m window --toggle split             # @ ]
 alt - 0x2A : yabai -m window --toggle float             # \ \
-alt - 0x18 : yabai -m window --toggle zoom-parent   # ! -
+alt - 0x18 : yabai -m window --toggle zoom-parent       # ! -
 alt - 0x18 : yabai -m window --toggle native-fullscreen # # +
 
 #################
 ## Applications #
 #################
 
-ralt - 0x24 : open -a Ghostty # Return
-ralt + shift - 0x24 : alacritty # Return
-ralt - a : open -a Alacritty
-ralt - b : open -a Arc
-ralt - c : open -a Notion\ Calendar
-ralt - d : open -a Discord
-ralt - e : wezterm -e yazi
-ralt - f : open -a Finder
-ralt - m : open -a Texts
-ralt + shift - m : open -a Spark\ Desktop
-ralt - n : open -a Notion
-ralt - t : open -a Todoist
+# ralt - 0x24 : open -a Ghostty # Return
+# ralt + shift - 0x24 : alacritty # Return
+# ralt - a : open -a Alacritty
+# ralt - b : open -a Arc
+# ralt - c : open -a Notion\ Calendar
+# ralt - d : open -a Discord
+# ralt - e : wezterm -e yazi
+# ralt - f : open -a Finder
+# ralt - m : open -a Texts
+# ralt + shift - m : open -a Spark\ Desktop
+# ralt - n : open -a Notion
+# ralt - t : open -a Todoist
 
 # vim:ft=conf

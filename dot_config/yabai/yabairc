@@ -16,30 +16,50 @@ sudo yabai --load-sa
 ## Config #
 ###########
 
-## Gaps
-yabai -m config top_padding 6
-yabai -m config bottom_padding 6
-yabai -m config left_padding 6
-yabai -m config right_padding 6
-yabai -m config window_gap 6
+## Tiling options
 
-## split ratio
+# Window placements
+yabai -m config window_placement second_child # first_child
+
+# Gaps
+yabai -m config top_padding 3
+yabai -m config bottom_padding 3
+yabai -m config left_padding 3
+yabai -m config right_padding 3
+yabai -m config window_gap 3
+
+yabai -m config --space 3 top_padding 0
+yabai -m config --space 3 bottom_padding 0
+yabai -m config --space 3 left_padding 0
+yabai -m config --space 3 right_padding 0
+yabai -m config --space 3 window_gap 0
+
+# split ratio
 yabai -m config auto_balance off
 yabai -m config split_ratio 0.6
 
 ## Mouse support
-yabai -m config focus_follows_mouse autoraise # (options: off, autofocus, autoraise)
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+yabai -m config focus_follows_mouse autoraise # off/autofocus/autoraise
 yabai -m config mouse_follows_focus off
 
 ## Window modifications
-yabai -m config window_shadow float # (options: on, off, float)
+yabai -m config window_shadow float # on/off/float
+yabai -m config window_opacity off  # on
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.9
+
+## Status bar
+yabai -m config external_bar all:33:0
 
 ##########
 ## Space #
 ##########
 
 ## Spaces that should be created
-declare -a yabai_create_spaces=("banana" "web" "develop" "tool" "product" "social")
+declare -a yabai_create_spaces=("mac" "web" "develop" "tool" "product" "social")
 
 ## Get nuber of spaces that should be created
 yabai_create_spaces_count=${#yabai_create_spaces[@]}
@@ -90,30 +110,27 @@ yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Numi$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System.*informationen$" manage=off
-
-## Unmanaged windows of specific applications
-# yabai -m rule --add app="^Arc$" title="^Samyak$" manage=off # Arc settings
 yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
 
 ## Space 1:banana
 space=1
+yabai -m rule --add app="^IINA$" space="^${space}"
 yabai -m rule --add app="^Jellyfin Media Player$" space="^${space}"
 yabai -m rule --add app="^Spotify$" space="^${space}"
 yabai -m rule --add app="^Transmission Remote GUI$" space="^${space}"
 
 ## Space 2:web
 space=2
-yabai -m rule --add app="^Arc$" space="^${space}"
+yabai -m rule --add app="^Zen$" space="^${space}"
 
 ## Space 3:develop
 space=3
 yabai -m rule --add app="^Code$" space="^${space}"
+yabai -m rule --add app="^Ghostty$" space="^${space}"
 yabai -m rule --add app="^Sublime Text$" space="^${space}"
 yabai -m rule --add app="^VSCode$" space="^${space}"
 yabai -m rule --add app="^Zed$" space="^${space}"
-yabai -m rule --add app="^alacritty$" title="^neovim$" space="^${space}"
-yabai -m rule --add app="^alacritty$" title="^t$" space="^${space}"
-yabai -m rule --add app="^alacritty$" title="^tmux$" space="^${space}"
+yabai -m rule --add app="^alacritty$" space="^${space}"
 
 ## Space 4:tool
 space=4
@@ -125,15 +142,14 @@ yabai -m rule --add app="^MongoDB Compass$" space="^${space}"
 space=5
 yabai -m rule --add app="^Notion Calendar$" space="^${space}"
 yabai -m rule --add app="^Notion$" space="^${space}"
+yabai -m rule --add app="^Obsidian$" space="^${space}"
 
 ## Space 6:social
 space=6
-yabai -m rule --add app="^Beeper$" space="^${space}"
 yabai -m rule --add app="^Discord$" space="^${space}"
-yabai -m rule --add app="^Spark Desktop$" space social
-yabai -m rule --add app="^Telegram$" space social
-yabai -m rule --add app="^Texts$" space="^${space}"
-yabai -m rule --add app="^WhatsApp$" space social
+yabai -m rule --add app="^Telegram$" space="^${space}"
+yabai -m rule --add app="WhatsApp" space="^${space}"
+yabai -m rule --add app="^WhatsApp Business$" space="^${space}"
 
 ## Apply all rules
 yabai -m rule --apply
@@ -148,8 +164,16 @@ yabai -m rule --apply
 # Post Config #
 ###############
 
+# layouts
 yabai -m config layout bsp
 yabai -m config --space 1 layout float
 yabai -m config --space 3 layout stack
+
+# # gaps
+# yabai -m config --space 3 top_padding 0
+# yabai -m config --space 3 bottom_padding 0
+# yabai -m config --space 3 left_padding 0
+# yabai -m config --space 3 right_padding 0
+# yabai -m config --space 3 window_gap 0
 
 # vim:ft=sh

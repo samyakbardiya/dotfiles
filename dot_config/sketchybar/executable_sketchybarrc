@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+ICON_FONT="MonaspiceAr Nerd Font:Medium:16.0"
+LABEL_FONT="MonaspiceAr Nerd Font:Medium:14.0"
+
+##### Bar Appearance #####
+# https://felixkratz.github.io/SketchyBar/config/bar
+# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+
+bar=(
+  height=33
+  blur_radius=30
+  font_smoothing=on
+)
+sketchybar --bar "${bar[@]}"
+
+##### Changing Defaults #####
+# https://felixkratz.github.io/SketchyBar/config/items
+
+default=(
+  padding_left=5
+  padding_right=5
+  icon.font="$ICON_FONT"
+  icon.color=0xffffffff
+  icon.padding_left=4
+  icon.padding_right=4
+  label.font="$LABEL_FONT"
+  label.color=0xffffffff
+  label.padding_left=4
+  label.padding_right=4
+)
+sketchybar --default "${default[@]}"
+
+#### Items ####
+
+source "$ITEM_DIR/spaces.sh"
+
+source "$ITEM_DIR/clock.sh"
+
+#
+
+##### Adding Left Items #####
+# We add some regular items to the left side of the bar, where
+# only the properties deviating from the current defaults need to be set
+
+front_app=(
+  padding_left=25
+  icon.drawing=off
+  script="$PLUGIN_DIR/front_app.sh"
+)
+sketchybar \
+  --add item front_app left \
+  --set front_app "${front_app[@]}" \
+  --subscribe front_app front_app_switched
+
+# --add item chevron left \
+# --set chevron icon= label.drawing=off \
+
+##### Adding Right Items #####
+# In the same way as the left items we can add items to the right side.
+# Additional position (e.g. center) are available, see:
+# https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
+
+sketchybar \
+  --add item volume right \
+  --set volume script="$PLUGIN_DIR/volume.sh" \
+  --subscribe volume volume_change
+
+sketchybar \
+  --add item battery right \
+  --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+  --subscribe battery system_woke power_source_change
+
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update
+
+# vim:ft=sh

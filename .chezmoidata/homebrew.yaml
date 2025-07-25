@@ -1,24 +1,22 @@
 homebrew:
   taps:
-    - homebrew/bundle
-    - homebrew/services
+    - FelixKratz/formulae
     - koekeishiya/formulae
-    - localsend/localsend
 
   brews:
-    - zstd
     - asciinema
     - atuin
     - awscli
     - bat
     - bat-extras
     - btop
-    - cmatrix
     - chezmoi
+    - cmatrix
     - coreutils
     - curl
     - curlie
     - dust
+    - ente-cli
     - eza
     - fastfetch
     - fd
@@ -39,12 +37,11 @@ homebrew:
     - go
     - grep
     - hledger
+    - httpie
     - hyperfine
     - imagemagick
     - jq
     - just
-    - koekeishiya/formulae/skhd
-    - koekeishiya/formulae/yabai
     - lazydocker
     - lazygit
     - ledger
@@ -58,27 +55,24 @@ homebrew:
     - ripgrep-all
     - rust
     - scrcpy
-    - stow
-    - telnet
+    - sketchybar
+    - skhd
     - thefuck
     - tldr
     - tmux
     - tokei
+    - yabai
     - yq
     - zellij
     - zoxide
-    - zegervdv/zathura/zathura
-    - zegervdv/zathura/zathura-pdf-mupdf
-
-  brews_linked:
-    - trash
 
   casks:
     - alacritty
     - alt-tab
+    - amethyst
     - android-platform-tools
     - anydesk
-    - arc
+    - brave-browser
     - clocker
     - discord
     - ente-auth
@@ -87,25 +81,28 @@ homebrew:
     - font-input
     - font-monaspace
     - font-monaspace-nerd-font
+    - font-sf-mono
+    - font-sf-mono-nerd-font-ligaturized
+    - font-sf-pro
     - font-symbols-only-nerd-font
     - ghostty
-    - google-chrome@dev
     - google-drive
-    - httpie
+    - httpie-desktop
     - iina
     - imageoptim
     - itsycal
     - jordanbaird-ice
     - karabiner-elements
+    - key-codes
     - keycastr
     - localsend
     - middleclick
     - notion
     - notion-calendar
     - obs
+    - obsidian
     - qbittorrent
     - raycast
-    - rustdesk
     - sf-symbols
     - shottr
     - skim
@@ -113,9 +110,11 @@ homebrew:
     - spotify
     - stats
     - stremio
-    - todoist
+    - telegram
+    - todoist-app
     - visual-studio-code
     - wakatime
     - wezterm
+    - whatsapp
     - zed
-    - zen-browser
+    - zen
