@@ -92,26 +92,6 @@ done
 ## Rules #
 ##########
 
-### Layer & Sub-layer
-#yabai -m rule --add app="^Code$" sub-layer=normal
-#yabai -m rule --add app="^Sublime Text$" sub-layer=normal
-#yabai -m rule --add app="^Zed$" sub-layer=normal
-#yabai -m rule --add app="^alacritty$" sub-layer=normal
-
-## Sticky Windows
-yabai -m rule --add app="^Todoist$" manage=off
-
-## Native Fullscreen
-yabai -m rule --add app="^streamio$" manage=off native-fullscreen=on
-
-## Unmanaged applications
-yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^Numi$" manage=off
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^System.*informationen$" manage=off
-yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
-
 ## Space 1:banana
 space=1
 yabai -m rule --add app="^IINA$" space="^${space}"
@@ -150,6 +130,27 @@ yabai -m rule --add app="^Discord$" space="^${space}"
 yabai -m rule --add app="^Telegram$" space="^${space}"
 yabai -m rule --add app="WhatsApp" space="^${space}"
 yabai -m rule --add app="^WhatsApp Business$" space="^${space}"
+
+### Layer & Sub-layer
+#yabai -m rule --add app="^Code$" sub-layer=normal
+#yabai -m rule --add app="^Sublime Text$" sub-layer=normal
+#yabai -m rule --add app="^Zed$" sub-layer=normal
+#yabai -m rule --add app="^alacritty$" sub-layer=normal
+
+## Sticky Windows
+yabai -m rule --add app="^Todoist$" manage=off
+
+## Native Fullscreen
+yabai -m rule --add app="^streamio$" manage=off native-fullscreen=on
+
+## Unmanaged applications
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Numi$" manage=off
+yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^System.*informationen$" manage=off
+yabai -m rule --add app="Zen" title="Extension" manage=off
 
 ## Apply all rules
 yabai -m rule --apply

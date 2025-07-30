@@ -21,8 +21,8 @@ lalt - 0x0E : yabai -m space --focus 5 # .
 lalt - 0x0D : yabai -m space --focus 6 # ,
 lalt - 0x0C : yabai -m space --focus prev # ;
 lalt - p    : yabai -m space --focus next
-lcmd - 0x32 : yabai -m space --focus last # $
-alt - tab  : yabai -m space --focus recent
+lalt - 0x32 : yabai -m space --focus last # $
+lalt - tab  : yabai -m space --focus recent
 
 ## Move window to space
 alt + shift - u    : yabai -m window --space 1
