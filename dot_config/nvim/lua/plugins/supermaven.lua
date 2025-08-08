@@ -1,10 +1,6 @@
 -- The official Neovim plugin for Supermaven
 return {
     "supermaven-inc/supermaven-nvim",
-    enabled = false,
-    cmd = {
-        "SupermavenUseFree",
-    },
     opts = {
         keymaps = {
             accept_suggestion = nil, -- handled by nvim-cmp / blink.cmp
