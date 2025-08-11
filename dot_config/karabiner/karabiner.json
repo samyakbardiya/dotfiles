@@ -270,6 +270,17 @@
                         "description": "Esc-Ctrl Tap-Dance",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "input_source_id": "com.apple.keyboardlayout.Programmer Dvorak",
+                                                "language": "en"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "left_control",
                                     "modifiers": { "optional": ["any"] }

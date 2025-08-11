@@ -1,6 +1,6 @@
 return {
-	paddings = 3,
-	group_paddings = 5,
+	paddings = 3, -- 4
+	-- group_paddings = 5,
 
 	icons = "sf-symbols",
 	font = {
@@ -10,11 +10,11 @@ return {
 		},
 		size = 14,
 		style = {
-			["Regular"] = "Regular",
-			["Semibold"] = "Semibold",
-			["Bold"] = "Bold",
-			["Heavy"] = "Heavy",
-			["Black"] = "Black",
+			regular = "Regular",
+			semibold = "Semibold",
+			bold = "Bold",
+			heavy = "Heavy",
+			black = "Black",
 		},
 	},
 }

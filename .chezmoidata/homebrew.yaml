@@ -1,7 +1,8 @@
 homebrew:
   taps:
-    - FelixKratz/formulae
+    - felixkratz/formulae
     - koekeishiya/formulae
+    - localsend/localsend
 
   brews:
     - asciinema
@@ -97,10 +98,14 @@ homebrew:
     - keycastr
     - localsend
     - middleclick
+    - neardrop # --no-quarantine
     - notion
     - notion-calendar
     - obs
     - obsidian
+    - proton-drive
+    - proton-mail
+    - protonvpn
     - qbittorrent
     - raycast
     - sf-symbols
