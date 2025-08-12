@@ -1,0 +1,42 @@
+{
+  "backupVersion": "1.2",
+  "settings": {
+    "bangSymbol": "!",
+    "searchEngines": {}
+  },
+  "bangs": [
+    {
+      "name": "Github Repo",
+      "bang": "gg",
+      "targets": [
+        {
+          "url": "https://github.com/{{{s}}}",
+          "baseUrl": "https://github.com",
+          "urlEncodeQuery": false
+        }
+      ]
+    },
+    {
+      "name": "PPDS Jira",
+      "bang": "ppds",
+      "targets": [
+        {
+          "url": "https://ppds.atlassian.net/jira/search?searchString={{{s}}}",
+          "baseUrl": "https://ppds.atlassian.net/",
+          "urlEncodeQuery": false
+        }
+      ]
+    },
+    {
+      "name": "T3 Chat - Gemini 2.5 Flash Lite",
+      "bang": "#",
+      "targets": [
+        {
+          "url": "https://t3.chat/new?model=gemini-2.5-flash-lite&q={{{s}}}",
+          "baseUrl": "https://t3.chat/new?model=gemini-2.5-flash-lite&q=yo",
+          "urlEncodeQuery": false
+        }
+      ]
+    }
+  ]
+}
