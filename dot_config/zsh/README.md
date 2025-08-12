@@ -12,6 +12,6 @@
 | `~/.zshrc`      |   F   |     D     |        |
 | `/etc/zlogin`   |   G   |           |        |
 | `~/.zlogin`     |   H   |           |        |
-| **_WORK_**      |       |           |        |
+| _WORK SESSION_  |       |           |        |
 | `~/.zlogout`    |   I   |           |        |
 | `/etc/zlogout`  |   J   |           |        |

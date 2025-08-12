@@ -95,6 +95,12 @@ function wave_htv() {
 		lazydocker
 }
 
+function dt() {
+	d "$@" &&
+		base=$(basename "$PWD") &&
+		t "$base"
+}
+
 v() {
 	multiplexer_name_update
 	nvim "$@"
