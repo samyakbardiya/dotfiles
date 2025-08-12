@@ -9,7 +9,7 @@
 # @samyak039
 
 function mkcd() {
-	[[ -n ${1} ]] && mkdir -p ${1} && builtin cd ${1}
+	[[ -n ${1} ]] && mkdir -p "${1}" && builtin cd "${1}" || exit
 }
 
 # case conversion
@@ -23,25 +23,25 @@ function snakecase() {
 }
 
 function tmux-window-name() {
-	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+	("$TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py" &)
 }
 
-# adb quick connect connect
-adbcon() {
-	if (adb connect "192.168.$1.93:5555" | rg connected); then
-		if (adb devices | rg 'device$'); then
-			if (flutter devices | rg -i android); then
-			else
-				echo '\e[1;33mNOT CONNECTED\e[m' && return 2
-			fi
-		else
-			echo 'echo'
-		fi
-	else
-		echo '\e[1;33mADB cannot reach Device\e[m'
-		return 1
-	fi
-}
+# # adb quick connect connect
+# adbcon() {
+# 	if (adb connect "192.168.$1.93:5555" | rg connected); then
+# 		if (adb devices | rg 'device$'); then
+# 			if (flutter devices | rg -i android); then
+# 			else
+# 				echo '\e[1;33mNOT CONNECTED\e[m' && return 2
+# 			fi
+# 		else
+# 			echo 'echo'
+# 		fi
+# 	else
+# 		echo '\e[1;33mADB cannot reach Device\e[m'
+# 		return 1
+# 	fi
+# }
 
 # better X tools
 xxev() {
@@ -65,7 +65,7 @@ current_dir_name() {
 		dir_name=${dir_name%/}
 	else
 		dir_name=$PWD
-		if [[ $dir_name == $HOME ]]; then
+		if [[ $dir_name == "$HOME" ]]; then
 			dir_name="~"
 		else
 			dir_name=${dir_name##*/}
@@ -112,7 +112,7 @@ function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
+		cd -- "$cwd" || exit
 	fi
 	rm -f -- "$tmp"
 }
