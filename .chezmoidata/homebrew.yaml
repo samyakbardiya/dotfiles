@@ -75,6 +75,7 @@ homebrew:
     - anydesk
     - brave-browser
     - clocker
+    - cloudflare-warp
     - discord
     - ente-auth
     - font-fira-code
