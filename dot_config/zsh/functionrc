@@ -88,8 +88,8 @@ multiplexer_name_update() {
 # chpwd_functions+=(multiplexer_name_update)
 
 function wave_htv() {
-	cd "$HOME/work-tp/wave-hospitality"
-	env | rg WAVE
+	export WAVE_HTV_API="$PWD"
+	env | rg WAVE_HTV_
 	wave-htv $* --verbose &&
 		lazydocker
 }

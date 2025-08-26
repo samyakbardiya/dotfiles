@@ -2,16 +2,43 @@
 
 #SingleInstance
 
-;=================;
-; Common Settings ;
-;=================;
-
 ; Reload
 +F12:: Reload
 
 ; Window Management
 !m:: WinMinimize 'A'
 +!m:: WinMaximize 'A'
+
+; Application Management
+>^Enter:: ActivateOrRunProgram("wezterm-gui.exe")
+>^+b:: ActivateOrRunProgram("brave.exe")
+>^b:: ActivateOrRunProgram("zen.exe")
+>^n:: ActivateOrRunProgram("notepad.exe")
+>^o:: ActivateOrRunProgram("obsidian.exe")
+>^t:: ActivateOrRunProgram("ms-teams.exe")
+
+;-----------;
+; Functions ;
+;-----------;
+
+ActivateOrRunProgram(A_ProgramName, A_WinTitle := "") {
+    local WinTarget
+
+    ; Determine the target string for WinExist/WinActivate
+    if (A_WinTitle != "") {
+        WinTarget := A_WinTitle
+    } else {
+        WinTarget := "ahk_exe " . A_ProgramName
+    }
+
+    if (WinExist(WinTarget)) {
+        WinActivate(WinTarget)
+        ; WinMaximize(WinTarget)
+    }
+    else {
+        Run(A_ProgramName)
+    }
+}
 
 ; RAlt Modifiers
 ; >!h:: SendInput "{Left}"
