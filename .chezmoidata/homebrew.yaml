@@ -91,6 +91,8 @@ homebrew:
     - beeper
     - brave-browser@beta
     - clocker
+    - cursor
+    - cursor-cli
     - discord
     - ente-auth
     - font-fira-code
