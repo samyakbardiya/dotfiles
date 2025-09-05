@@ -13,6 +13,10 @@
 ## Default Directories #
 ########################
 
+{{ if eq .chezmoi.os "darwin" -}}
+export COMPUTER_NAME="enma"
+{{ end -}}
+
 ## XDG Directories
 export XDG_BIN_HOME="$HOME/.local/bin"
 export XDG_CACHE_HOME="$HOME/.cache"
