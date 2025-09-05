@@ -1,0 +1,70 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "enma"
+sudo scutil --set HostName "enma"
+sudo scutil --set LocalHostName "enma"
+
+## https://www.defaults-write.com/
+
+# Enable the expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Key Rate
+# https://apple.stackexchange.com/a/83923
+defaults write -g InitialKeyRepeat -float 15.0 # 15 (225 ms)
+defaults write -g KeyRepeat -float 1.5         # 2 (30 ms)
+
+# Disable Animations
+# https://apple.stackexchange.com/a/63477
+
+# showing the Dock
+defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-delay -float 0
+
+##### Finder
+
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
+# Show the /Volumes folder
+sudo chflags nohidden /Volumes
+
+# Show Path Bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Show Status Bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+##### Dock
+
+# # Autohide Dock
+defaults write com.apple.dock autohide -bool true
+
+# Disable icon bouncing Dock
+defaults write com.apple.dock no-bouncing -bool true
+
+# Set the icon size of Dock items to 48 pixels
+defaults write com.apple.dock tilesize -int 32
+
+# NOTE: disable command
+# defaults delete <option value>
+
+# vim:ft=sh
+{{- end }}
