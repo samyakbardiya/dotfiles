@@ -4,6 +4,7 @@
     "light": "Catppuccin Latte - No Italics",
     "dark": "Catppuccin Mocha - No Italics"
   },
+  "icon_theme": "Catppuccin Mocha",
   "buffer_font_family": "Input Mono",
   "buffer_font_fallbacks": ["Symbols Nerd Font"],
   "buffer_font_size": 16,
@@ -17,7 +18,6 @@
   "redact_private_values": true,
   "indent_guides": {
     "coloring": "indent_aware"
-    // "background_coloring": "indent_aware"
   },
   "vertical_scroll_margin": 4,
   "inlay_hints": { "enabled": true },

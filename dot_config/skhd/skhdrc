@@ -73,16 +73,20 @@ alt - 0x18 : yabai -m window --toggle native-fullscreen # # +
 ## Applications #
 #################
 
-# ralt - 0x24 : open -a Ghostty # Return
-# ralt + shift - 0x24 : alacritty # Return
+ralt + shift - 0x24 : alacritty            # Return
+ralt - 0x24         : open -a Ghostty      # Return
+ralt - 0x2B         : open -a WhatsApp     # w ,
+ralt - b            : open -a Zen
+ralt - f            : open -a Finder
+ralt - m            : open -a Proton\ Mail
+ralt - t            : open -a Todoist
+
+# ralt + shift - m : open -a Spark\ Desktop
 # ralt - a : open -a Alacritty
-# ralt - b : open -a Arc
 # ralt - c : open -a Notion\ Calendar
 # ralt - d : open -a Discord
 # ralt - e : wezterm -e yazi
-# ralt - f : open -a Finder
 # ralt - m : open -a Texts
-# ralt + shift - m : open -a Spark\ Desktop
 # ralt - n : open -a Notion
 # ralt - t : open -a Todoist
 

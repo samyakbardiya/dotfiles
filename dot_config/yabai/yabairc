@@ -112,21 +112,22 @@ yabai -m rule --add app="^VSCode$" space="^${space}"
 yabai -m rule --add app="^Zed$" space="^${space}"
 yabai -m rule --add app="^alacritty$" space="^${space}"
 
-## Space 4:tool
+## Space 4:product
 space=4
-yabai -m rule --add app="^Beekeeper-Studio$" space="^${space}"
-yabai -m rule --add app="^Insomnia$" space="^${space}"
-yabai -m rule --add app="^MongoDB Compass$" space="^${space}"
-
-## Space 5:product
-space=5
 yabai -m rule --add app="^Notion Calendar$" space="^${space}"
 yabai -m rule --add app="^Notion$" space="^${space}"
 yabai -m rule --add app="^Obsidian$" space="^${space}"
 
+## Space 5:tool
+space=5
+yabai -m rule --add app="^Beekeeper-Studio$" space="^${space}"
+yabai -m rule --add app="^Insomnia$" space="^${space}"
+yabai -m rule --add app="^MongoDB Compass$" space="^${space}"
+
 ## Space 6:social
 space=6
 yabai -m rule --add app="^Discord$" space="^${space}"
+yabai -m rule --add app="^Proton Mail$" space="^${space}"
 yabai -m rule --add app="^Telegram$" space="^${space}"
 yabai -m rule --add app="WhatsApp" space="^${space}"
 yabai -m rule --add app="^WhatsApp Business$" space="^${space}"
