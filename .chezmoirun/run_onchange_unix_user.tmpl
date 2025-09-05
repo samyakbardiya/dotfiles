@@ -1,6 +1,7 @@
 {{ if ne .chezmoi.os "windows" -}}
 #!/usr/bin/env bash
 
+# {{ output "bat" "--version" | trim }}
 bat cache --build
 
 # vim:ft=sh

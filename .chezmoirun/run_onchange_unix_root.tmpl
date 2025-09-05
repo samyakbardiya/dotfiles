@@ -11,6 +11,8 @@ root_cmd="sudo"
 root_cmd="doas"
 {{- end }}
 
+$root_cmd -v
+
 {{ if eq .chezmoi.os "linux" -}}
 {{- if eq .chezmoi.osRelease.id "arch" -}}
 # {{ include "__root__/etc/pacman.conf" | sha256sum }}
