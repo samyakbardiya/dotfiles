@@ -95,6 +95,7 @@ homebrew:
     - cursor-cli
     - discord
     - ente-auth
+    - figma
     - font-fira-code
     - font-fira-code-nerd-font
     - font-input

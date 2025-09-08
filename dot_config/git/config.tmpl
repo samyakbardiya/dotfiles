@@ -17,10 +17,10 @@
     line-numbers = true
     navigate = true
 
-; {{ if eq .chezmoi.os "darwin" -}}
-; [gpg]
-;     program = /opt/homebrew/bin/gpg
-; {{- end }}
+{{ if eq .chezmoi.os "darwin" -}}
+[gpg]
+    program = /opt/homebrew/bin/gpg
+{{- end }}
 
 [init]
     defaultbranch = main
