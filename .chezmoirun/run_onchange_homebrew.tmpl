@@ -1,17 +1,8 @@
 {{ if eq .chezmoi.os "darwin" -}}
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-brew bundle --file=/dev/stdin <<EOF
-{{ range .homebrew.taps -}}
-tap {{ . | quote }}
-{{ end -}}
-{{ range .homebrew.brews -}}
-brew {{ . | quote }}
-{{ end -}}
-{{ range .homebrew.casks -}}
-cask {{ . | quote }}
-{{ end -}}
-EOF
+# {{ include "dot_config/homebrew/Brewfile" | sha256sum }}
+brew bundle
 
 # vim:ft=sh
 {{- end }}
