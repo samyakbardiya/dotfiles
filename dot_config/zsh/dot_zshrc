@@ -159,9 +159,7 @@ lazyload jenv -- '
     eval "$(jenv init -)"
 '
 lazyload pyenv -- '
-    eval "$(pyenv init --path)"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+    eval "$(pyenv init - zsh)"
 '
 
 
