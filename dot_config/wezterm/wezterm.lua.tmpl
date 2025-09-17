@@ -1,20 +1,40 @@
+--                   _
+-- __      _____ ___| |_ ___ _ __ _ __ ___
+-- \ \ /\ / / _ \_  / __/ _ \ '__| '_ ` _ \
+--  \ V  V /  __// /| ||  __/ |  | | | | | |
+--   \_/\_/ \___/___|\__\___|_|  |_| |_| |_|
+--
+-- @samyakbardiya
+-------------------------------------------------------------------------------
+-- * https://wezterm.org/config/lua/general.html
+
 local wezterm = require("wezterm")
 local mux = wezterm.mux
 local config = {}
 
--- Appearance
+
+-- ##########
+-- # Config #
+-- ##########
+
+config.use_resize_increments = false
+-- config.command_palette_rows = 10
+
+
+-- ##############
+-- # Appearance #
+-- ##############
+
+-- ## Colors
 config.color_scheme = "Catppuccin Mocha"
-config.command_palette_font_size = 12.0
+
+-- ## Cursor
 config.cursor_thickness = 2.0
 config.default_cursor_style = "SteadyUnderline"
 config.underline_position = -4.0
 config.underline_thickness = 2.0
 
--- Config
-config.use_resize_increments = false
--- config.command_palette_rows = 10
-
--- font
+-- ## Font
 local ligature = {
 	-- calming
 	"ss01", -- == === =/= != !== /= /== ~~ =~ !~
@@ -36,11 +56,19 @@ config.font = wezterm.font_with_fallback({
 	{ family = "Symbols Nerd Font Mono", scale = 1.00 },
 })
 
--- Tab Bar
+
+-- ######
+-- # UI #
+-- ######
+
+-- ## Command Palette
+config.command_palette_font_size = 12.0
+
+-- ## Tab Bar
 config.hide_tab_bar_if_only_one_tab = true
 config.switch_to_last_active_tab_when_closing_tab = false
 
--- Window
+-- ## Window
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.window_frame = {
@@ -54,16 +82,43 @@ config.window_padding = {
 	bottom = 0,
 }
 
--- Key Bindings
+
+-- ################
+-- # Key Bindings #
+-- ################
+
 config.keys = {
 	{ key = "a", mods = "CTRL|SHIFT", action = wezterm.action.ActivateCopyMode },
 	{ key = "F11", action = wezterm.action.ToggleFullScreen },
 }
 
--- Init
+
+-- ############
+-- # Launcher #
+-- ############
+
+config.launch_menu = {
+	{{- if eq .chezmoi.os "windows" }}
+	{
+		label = "Arch WSL",
+		args = { "wsl", "-d", "archlinux", "--", "tmux", "new-session", "-A", "-s", "0_o" },
+	},
+	{{- end }}
+}
+
+
+-- ############
+-- # Defaults #
+-- ############
+
 {{ if eq .chezmoi.os "windows" -}}
 config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o" }
-{{ end -}}
+{{- end }}
+
+
+-- ##########
+-- # Events #
+-- ##########
 
 wezterm.on("gui-startup", function(cmd)
 	local tab, pane, window = mux.spawn_window(cmd or {})
@@ -71,6 +126,7 @@ wezterm.on("gui-startup", function(cmd)
 	window:gui_window():maximize()
 end)
 
-return config
 
--- vim:ft=lua
+-------------------------------------------------------------------------------
+
+return config

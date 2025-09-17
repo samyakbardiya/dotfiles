@@ -41,6 +41,11 @@ Host ssh.dev.azure.com
     AddKeysToAgent yes
     IdentityFile ~/.ssh/work-ct/id_rsa_azure
 
+Host tvlab
+    HostName 172.27.221.225
+    User tvlab
+    PasswordAuthentication yes
+
 #===============#
 ## AI Dashboard #
 #===============#
