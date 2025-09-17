@@ -101,7 +101,7 @@ config.launch_menu = {
 	{{- if eq .chezmoi.os "windows" }}
 	{
 		label = "Arch WSL",
-		args = { "wsl", "-d", "archlinux", "--", "tmux", "new-session", "-A", "-s", "0_o" },
+		args = { "wsl", "-d", "archlinux", "--", "tmux", "new-session", "-A", "-s", "0_o", "-c", "$HOME" },
 	},
 	{{- end }}
 }
@@ -112,7 +112,7 @@ config.launch_menu = {
 -- ############
 
 {{ if eq .chezmoi.os "windows" -}}
-config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o" }
+config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o", "-c", "$HOME" }
 {{- end }}
 
 
