@@ -1,0 +1,18 @@
+{{ if eq .chezmoi.os "windows" -}}
+
+[diff]
+command = "code"
+args = ["--wait", "--diff"]
+
+[edit]
+command = "code"
+args = ["--wait"]
+
+[merge]
+command = "bash"
+args = [
+    "-c",
+    "cp {{ .Target }} {{ .Target }}.base && code --new-window --wait --merge {{ .Destination }} {{ .Target }} {{ .Target }}.base {{ .Source }}",
+]
+
+{{- end }}
