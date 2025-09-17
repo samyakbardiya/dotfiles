@@ -13,9 +13,11 @@
 >^Enter:: ActivateOrRunProgram("wezterm-gui.exe")
 >^+b:: ActivateOrRunProgram("brave.exe")
 >^b:: ActivateOrRunProgram("zen.exe")
+>^f:: ActivateOrRunProgram("FortiClient.exe")
 >^n:: ActivateOrRunProgram("notepad.exe")
 >^o:: ActivateOrRunProgram("obsidian.exe")
 >^t:: ActivateOrRunProgram("ms-teams.exe")
+; >^w:: ActivateOrRunProgram("WhatsApp.exe")
 
 ;-----------;
 ; Functions ;
@@ -36,7 +38,7 @@ ActivateOrRunProgram(A_ProgramName, A_WinTitle := "") {
         ; WinMaximize(WinTarget)
     }
     else {
-        Run(A_ProgramName)
+        Run(WinTarget)
     }
 }
 

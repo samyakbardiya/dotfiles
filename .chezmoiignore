@@ -1,20 +1,25 @@
-**/.DS_Store
 **/README.md
-Brewfile
 LICENSE
 __data__
 __root__
 
-{{ if ne .chezmoi.os "darwin" }}
-Library/
-{{ end }}
-
-{{ if ne .chezmoi.os "linux" }}
+{{- if eq .chezmoi.os "darwin" }}
+**/.DS_Store
+.config/AutoHotKey/
 .config/Code/
-{{ end }}
+.config/dual-key-remap/
+AppData/
+{{- end }}
 
-{{ if ne .chezmoi.os "windows" }}
+{{- if eq .chezmoi.os "linux" }}
 .config/AutoHotKey/
 .config/dual-key-remap/
 AppData/
-{{ end }}
+Library/
+{{- end }}
+
+{{- if eq .chezmoi.os "windows" }}
+.config/Code/
+.config/zsh/
+Library/
+{{- end }}
