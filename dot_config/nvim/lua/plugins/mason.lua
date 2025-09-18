@@ -1,6 +1,6 @@
 --  Portable package manager for Neovim that runs everywhere Neovim runs.
 return {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
         ensure_installed = {
             "gitui",
