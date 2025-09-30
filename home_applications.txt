@@ -1,0 +1,4 @@
+'Brave Browser Apps.localized'
+Portal.app
+Undertale.app
+'WhatsApp Business.app'
