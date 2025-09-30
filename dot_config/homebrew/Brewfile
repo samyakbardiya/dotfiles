@@ -129,7 +129,7 @@ cask "legcord"
 cask "localsend"
 cask "mediamate"
 cask "middleclick"
-cask "neardrop"
+cask "neardrop", args: { "no-quarantine": true }
 cask "notion"
 cask "notion-calendar"
 cask "obs"
