@@ -3,7 +3,7 @@ return {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
-    version = "^1.11.0",
+    -- version = "^1.11.0",
     opts = {
         transparent_background = false,
         show_end_of_buffer = true,
