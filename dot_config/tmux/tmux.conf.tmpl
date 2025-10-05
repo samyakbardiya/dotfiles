@@ -183,5 +183,7 @@ set -g @tea-alt-bind "false"
 set-environment -g PATH "/opt/homebrew/bin:/bin:/usr/bin"
 {{ end -}}
 
-set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins'
-run "${TMUX_PLUGIN_MANAGER_PATH}/tpm/tpm"
+run "~/.config/tmux/plugins/tpm/tpm"
+
+# set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins'
+# run "${TMUX_PLUGIN_MANAGER_PATH}/tpm/tpm"
