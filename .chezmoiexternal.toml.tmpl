@@ -2,6 +2,8 @@
 ## FILES #
 ##########
 
+#### Common
+
 [".config/alacritty/catppuccin-mocha.toml"]
 type = "file"
 url = "https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml"
@@ -22,14 +24,6 @@ type = "file"
 url = "https://github.com/catppuccin/delta/raw/refs/heads/main/catppuccin.gitconfig"
 refreshPeriod = "168h"
 
-{{ if eq .chezmoi.os "windows" -}}
-[".config/dual-key-remap/dual-key-remap.exe"]
-type = "archive-file"
-url = "https://github.com/ililim/dual-key-remap/releases/download/v0.7/dual-key-remap-v0.7.zip"
-executable = true
-path = "dual-key-remap-v0.7/dual-key-remap.exe"
-{{- end }}
-
 [".config/ghostty/themes/catppuccin-mocha.conf"]
 type = "file"
 url = "https://raw.githubusercontent.com/catppuccin/ghostty/refs/heads/main/themes/catppuccin-mocha.conf"
@@ -38,6 +32,11 @@ refreshPeriod = "168h"
 [".config/gitui/theme.ron"]
 type = "file"
 url = "https://github.com/catppuccin/gitui/raw/refs/heads/main/themes/catppuccin-mocha.ron"
+refreshPeriod = "168h"
+
+[".config/tmux/plugins/tpm"]
+type = "git-repo"
+url = "https://github.com/tmux-plugins/tpm"
 refreshPeriod = "168h"
 
 [".config/yazi/theme.toml"]
@@ -51,16 +50,29 @@ refreshPeriod = "168h"
 # refreshPeriod = "168h"
 # executable = true
 
-#############
-## GIT-REPO #
-#############
-
-[".config/tmux/plugins/tpm"]
-type = "git-repo"
-url = "https://github.com/tmux-plugins/tpm"
-refreshPeriod = "168h"
-
 [".local/share/zsh-bench"]
 type = "git-repo"
 url = "https://github.com/romkatv/zsh-bench"
 refreshPeriod = "168h"
+
+{{ if eq .chezmoi.os "darwin" -}}
+#### Darwin
+
+["~/Applications/Menu Bar Spacing.app"]
+type = "archive"
+url = "https://github.com/sindresorhus/menu-bar-spacing-meta/releases/latest/download/Menu.Bar.Spacing.zip"
+executable = true
+
+{{- end }}
+
+{{ if eq .chezmoi.os "windows" -}}
+#### Windows
+
+[".config/dual-key-remap/dual-key-remap.exe"]
+type = "archive-file"
+url = "https://github.com/ililim/dual-key-remap/releases/download/v0.7/dual-key-remap-v0.7.zip"
+executable = true
+path = "dual-key-remap-v0.7/dual-key-remap.exe"
+
+{{- end }}
+
