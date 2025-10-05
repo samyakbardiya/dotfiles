@@ -58,10 +58,11 @@ refreshPeriod = "168h"
 {{ if eq .chezmoi.os "darwin" -}}
 #### Darwin
 
-["~/Applications/Menu Bar Spacing.app"]
+["Applications/Menu Bar Spacing.app"]
 type = "archive"
-url = "https://github.com/sindresorhus/menu-bar-spacing-meta/releases/latest/download/Menu.Bar.Spacing.zip"
-executable = true
+url = {{ gitHubLatestReleaseAssetURL "sindresorhus/menu-bar-spacing-meta" "Menu.Bar.Spacing.zip" | quote }}
+stripComponents = 1
+refreshPeriod = "168h"
 
 {{- end }}
 
