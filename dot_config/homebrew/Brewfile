@@ -89,7 +89,7 @@ brew "zoxide"
 brew "charmbracelet/tap/crush"
 brew "felixkratz/formulae/sketchybar"
 brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
+brew "koekeishiya/formulae/yabai"
 cask "alacritty"
 cask "alt-tab"
 cask "amethyst"
