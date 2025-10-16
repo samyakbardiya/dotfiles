@@ -1,7 +1,6 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.copilot",
-    "lazyvim.plugins.extras.ai.copilot-chat",
     "lazyvim.plugins.extras.coding.blink",
     "lazyvim.plugins.extras.coding.luasnip",
     "lazyvim.plugins.extras.coding.mini-surround",
@@ -47,7 +46,7 @@
   ],
   "install_version": 7,
   "news": {
-    "NEWS.md": "10960",
+    "NEWS.md": "11866",
     "doc/news.txt": "25358"
   },
   "version": 8

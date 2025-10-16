@@ -11,8 +11,9 @@ LABEL_FONT="MonaspiceAr Nerd Font:Medium:14.0"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 bar=(
+  color=0x11000000
   height=33
-  blur_radius=30
+  blur_radius=11
   font_smoothing=on
 )
 sketchybar --bar "${bar[@]}"
