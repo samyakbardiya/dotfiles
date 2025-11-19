@@ -29,7 +29,8 @@ function tmux-window-name() {
 # Change directory & open Tmux session
 function dt() {
 	d $@ &&
-		t $(basename "$PWD")
+		t $(basename "$PWD") &
+	d -
 }
 
 # adb quick connect connect
