@@ -1,0 +1,4 @@
+/* hides the current space name */
+.zen-current-workspace-indicator {
+  display: none !important;
+}
