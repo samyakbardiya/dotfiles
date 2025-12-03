@@ -26,6 +26,13 @@ function tmux-window-name() {
 	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
 }
 
+# Change directory & open Tmux session
+function dt() {
+	d $@ &&
+		t $(basename "$PWD") &&
+		d -
+}
+
 # adb quick connect connect
 adbcon() {
 	if (adb connect "192.168.$1.93:5555" | rg connected); then
