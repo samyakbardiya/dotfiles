@@ -101,6 +101,55 @@ function wave_htv() {
 		lazydocker
 }
 
+function wave-htv-unzip-config() {
+	local BUCKET=${BUCKET} KEY=${KEY}
+
+	while [[ $# -gt 0 ]]; do
+		case $1 in
+		-h | --help)
+			echo "Usage: wave-htv-unzip-config -b <BUCKET> -k <KEY>"
+			echo ""
+			echo "Options:"
+			echo "  -b, --bucket BUCKET  S3 bucket name"
+			echo "  -k, --key KEY        S3 key path"
+			echo "  -h, --help           Show this help message"
+			echo ""
+			echo "ENV variables:"
+			echo "  BUCKET               S3 bucket name"
+			echo "  KEY                  S3 key path"
+			return 0
+			;;
+		-b | --bucket)
+			BUCKET=$2
+			shift 2
+			;;
+		-k | --key)
+			KEY=$2
+			shift 2
+			;;
+		*)
+			echo "Unknown option: $1"
+			return 1
+			;;
+		esac
+	done
+
+	[[ -n $BUCKET ]] || {
+		echo "BUCKET is required (use -b, --bucket or set BUCKET env)"
+		return 1
+	}
+	[[ -n $KEY ]] || {
+		echo "KEY is required (use -k, --key or set KEY env)"
+		return 1
+	}
+
+	aws sts get-caller-identity || aws sso login &&
+		cd $(mktemp -d) &&
+		aws s3 cp "s3://$BUCKET/$KEY" "$BUCKET/$KEY" --recursive &&
+		fd -tf .zip -x unzip {} -d "$BUCKET/$KEY/MasterCloneData/" &&
+		fd -tf -E '*.zip' --strip-cwd-prefix -x aws s3 cp "{}" "s3://{}"
+}
+
 v() {
 	multiplexer_name_update
 	nvim "$@"
