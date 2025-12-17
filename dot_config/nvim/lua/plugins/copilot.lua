@@ -4,9 +4,9 @@ return {
     cmd = "Copilot",
     build = ":Copilot auth",
     optional = true,
-    opts = {
-        copilot_model = "gpt-4o-copilot",
-    },
+    -- opts = {
+    --     copilot_model = "gpt-4o-copilot", -- "",
+    -- },
     config = function(_, opts)
         require("copilot.api").status = require("copilot.status")
         require("copilot").setup(opts)
@@ -28,6 +28,6 @@ return {
                     -- vim.g.copilot_enabled = false
                 end
             end,
-        }):map("<leader>uX")
+        }):map("<leader>ux")
     end,
 }
