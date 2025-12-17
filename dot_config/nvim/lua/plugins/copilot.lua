@@ -1,7 +1,6 @@
 -- Fully featured & enhanced replacement for copilot.vim complete with API for interacting with Github Copilot
 return {
     "zbirenbaum/copilot.lua",
-    -- enabled = false,
     cmd = "Copilot",
     build = ":Copilot auth",
     optional = true,
@@ -10,23 +9,23 @@ return {
     },
     config = function(_, opts)
         require("copilot.api").status = require("copilot.status")
-        -- require("copilot").setup(opts)
+        require("copilot").setup(opts)
         Snacks.toggle({
             name = "Github Copilot",
             get = function()
-                if not vim.g.copilot_enabled then
-                    return false
-                end
+                -- if not vim.g.copilot_enabled then
+                --     return false
+                -- end
                 return not require("copilot.client").is_disabled()
             end,
             set = function(state)
                 if state then
                     require("copilot").setup(opts)
                     require("copilot.command").enable()
-                    vim.g.copilot_enabled = true
+                    -- vim.g.copilot_enabled = true
                 else
                     require("copilot.command").disable()
-                    vim.g.copilot_enabled = false
+                    -- vim.g.copilot_enabled = false
                 end
             end,
         }):map("<leader>uX")
