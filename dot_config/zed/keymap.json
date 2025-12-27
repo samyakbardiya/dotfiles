@@ -2,13 +2,8 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
-    }
+      "shift-s": ["vim::PushAddSurrounds", {}],
+    },
   },
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
@@ -16,7 +11,7 @@
       "K": "editor::Hover",
       "g r": "editor::GoToImplementation",
       "shift-l": "pane::ActivateNextItem",
-      "shift-h": "pane::ActivatePrevItem"
-    }
-  }
+      "shift-h": "pane::ActivatePreviousItem",
+    },
+  },
 ]
