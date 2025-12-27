@@ -2,7 +2,7 @@
 #!/usr/bin/env zsh
 
 # {{ include "dot_config/homebrew/Brewfile" | sha256sum }}
-brew bundle
+brew bundle --cleanup --no-upgrade
 
 # vim:ft=sh.chezmoitmpl
 {{- end }}
