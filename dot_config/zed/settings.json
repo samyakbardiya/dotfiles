@@ -1,4 +1,17 @@
 {
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-haiku-4.5"
+    },
+    "model_parameters": []
+  },
   "$schema": "zed://schemas/settings",
 
   "auto_install_extensions": {
