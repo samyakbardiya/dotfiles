@@ -15,3 +15,15 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
         vim.bo.filetype = "htmldjango"
     end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("lazyvim_wrap_spell", { clear = true }),
+    pattern = { "text", "plaintex", "tex", "typst", "gitcommit", "markdown" },
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.spell = true
+        vim.opt_local.textwidth = 80
+        vim.opt_local.wrapmargin = 0
+        vim.opt_local.linebreak = true
+    end,
+})
