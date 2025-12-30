@@ -16,16 +16,17 @@
 # {{ .chezmoi.hostname }}
 
 {{ if eq .chezmoi.hostname "inblrnb0230" -}}
-export AUTH0_CLIENT_ID={{ pass "work-tp/env/DEV/AUTH0_CLIENT_ID" }}
-export AUTH0_CLIENT_SECRET={{ pass "work-tp/env/DEV/AUTH0_CLIENT_SECRET" }}
 export GITLAB_NPM_TOKEN={{ pass "work-tp/env/GITLAB_NPM_TOKEN" }}
+
+export AUTH0_CLIENT_ID={{ pass "work-tp/hospitality/DEV/AUTH0_CLIENT_ID" }}
+export AUTH0_CLIENT_SECRET={{ pass "work-tp/hospitality/DEV/AUTH0_CLIENT_SECRET" }}
 {{- end }}
 
 ##########
 ## EVALS #
 ##########
 
-## macOS homebrew
+## homebrew
 {{ if eq .chezmoi.os "darwin" -}}
 if [ $(arch) = "arm64" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -42,6 +43,10 @@ eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(zoxide init zsh --cmd d)"
 
 ## Development
+
 eval "$(fnm env --use-on-cd --shell zsh)"
 source <(fnm completions --shell zsh) > /dev/null 2>&1
+
+{{ if eq .chezmoi.os "darwin" -}}
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+{{ end -}}
