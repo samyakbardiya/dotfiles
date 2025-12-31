@@ -44,7 +44,7 @@ args = [
     "-c",
     "cp",
     {{ printf "%q" "{{ .Target }}" }},
-    {{ printf "%q.base" "{{ .Target }}" }},
+    {{ printf "%q" "{{ .Target.base }}" }},
     "&&",
     "code",
     "--new-window",
@@ -52,7 +52,7 @@ args = [
     "--merge",
     {{ printf "%q" "{{ .Destination }}" }},
     {{ printf "%q" "{{ .Target }}" }},
-    {{ printf "%q.base" "{{ .Target }}" }},
+    {{ printf "%q" "{{ .Target.base }}" }},
     {{ printf "%q" "{{ .Source }}" }},
 ]
 {{- end }}
