@@ -39,10 +39,12 @@ if [ -d '/home/linuxbrew/.linuxbrew' ]; then
 fi
 {{ end -}}
 
-eval "$(atuin init zsh --disable-up-arrow)"
+# eval "$(atuin init zsh --disable-up-arrow)" # FIXME:
 eval "$(zoxide init zsh --cmd d)"
 
-## Development
+#==============#
+## Development #
+#==============#
 
 eval "$(fnm env --use-on-cd --shell zsh)"
 source <(fnm completions --shell zsh) > /dev/null 2>&1

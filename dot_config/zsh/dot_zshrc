@@ -32,6 +32,11 @@ WORDCHARS=${WORDCHARS//[\/]} # Remove path separator from WORDCHARS.
 
 unsetopt beep # beep-beep
 
+# Open buffer line in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^Z^Z' edit-command-line
+
 ############################
 ## pre zimfw customization #
 ############################
@@ -147,8 +152,8 @@ bindkey -M emacs '^N' history-substring-search-down
 ## p10K
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
-
-
+#
+#
 ############################
 ## Development Environment #
 ############################
@@ -161,6 +166,3 @@ lazyload jenv -- '
 lazyload pyenv -- '
     eval "$(pyenv init - zsh)"
 '
-
-
-# vim:ft=zsh
