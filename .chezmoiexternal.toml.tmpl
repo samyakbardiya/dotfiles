@@ -55,8 +55,10 @@ type = "git-repo"
 url = "https://github.com/romkatv/zsh-bench"
 refreshPeriod = "168h"
 
-{{ if eq .chezmoi.os "darwin" -}}
+##
+
 #### Darwin
+{{ if eq .chezmoi.os "darwin" -}}
 
 ["Applications/Menu Bar Spacing.app"]
 type = "archive"
@@ -64,17 +66,18 @@ url = {{ gitHubLatestReleaseAssetURL "sindresorhus/menu-bar-spacing-meta" "Menu.
 stripComponents = 1
 refreshPeriod = "168h"
 
-{{- end }}
+{{- end -}}
+##
 
-{{ if eq .chezmoi.os "windows" -}}
 #### Windows
+{{ if eq .chezmoi.os "windows" -}}
 
-[".config/dual-key-remap/dual-key-remap.exe"]
+["AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/dual-key-remap.exe"]
 type = "archive-file"
 url = "https://github.com/ililim/dual-key-remap/releases/download/v0.7/dual-key-remap-v0.7.zip"
 executable = true
 path = "dual-key-remap-v0.7/dual-key-remap.exe"
 refreshPeriod = "168h"
 
-{{- end }}
-
+{{- end -}}
+##
