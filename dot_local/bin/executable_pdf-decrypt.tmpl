@@ -1,0 +1,57 @@
+#!/usr/bin/env zsh
+
+DOWNLOADS_DIR="$HOME/Downloads"
+cd "$DOWNLOADS_DIR" || { echo "Failed to change directory to $DOWNLOADS_DIR"; exit 1; }
+
+function decrypt_pdf() {
+  local password="$1"
+  local in_file="$2"
+  local out_file="$3"
+
+  if [[ -z "$out_file" ]]; then
+    qpdf --decrypt --replace-input --password="$password" "$in_file"
+  else
+    qpdf --decrypt --password="$password" "$in_file" "$out_file"
+  fi
+
+  if [[ $? -ne 0 ]]; then
+    echo "Failed to decrypt: $in_file"
+  fi
+}
+
+for pdf_file in *.pdf; do
+  if [[ ! -f "$pdf_file" ]]; then
+    echo "No PDF files found in $DOWNLOADS_DIR."
+    exit 1
+  fi
+
+  case "$pdf_file" in
+    89XXXXX112.pdf)
+      decrypt_pdf '{{ pass "bank/Kotak-811/statement" }}' "$pdf_file"
+      ;;
+
+    4315XXXXXXXX4008_*_Retail_Amazon_NORM.pdf)
+      decrypt_pdf '{{ pass "bank/ICICI/statement" }}' "$pdf_file" "4008--  $pdf_file"
+      ;;
+
+    4748XXXXXXXX3004_*_Retail_HPCL_NORM.pdf)
+      decrypt_pdf '{{ pass "bank/ICICI/statement" }}' "$pdf_file" "3004--  $pdf_file"
+      ;;
+
+    560027_1009030000147146*.pdf)
+      decrypt_pdf '{{ pass "bank/Yes/statement" }}' "$pdf_file" "5338-- $pdf_file"
+      ;;
+
+    Statement_*_575585700.pdf)
+      [[ $pdf_file =~ ([0-9]{4})MTH([0-9]{2}) ]]
+      new_filename="3304--${match[1]}-${match[2]}.pdf"
+      decrypt_pdf '{{ pass "bank/ICICI/statement" }}' "$pdf_file" "3304--${match[1]}-${match[2]}.pdf"
+      ;;
+
+    CardStatement_*.pdf)
+      echo "=> $pdf_file"
+      [[ $pdf_file =~ ([0-9]{4})-([0-9]{2})-([0-9]{2}) ]]
+      mv "$pdf_file" "2108--${match[1]}-${match[2]}-${match[3]}.pdf"
+  esac
+
+done
