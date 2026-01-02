@@ -4,5 +4,8 @@
 # {{ include "dot_config/homebrew/Brewfile" | sha256sum }}
 brew bundle --cleanup --no-upgrade
 
+[[ -d "$(brew --prefix)/opt/emacs-mac/Emacs.app" ]] &&
+  ln -s "$(brew --prefix)/opt/emacs-mac/Emacs.app" "$HOME/Applications/Emacs.app"
+
 # vim:ft=sh.chezmoitmpl
 {{- end }}
