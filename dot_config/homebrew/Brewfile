@@ -102,7 +102,7 @@ brew "charmbracelet/tap/crush"
 brew "felixkratz/formulae/sketchybar", restart_services: :always
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
-brew "railwaycat/emacsmacport/emacs-mac@29", args: ["without-tree-sitter"]
+brew "railwaycat/emacsmacport/emacs-mac", args: ["without-tree-sitter"]
 brew "scarvalhojr/tap/aoc-cli"
 cask "alacritty"
 cask "alt-tab"
