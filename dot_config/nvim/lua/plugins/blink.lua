@@ -10,11 +10,14 @@ return {
         -- Performant, batteries-included completion plugin for Neovim
         "saghen/blink.cmp",
         dependencies = {
-            "Gelio/cmp-natdat", -- autocomplete natural dates and turm them into ISO dates
+            -- autocomplete natural dates and turm them into ISO dates
+            { "Gelio/cmp-natdat", config = true },
         },
         opts = {
             sources = {
-                compat = { "natdat" },
+                compat = {
+                    "natdat",
+                },
                 providers = {
                     natdat = { name = "natdat" },
                 },

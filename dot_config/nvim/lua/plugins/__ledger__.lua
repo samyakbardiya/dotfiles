@@ -1,11 +1,4 @@
 return {
-
-    -- For writing hledger journal
-    {
-        "anekos/hledger-vim",
-        ft = { "ledger" },
-    },
-
     -- Vim plugin for Ledger
     {
         "ledger/vim-ledger",
