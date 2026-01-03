@@ -6,7 +6,8 @@ brew bundle --cleanup --no-upgrade
 
 [[ -d "$(brew --prefix)/opt/emacs-mac/Emacs.app" ]] &&
   [[ ! -d "$HOME/Applications/Emacs.app" ]] &&
-  ln -s "$(brew --prefix)/opt/emacs-mac/Emacs.app" "$HOME/Applications/Emacs.app"
+  ln -s "$(brew --prefix)/opt/emacs-mac/Emacs.app" "$HOME/Applications/Emacs.app" ||
+  return 0
 
 # vim:ft=sh.chezmoitmpl
 {{- end }}
