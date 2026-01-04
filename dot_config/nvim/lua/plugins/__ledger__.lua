@@ -53,6 +53,13 @@ return {
                 desc = "Align whole File",
                 ft = "ledger",
             },
+            {
+                "<localLeader>hh",
+                "o<CR>2025-",
+                mode = { "n", "v" },
+                desc = "Insert new transaction",
+                ft = "ledger",
+            },
         },
     },
 
