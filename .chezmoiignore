@@ -21,5 +21,6 @@ Library/
 {{- if eq .chezmoi.os "windows" }}
 .config/Code/
 .config/zsh/
+.local/bin/
 Library/
 {{- end }}
