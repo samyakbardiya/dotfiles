@@ -5,14 +5,12 @@ __root__
 
 {{- if eq .chezmoi.os "darwin" }}
 **/.DS_Store
-.config/AutoHotKey/
 .config/Code/
 .config/dual-key-remap/
 AppData/
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
-.config/AutoHotKey/
 .config/dual-key-remap/
 AppData/
 Library/
