@@ -9,6 +9,28 @@
 # @samyakbardiya
 
 
+##################
+## ENV Variables # {{ .chezmoi.hostname }}
+##################
+
+{{ if eq .chezmoi.hostname "inblrnb0230" -}}
+
+# TPV
+export GITLAB_NPM_TOKEN={{ pass "work-tp/env/GITLAB_NPM_TOKEN" }}
+
+# Wave Hospitality
+export AUTH0_CLIENT_ID={{ pass "work-tp/hospitality/DEV/AUTH0_CLIENT_ID" }}
+export AUTH0_CLIENT_SECRET={{ pass "work-tp/hospitality/DEV/AUTH0_CLIENT_SECRET" }}
+export WAVE_HTV_API="$HOME/work-tp/wave-hospitality/htv-api"
+export WAVE_HTV_CLI="$HOME/work-tp/wave-hospitality/htv-cli"
+export WAVE_HTV_PORTAL="$HOME/work-tp/wave-hospitality/htv-portal"
+
+# Wave Signage
+export AWS_PROFILE="localstack"
+
+{{- end }}
+
+
 ########################
 ## Default Directories #
 ########################
@@ -185,9 +207,11 @@ export XCURSOR_PATH="/usr/share/icons:$XDG_DATA_HOME/icons"
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 
 ########
+# WORK #
+########
+
+
+########
 # TEMP #
 ########
 
-export WAVE_HTV_API="$HOME/work-tp/wave-hospitality/htv-api"
-export WAVE_HTV_CLI="$HOME/work-tp/wave-hospitality/htv-cli"
-export WAVE_HTV_PORTAL="$HOME/work-tp/wave-hospitality/htv-portal"

@@ -13,14 +13,6 @@
 ## ENV Variables #
 ##################
 
-# {{ .chezmoi.hostname }}
-
-{{ if eq .chezmoi.hostname "inblrnb0230" -}}
-export GITLAB_NPM_TOKEN={{ pass "work-tp/env/GITLAB_NPM_TOKEN" }}
-
-export AUTH0_CLIENT_ID={{ pass "work-tp/hospitality/DEV/AUTH0_CLIENT_ID" }}
-export AUTH0_CLIENT_SECRET={{ pass "work-tp/hospitality/DEV/AUTH0_CLIENT_SECRET" }}
-{{- end }}
 
 ##########
 ## EVALS #
