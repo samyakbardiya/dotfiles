@@ -69,26 +69,24 @@ bind-key -T copy-mode-vi C-\\ select-pane -l
 
 set -g @plugin "tmux-plugins/tpm"  # Tmux Plugin Manager
 
-set -g @plugin "tmux-plugins/tmux-battery"  #  battery percentage and icon indicator
-set -g @plugin "tmux-plugins/tmux-continuum"  # Persists tmux environment across system restarts.
-set -g @plugin "tmux-plugins/tmux-cpu"  # cpu percentage and icon indicator
-set -g @plugin "tmux-plugins/tmux-pain-control"  # standard pane key-bindings for tmux
-set -g @plugin "tmux-plugins/tmux-resurrect"  # Continuous saving of tmux environment.
-set -g @plugin "tmux-plugins/tmux-sensible"  # basic tmux settings everyone can agree on
-
 set -g @plugin "2kabhishek/tmux-tea" # tmux sessions as easy as tea
 set -g @plugin "AngryMorrocoy/tmux-neolazygit" # Better workflow with nvim + tmux + lazygit
 set -g @plugin "catppuccin/tmux"  # Soothing pastel theme for Tmux!
 set -g @plugin "joshmedeski/t-smart-tmux-session-manager"  # t - the smart tmux session manager
 set -g @plugin "noscript/tmux-mighty-scroll"  # More scroll, less hassle
-# set -g @plugin "omerxx/tmux-sessionx"  #  A Tmux session manager, with preview, fuzzy finding, and MORE 
+set -g @plugin "tmux-plugins/tmux-pain-control"  # standard pane key-bindings for tmux
+set -g @plugin "tmux-plugins/tmux-sensible"  # basic tmux settings everyone can agree on
+set -g @plugin 'jaclu/tmux-power-zoom' # Zoom pane to separate window, and unzoom it back into it's original location
 
-# set -g @plugin "aserowy/tmux.nvim"  #  tmux integration for nvim features pane movement and resizing from within nvim. 
-# set -g @plugin "christoomey/vim-tmux-navigator"  # Seamless navigation between tmux panes and vim splits
-# set -g @plugin "egel/tmux-gruvbox" # gruvbox colorschemjaclu/tmux-mouse-swipee
-# set -g @plugin "lawabidingcactus/tmux-gruvbox-truecolor"  # gruvbox colorscheme
-# set -g @plugin "ofirgall/tmux-window-name" #  A plugin to name your tmux windows smartly.
-# set -g @plugin "theutz/tmux-tokyonight-nvim" # tokyonight colorscheme
+# TODO: Check these plugins later
+# set -g @plugin 'graemedavidson/tmux-pane-focus'
+# set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+# set -g @plugin 'rickstaa/tmux-notify'
+
+# set -g @plugin "aserowy/tmux.nvim"  #  tmux integration for nvim features pane movement and resizing from within nvim.
+# set -g @plugin "omerxx/tmux-sessionx"  #  A Tmux session manager, with preview, fuzzy finding, and MORE 
+# set -g @plugin "tmux-plugins/tmux-continuum"  # Persists tmux environment across system restarts.
+# set -g @plugin "tmux-plugins/tmux-resurrect"  # Continuous saving of tmux environment.
 
 #================#
 # PLUGIN-OPTIONS #
@@ -110,32 +108,10 @@ set -g @catppuccin_status_session_text_bg "#{?client_prefix,#{E:@thm_red},#{E:@t
 set -g @catppuccin_date_time_text " %b-%d-%a %H:%M:%S"
 set -g @catppuccin_cpu_text " #{l:#{cpu_percentage}} #{l:#{ram_percentage}}"
 
-# run ~/.config/tmux/plugins/tmux/catppuccin.tmux
-
 set -g status-right-length 100
 set -g status-left-length 100
 set -g status-left ""
-set -g status-right ""
-# set -ag status-right "#{E:@catppuccin_status_directory}"
-set -agF status-right "#{E:@catppuccin_status_cpu}"
-# set -agF status-right "#{E:@catppuccin_status_load}"
-set -agF status-right "#{E:@catppuccin_status_battery}"
-# set -agF status-right "#{E:@catppuccin_status_load}"
-set -agF status-right "#{E:@catppuccin_status_date_time}"
-set -ag status-right "#{E:@catppuccin_status_session}"
-
-# set -g status-right-length 100
-# set -g status-left-length 100
-# set -g status-left "#[bg=#{?client_prefix,#{E:@thm_red},#{E:@thm_green}},bold,fg=#{@thm_crust}] #S "
-# set -ag status-left "#[bg=#{@thm_mantle}]   "
-# set -g status-right "#{E:@catppuccin_status_directory}"
-# set -agF status-right "#{E:@catppuccin_status_cpu}"
-# # set -ag status-right "#[bg=#{@thm_flamingo},fg=#{@thm_crust}]#[noreverse] 󱀙 "
-# # set -ag status-right "#[fg=#{@thm_fg},bg=#{@thm_surface_0}] #{ram_percentage}"
-# set -agF status-right "#{E:@catppuccin_status_battery}"
-# set -ag status-right "#[bg=#{@thm_mantle}]   "
-# set -ag status-right "#[bg=#{?client_prefix,#{E:@thm_red},#{E:@thm_green}},bold,fg=#{@thm_crust}] %b-%d-%a %H:%M "
-# # set -ag status-right "#{E:@catppuccin_status_date_time}"
+set -g status-right "#{E:@catppuccin_status_session}"
 
 # set -g @continuum-boot "on"
 # set -g @continuum-restore "on"
@@ -154,36 +130,10 @@ set -g @resurrect-processes "btop lazygit lazydocker neovim ssh"
 set -g @tea-bind "u"
 set -g @tea-alt-bind "false"
 
-# set -g @tokyonight "moon"
-
-# set -g @tmux-gruvbox "dark" # or "light"
-
-# set -g @tmux-nvim-navigation true
-# set -g @tmux-nvim-navigation-cycle true
-# set -g @tmux-nvim-navigation-keybinding-left 'C-h'
-# set -g @tmux-nvim-navigation-keybinding-down 'C-j'
-# set -g @tmux-nvim-navigation-keybinding-up 'C-k'
-# set -g @tmux-nvim-navigation-keybinding-right 'C-l'
-# set -g @tmux-nvim-resize true
-# set -g @tmux-nvim-resize-step-x 1
-# set -g @tmux-nvim-resize-step-y 1
-# set -g @tmux-nvim-resize-keybinding-left 'M-h'
-# set -g @tmux-nvim-resize-keybinding-down 'M-j'
-# set -g @tmux-nvim-resize-keybinding-up 'M-k'
-# set -g @tmux-nvim-resize-keybinding-right 'M-l'
-
-# set -g @tmux_window_dir_programs "['nvim', 'vim', 'vi', 'git']"
-# set -g @tmux_window_name_use_tilde "True"
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-# run "${XDG_CONFIG_HOME}/tmux/plugins/tpm/tpm"
-
 
 {{ if eq .chezmoi.os "darwin" -}}
 set-environment -g PATH "/opt/homebrew/bin:/bin:/usr/bin"
 {{ end -}}
 
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run "~/.config/tmux/plugins/tpm/tpm"
-
-# set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins'
-# run "${TMUX_PLUGIN_MANAGER_PATH}/tpm/tpm"
