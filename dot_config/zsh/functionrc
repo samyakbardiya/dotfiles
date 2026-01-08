@@ -166,4 +166,10 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+# GNOME Terminal via dbus-launch to avoid dbus issues
+# https://stackoverflow.com/a/73329143/10395681
+function gnome-term() {
+	dbus-launch gnome-terminal $@
+}
+
 # vim:ft=sh
