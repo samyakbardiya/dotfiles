@@ -4,9 +4,10 @@ return {
     cmd = "Copilot",
     build = ":Copilot auth",
     optional = true,
-    -- opts = {
-    --     copilot_model = "gpt-4o-copilot", -- "",
-    -- },
+    opts = {
+        -- copilot_model = "gpt-4o-copilot", -- "",
+        copilot_node_command = vim.fn.expand("$FNM_DIR") .. "/aliases/latest/bin/node",
+    },
     config = function(_, opts)
         require("copilot.api").status = require("copilot.status")
         require("copilot").setup(opts)
