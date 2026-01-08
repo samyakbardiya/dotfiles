@@ -93,20 +93,20 @@ set -g @plugin 'jaclu/tmux-power-zoom' # Zoom pane to separate window, and unzoo
 #================#
 
 set -g @catppuccin_flavor "mocha"
-set -g @catppuccin_status_background "none" # "default"
 
-set -g @catppuccin_window_text " #W"
-set -g @catppuccin_window_current_text "#W"
+set -g @catppuccin_status_connect_separator "no"
+set -g @catppuccin_status_left_separator "█"
+set -g @catppuccin_status_right_separator "█"
+set -g @catppuccin_status_session_text_bg "#{?client_prefix,#{E:@thm_red},#{E:@thm_green}}"
+set -g @catppuccin_status_session_text_fg "#{E:@thm_crust}"
 set -g @catppuccin_window_current_number_color "#{@thm_peach}"
+set -g @catppuccin_window_current_text "#W"
 set -g @catppuccin_window_current_text_color "fg=#{@thm_peach}"
 set -g @catppuccin_window_flags "icon"
-set -g @catppuccin_status_left_separator "█"
-set -g @catppuccin_status_connect_separator "yes"
+set -g @catppuccin_window_text " #W"
 
-set -g @catppuccin_status_session_text_fg "#{E:@thm_crust}"
-set -g @catppuccin_status_session_text_bg "#{?client_prefix,#{E:@thm_red},#{E:@thm_green}}"
-set -g @catppuccin_date_time_text " %b-%d-%a %H:%M:%S"
 set -g @catppuccin_cpu_text " #{l:#{cpu_percentage}} #{l:#{ram_percentage}}"
+set -g @catppuccin_date_time_text " %b-%d-%a %H:%M:%S"
 
 set -g status-right-length 100
 set -g status-left-length 100

@@ -1,17 +1,4 @@
 {
-  "edit_predictions": {
-    "mode": "subtle",
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
-  "agent": {
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-haiku-4.5",
-    },
-    "model_parameters": [],
-  },
   "$schema": "zed://schemas/settings",
 
   "auto_install_extensions": {
@@ -33,6 +20,13 @@
     "toml": true,
   },
 
+  "agent": {
+    "default_model": {
+      "model": "claude-haiku-4.5",
+      "provider": "copilot_chat",
+    },
+    "model_parameters": [],
+  },
   "audio": {
     "experimental.auto_microphone_volume": true,
     "experimental.auto_speaker_volume": true,
@@ -49,6 +43,12 @@
   },
   "colorize_brackets": true,
   "cursor_blink": false,
+  "edit_predictions": {
+    "mode": "subtle",
+  },
+  "features": {
+    "edit_prediction_provider": "copilot",
+  },
   "gutter": {
     "min_line_number_digits": 3,
   },
