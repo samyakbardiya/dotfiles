@@ -10,36 +10,49 @@
 +!m:: WinMaximize 'A'
 
 ; Application Management
->^Enter:: ActivateOrRunProgram("wezterm-gui.exe")
->^+b:: ActivateOrRunProgram("brave.exe")
->^b:: ActivateOrRunProgram("zen.exe")
->^f:: ActivateOrRunProgram("FortiClient.exe")
->^n:: ActivateOrRunProgram("notepad.exe")
->^o:: ActivateOrRunProgram("obsidian.exe")
->^t:: ActivateOrRunProgram("ms-teams.exe")
-; >^w:: ActivateOrRunProgram("WhatsApp.exe")
+^!u:: ActivateOrRunProgram("wezterm-gui.exe", "C:\Users\samyak.bardiya\Documents\WezTerm-windows-20240203-110809-5046fc22\wezterm-gui.exe")
+^!e:: ActivateOrRunProgram("zen.exe")
+^!o:: ActivateOrRunProgram("slack.exe", "C:\Users\samyak.bardiya\AppData\Local\slack\slack.exe")
+^!a:: ActivateOrRunProgram("")
+^!p:: ActivateOrRunProgram("msrdc.exe", '"C:\Program Files\WSL\wslg.exe" -d archlinux --cd "~" -- gnome-terminal')
+^!.:: ActivateOrRunProgram("chrome.exe", "C:\Users\samyak.bardiya\AppData\Local\imput\Helium\Application\chrome.exe") ;"
+^!,:: ActivateOrRunProgram("outlook.exe")
+^!;:: ActivateOrRunProgram("")
 
 ;-----------;
 ; Functions ;
 ;-----------;
 
-ActivateOrRunProgram(A_ProgramName, A_WinTitle := "") {
-    local WinTarget
+ActivateOrRunProgram(programName, exePath := "") {
+    if (!programName) {
+        return
+    }
 
-    ; Determine the target string for WinExist/WinActivate
-    if (A_WinTitle != "") {
-        WinTarget := A_WinTitle
+    local winTarget := "ahk_exe " . programName
+    if (WinExist(winTarget)) {
+        WinActivate(winTarget)
+        WinMaximize(winTarget)
     } else {
-        WinTarget := "ahk_exe " . A_ProgramName
+        try {
+            Run(exePath ? exePath : programName,, "Open")
+        } catch as err {
+            MsgBox("Failed to launch '" . programName . "'`n" . err.What)
+        }
+    }
+}
+
+ListOpenPrograms() {
+    local output := ""
+    allWindows := WinGetList(, , "Program Manager")
+
+    loop allWindows.Length {
+        local procName := WinGetProcessName(allWindows[A_Index])
+        if (procName) {
+            output .= procName . "`n"
+        }
     }
 
-    if (WinExist(WinTarget)) {
-        WinActivate(WinTarget)
-        ; WinMaximize(WinTarget)
-    }
-    else {
-        Run(WinTarget)
-    }
+    MsgBox(output ? output : "No programs found`n" . allWindows )
 }
 
 ; RAlt Modifiers
@@ -174,4 +187,3 @@ ActivateOrRunProgram(A_ProgramName, A_WinTitle := "") {
 ;     CurrentDesktop--
 ;     OutputDebug, [delete] desktops: %DesktopCount% current: %CurrentDesktop%
 ; }
-
