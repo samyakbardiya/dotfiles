@@ -49,28 +49,17 @@ Host gitlab.com
 Host tvlab
     HostName 172.27.221.225
     User tvlab
-
-    # Connection stability
     ServerAliveInterval 60
     ServerAliveCountMax 3
     TCPKeepAlive yes
-
-    # X11 forwarding (for GUI apps)
     ForwardX11 yes
     ForwardX11Trusted yes
-
-    # Agent forwarding (if needed for nested SSH)
     ForwardAgent no
-
-    # Performance tuning
     Compression yes
-    CompressionLevel 6
-
     # # Useful defaults
     # AddKeysToAgent yes
     # StrictHostKeyChecking accept-new
     # UserKnownHostsFile ~/.ssh/known_hosts
-
     PasswordAuthentication yes
     # # Key-based auth (faster, more secure)
     # IdentityFile ~/.ssh/id_rsa
