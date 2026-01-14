@@ -59,11 +59,10 @@ Host lab
     AddKeysToAgent yes
     StrictHostKeyChecking accept-new
     UserKnownHostsFile ~/.ssh/known_hosts
-    PasswordAuthentication yes
-    # # Key-based auth (faster, more secure)
-    # IdentityFile ~/.ssh/id_rsa
-    # IdentityFile ~/.ssh/id_ed25519
-    # PubkeyAuthentication yes
+    IdentityFile ~/.ssh/id_ed25519
+    PubkeyAuthentication yes
+    # RequestTTY yes
+    # RemoteCommand tmux new-session -A -s zero
 
 Host *htv_temp
     HostName ec2-54-93-55-233.eu-central-1.compute.amazonaws.com

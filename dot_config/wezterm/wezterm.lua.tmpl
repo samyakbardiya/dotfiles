@@ -103,6 +103,9 @@ config.launch_menu = {
 		label = "Arch WSL",
 		args = { "wsl", "-d", "archlinux", "--", "tmux", "new-session", "-A", "-s", "0_o", "-c", "$HOME" },
 	},
+	{ label = "WSL", args = { "wsl", "--cd", "~" } },
+	{ label = "PowerShell Core", args = { "pwsh" }, domain = { DomainName = "local" } },
+	{ label = "Command Prompt", args = { "cmd" } },
 	{{- end }}
 }
 
@@ -112,7 +115,8 @@ config.launch_menu = {
 -- ############
 
 {{ if eq .chezmoi.os "windows" -}}
-config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o", "-c", "$HOME" }
+config.default_domain = "SSH:lab"
+-- config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o", "-c", "$HOME" }
 {{- end }}
 
 
