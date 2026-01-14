@@ -13,14 +13,12 @@
 ## ENV Variables # {{ .chezmoi.hostname }}
 ##################
 
-{{ if eq .chezmoi.hostname "inblrnb0230" -}}
+{{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
 
 # TPV
 export GITLAB_NPM_TOKEN={{ pass "work-tp/env/GITLAB_NPM_TOKEN" }}
 
 # Wave Hospitality
-export AUTH0_CLIENT_ID={{ pass "work-tp/hospitality/DEV/AUTH0_CLIENT_ID" }}
-export AUTH0_CLIENT_SECRET={{ pass "work-tp/hospitality/DEV/AUTH0_CLIENT_SECRET" }}
 export WAVE_HTV_API="$HOME/work-tp/wave-hospitality/htv-api"
 export WAVE_HTV_CLI="$HOME/work-tp/wave-hospitality/htv-cli"
 export WAVE_HTV_PORTAL="$HOME/work-tp/wave-hospitality/htv-portal"
@@ -117,6 +115,9 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 # export PATH="${PATH}:$HOME/.pub-cache/bin"
 # export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/fvm/default/bin"
 # export PATH="${PATH}:/usr/lib/dart/bin"
+
+# FNM
+export FNM_PATH="${XDG_DATA_HOME}/fnm"
 
 # ## Java
 # export JAVA_HOME='/usr/lib/jvm/default'

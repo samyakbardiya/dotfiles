@@ -18,6 +18,10 @@
 ## EVALS #
 ##########
 
+#==========#
+# General  #
+#==========#
+
 ## homebrew
 {{ if eq .chezmoi.os "darwin" -}}
 if [ $(arch) = "arm64" ]; then
@@ -38,6 +42,7 @@ eval "$(zoxide init zsh --cmd d)"
 ## Development #
 #==============#
 
+[ -d "$FNM_PATH" ] && export PATH="${FNM_PATH}:${PATH}"
 eval "$(fnm env --use-on-cd --shell zsh)"
 source <(fnm completions --shell zsh) > /dev/null 2>&1
 

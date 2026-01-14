@@ -27,17 +27,17 @@ Host github.com
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_ed25519_github
 
-Host gitlab.com
-    AddKeysToAgent yes
-    PreferredAuthentications publickey
-    IdentityFile ~/.ssh/id_ed25519_gitlab
+# Host gitlab.com
+#     AddKeysToAgent yes
+#     PreferredAuthentications publickey
+#     IdentityFile ~/.ssh/id_ed25519_gitlab
 
 
 ##########
 ## Work ##
 ##########
 
-{{ if eq .chezmoi.hostname "inblrnb0230" -}}
+{{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
 #=============#
 #= TP Vision =#
 #=============#
@@ -46,9 +46,9 @@ Host gitlab.com
     AddKeysToAgent yes
     IdentityFile ~/.ssh/work-tp/id_ed25519_gitlab
 
-Host tvlab
+Host lab
     HostName 172.27.221.225
-    User tvlab
+    User samyak_bardiya
     ServerAliveInterval 60
     ServerAliveCountMax 3
     TCPKeepAlive yes
@@ -56,10 +56,9 @@ Host tvlab
     ForwardX11Trusted yes
     ForwardAgent no
     Compression yes
-    # # Useful defaults
-    # AddKeysToAgent yes
-    # StrictHostKeyChecking accept-new
-    # UserKnownHostsFile ~/.ssh/known_hosts
+    AddKeysToAgent yes
+    StrictHostKeyChecking accept-new
+    UserKnownHostsFile ~/.ssh/known_hosts
     PasswordAuthentication yes
     # # Key-based auth (faster, more secure)
     # IdentityFile ~/.ssh/id_rsa
