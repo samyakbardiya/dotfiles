@@ -111,7 +111,11 @@ set -g @catppuccin_date_time_text " %b-%d-%a %H:%M:%S"
 set -g status-right-length 100
 set -g status-left-length 100
 set -g status-left ""
+{{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
+set -g status-right "#{E:@catppuccin_status_host} #{E:@catppuccin_status_session}"
+{{- else -}}
 set -g status-right "#{E:@catppuccin_status_session}"
+{{- end }}
 
 # set -g @continuum-boot "on"
 # set -g @continuum-restore "on"
