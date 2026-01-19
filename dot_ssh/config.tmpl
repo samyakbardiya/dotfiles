@@ -61,8 +61,14 @@ Host lab
     UserKnownHostsFile ~/.ssh/known_hosts
     IdentityFile ~/.ssh/id_ed25519
     PubkeyAuthentication yes
+    DynamicForward 1080                 # for Gitlab proxy
+    LocalForward 3000 localhost:3000    # Signage Portal
+    LocalForward 8080 localhost:8080    # Signage API
+
     # RequestTTY yes
-    # RemoteCommand tmux new-session -A -s zero
+    # RemoteCommand /home/linuxbrew/.linuxbrew/bin/tmux new-session -A -s zero || /bin/zsh
+    # RemoteCommand /bin/tmux new-session -A -s zero || /bin/zsh
+    # RemoteCommand tmux new-session -A -s zero || /bin/zsh
 
 Host *htv_temp
     HostName ec2-54-93-55-233.eu-central-1.compute.amazonaws.com
