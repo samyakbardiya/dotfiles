@@ -8,7 +8,7 @@ set -g set-clipboard on
 set -g status-position top # set status bar on top
 set -ga terminal-overrides ",xterm-256color:Tc" # 24-bit colors
 set -sa terminal-overrides "*:Tc"
-set-window-option -g mode-keys vi # vim keybinds
+setw -g mode-keys vi # vim keybinds
 
 # fast scrolling
 bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
@@ -25,6 +25,10 @@ bind C-o send-prefix
 
 # bind C-o last-window # Second C-o
 bind o last-window # Second C-o
+
+# Use vim keybindings in copy mode
+unbind -T copy-mode-vi MouseDragEnd1Pane
+bind -T copy-mode-vi y send-keys -X copy-pipe  # Only copy, no cancel
 
 # # sane vim selection mode
 # # TODO: not working
