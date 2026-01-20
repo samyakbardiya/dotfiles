@@ -160,6 +160,10 @@ bindkey -M emacs '^N' history-substring-search-down
 
 eval "$(atuin init zsh --disable-up-arrow)"
 
+[ -d "$FNM_PATH" ] && export PATH="${FNM_PATH}:${PATH}"
+eval "$(fnm env --use-on-cd --shell zsh)"
+source <(fnm completions --shell zsh) > /dev/null 2>&1
+
 lazyload jenv -- '
     eval "$(jenv init -)"
 '

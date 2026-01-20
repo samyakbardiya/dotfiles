@@ -61,9 +61,19 @@ Host lab
     UserKnownHostsFile ~/.ssh/known_hosts
     IdentityFile ~/.ssh/id_ed25519
     PubkeyAuthentication yes
-    DynamicForward 1080                 # for Gitlab proxy
+    DynamicForward 1080                 # Tunnel SOCKS5 Proxy
     LocalForward 3000 localhost:3000    # Signage Portal
-    LocalForward 8080 localhost:8080    # Signage API
+    LocalForward 3001 localhost:3001    # Signage Admin Portal
+    LocalForward 8080 localhost:8080    # Signage API Service
+    LocalForward 8081 localhost:8081    # Signage Display Service
+    LocalForward 8082 localhost:8082    # Signage Admin API
+    LocalForward 8083 localhost:8083    # Signage Pro Store
+    LocalForward 8084 localhost:8084    # Signage Creator Service
+    LocalForward 8085 localhost:8085    # Signage Auth Service
+    LocalForward 8086 localhost:8086    # Signage Display Simulator
+    LocalForward 4566 localhost:4566    # Localhost
+    LocalForward 5432 localhost:5432    # PostgreSQL
+    LocalForward 27017 localhost:27017  # Mongo DB
 
     # RequestTTY yes
     # RemoteCommand /home/linuxbrew/.linuxbrew/bin/tmux new-session -A -s zero || /bin/zsh

@@ -70,7 +70,7 @@ config.switch_to_last_active_tab_when_closing_tab = false
 
 -- ## Window
 config.window_close_confirmation = "NeverPrompt"
-config.window_decorations = "RESIZE"
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.window_frame = {
 	font = wezterm.font({ family = "MonaspiceKr Nerd Font", weight = "Bold" }),
 	font_size = 10.0,
@@ -97,17 +97,12 @@ config.keys = {
 -- # Launcher #
 -- ############
 
+{{- if eq .chezmoi.os "windows" }}
 config.launch_menu = {
-	{{- if eq .chezmoi.os "windows" }}
-	{
-		label = "Arch WSL",
-		args = { "wsl", "-d", "archlinux", "--", "tmux", "new-session", "-A", "-s", "0_o", "-c", "$HOME" },
-	},
-	{ label = "WSL", args = { "wsl", "--cd", "~" } },
 	{ label = "PowerShell Core", args = { "pwsh" }, domain = { DomainName = "local" } },
-	{ label = "Command Prompt", args = { "cmd" } },
-	{{- end }}
+	{ label = "Command Prompt", args = { "cmd" }, domain = { DomainName = "local" } },
 }
+{{- end }}
 
 
 -- ############
