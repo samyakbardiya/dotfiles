@@ -14,4 +14,40 @@
       "shift-h": "pane::ActivatePreviousItem",
     },
   },
+  {
+    "context": "(Editor && edit_prediction)",
+    "bindings": {
+      "ctrl-a": "editor::AcceptEditPrediction",
+    },
+  },
+  {
+    "context": "((os != macos && Editor) && edit_prediction_conflict)",
+    "bindings": {
+      "alt-l": null,
+    },
+  },
+  {
+    "context": "(Editor && edit_prediction_conflict)",
+    "bindings": {
+      "ctrl-a": "editor::AcceptEditPrediction",
+    },
+  },
+  {
+    "context": "(Editor && edit_prediction)",
+    "bindings": {
+      "tab": null,
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s": "workspace::Save",
+    },
+  },
+  {
+    "context": "ContextEditor > Editor",
+    "bindings": {
+      "ctrl-s": "workspace::Save",
+    },
+  },
 ]

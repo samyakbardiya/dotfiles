@@ -44,7 +44,7 @@
   "colorize_brackets": true,
   "cursor_blink": false,
   "edit_predictions": {
-    "mode": "subtle",
+    "mode": "eager",
   },
   "features": {
     "edit_prediction_provider": "copilot",
@@ -71,6 +71,7 @@
     "allowed": true,
   },
   "project_panel": {
+    "button": true,
     "entry_spacing": "standard",
   },
   "redact_private_values": true,
@@ -115,7 +116,19 @@
   "ui_font_size": 16,
   "use_smartcase_search": true,
   "vertical_scroll_margin": 4,
+  "vim": {
+    "cursor_shape": {
+      "visual": "hollow",
+    },
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": true,
+    "use_system_clipboard": "on_yank",
+  },
   "vim_mode": true,
+  "which_key": {
+    "delay_ms": 250,
+    "enabled": true,
+  },
   "window_decorations": "client",
   "wrap_guides": [80, 100, 120],
 }
