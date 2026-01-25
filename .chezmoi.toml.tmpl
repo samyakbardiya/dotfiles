@@ -31,12 +31,10 @@ args = [
     {{ printf "%q" "{{ .Target }}" }},
 ]
 # args = [
-#   "-d",
-#   "-o2",
-#   {{ printf "%q" "{{ .Destination }}" }},
-#   {{ printf "%q" "{{ .Target }}" }},
-#   "-O",
-#   {{ printf "%q" "{{ .Source }}" }},
+#     "-d",
+#     "-c",
+#     {{ printf "%q" "split {{ .Destination }} | vsplit {{ .Target }}" }},
+#     {{ printf "%q" "{{ .Source }}" }},
 # ]
 {{- else -}}
 command = "bash"
