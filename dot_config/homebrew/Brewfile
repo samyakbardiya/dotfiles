@@ -170,3 +170,4 @@ mas "Kindle", id: 302584613
 mas "Spaced", id: 1666327168
 go "github.com/x-motemen/gore/cmd/gore"
 go "github.com/pratik-anurag/portik"
+go "github.com/samyakbardiya/trex"
