@@ -82,6 +82,10 @@ set -g @plugin "tmux-plugins/tmux-pain-control"  # standard pane key-bindings fo
 set -g @plugin "tmux-plugins/tmux-sensible"  # basic tmux settings everyone can agree on
 set -g @plugin 'jaclu/tmux-power-zoom' # Zoom pane to separate window, and unzoom it back into it's original location
 
+{{ if eq .chezmoi.os "darwin" -}}
+set -g @plugin 'victorkristof/tmux-auto-dark-mode'
+{{ end -}}
+
 # TODO: Check these plugins later
 # set -g @plugin 'graemedavidson/tmux-pane-focus'
 # set -g @plugin 'nhdaly/tmux-better-mouse-mode'
@@ -96,7 +100,13 @@ set -g @plugin 'jaclu/tmux-power-zoom' # Zoom pane to separate window, and unzoo
 # PLUGIN-OPTIONS #
 #================#
 
-set -g @catppuccin_flavor "mocha"
+# {{ if eq .chezmoi.os "darwin" -}}
+# set-option -g @adm-dark-status '/path/to/dark-status.conf'
+# set-option -g @adm-light-status '/path/to/light-status.conf'
+# {{ end -}}
+
+# set -g @catppuccin_flavor "mocha"
+set -g @catppuccin_status_background "none" # "default"
 
 set -g @catppuccin_status_connect_separator "no"
 set -g @catppuccin_status_left_separator "█"

@@ -7,11 +7,11 @@ cd "$(chezmoi execute-template '{{ .chezmoi.sourceDir }}')" || exit
 # HACK: Add `chezmoi` to NOPASS
 root_cmd="sudo"
 $root_cmd -v
+ZDIR="/etc"
 {{- else -}}
 root_cmd="doas"
-{{- end }}
-
 ZDIR=/etc/zsh
+{{- end }}
 [ -d $ZDIR ] || mkdir -p $ZDIR
 
 {{ if eq .chezmoi.os "linux" -}}
