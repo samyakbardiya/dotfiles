@@ -140,7 +140,7 @@ cask "legcord"
 cask "localsend"
 cask "mactex-no-gui"
 cask "middleclick"
-cask "neardrop"
+cask "grishka/grishka/neardrop"
 cask "obs"
 cask "obsidian"
 cask "orbstack"
@@ -169,3 +169,4 @@ mas "Bitwarden", id: 1352778147
 mas "Kindle", id: 302584613
 mas "Spaced", id: 1666327168
 go "github.com/x-motemen/gore/cmd/gore"
+go "github.com/pratik-anurag/portik"
