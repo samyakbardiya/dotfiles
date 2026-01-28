@@ -90,6 +90,17 @@ config.window_padding = {
 config.keys = {
 	{ key = "a", mods = "CTRL|SHIFT", action = wezterm.action.ActivateCopyMode },
 	{ key = "F11", action = wezterm.action.ToggleFullScreen },
+	{{- if eq .chezmoi.os "windows" }}
+	{
+		key = "Delete",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.SpawnCommandInNewWindow({
+			label = "SSH Tunnel",
+			domain = { DomainName = "local" },
+			args = { "ssh", "-vN", "lab" },
+		}),
+	},
+	{{- end }}
 }
 
 
@@ -101,7 +112,6 @@ config.keys = {
 config.launch_menu = {
 	{ label = "PowerShell Core", args = { "pwsh" }, domain = { DomainName = "local" } },
 	{ label = "Command Prompt", args = { "cmd" }, domain = { DomainName = "local" } },
-	{ label = "SSH Tunnel", args = { "ssh", "-vN", "lab" }, domain = { DomainName = "local" } },
 }
 {{- end }}
 
