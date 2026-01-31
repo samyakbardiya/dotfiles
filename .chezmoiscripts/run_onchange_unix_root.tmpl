@@ -14,23 +14,18 @@ ZDIR=/etc/zsh
 {{- end }}
 [ -d $ZDIR ] || mkdir -p $ZDIR
 
-{{ if eq .chezmoi.os "linux" -}}
-{{- if eq .chezmoi.osRelease.id "arch" -}}
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch")) -}}
 # {{ include "__root__/etc/pacman.conf" | sha256sum }}
-$root_cmd chezmoi execute-template \
-  --output=$ZDIR/pacman.conf \
+$root_cmd chezmoi execute-template --output=$ZDIR/pacman.conf \
   <__root__/etc/pacman.conf
-{{- end -}}
 {{- end }}
 
 # {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
-$root_cmd chezmoi execute-template \
-  --output=$ZDIR/zprofile \
+$root_cmd chezmoi execute-template --output=$ZDIR/zprofile \
   <__root__/etc/zsh/zprofile
 
 # {{ include "__root__/etc/zsh/zprofile" | sha256sum }}
-$root_cmd chezmoi execute-template \
-  --output=$ZDIR/zshenv \
+$root_cmd chezmoi execute-template --output=$ZDIR/zshenv \
   <__root__/etc/zsh/zshenv
 
 # vim:ft=sh.chezmoitmpl
