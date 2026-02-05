@@ -1,18 +1,20 @@
-[profile htv_dev]
+{{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
+
+[profile tpv_dev]
 sso_session = TPV
 sso_account_id = 825169607534
 sso_role_name = PowerUserAccess
 region = eu-central-1
 output = json
 
-[profile htv_acc]
+[profile tpv_acc]
 sso_session = TPV
 sso_account_id = 585008069858
 sso_role_name = PowerUserAccess
 region = eu-central-1
 output = json
 
-[profile htv_beta]
+[profile tpv_beta]
 sso_session = TPV
 sso_account_id = 597406702768
 sso_role_name = PowerUserAccess
@@ -28,3 +30,5 @@ endpoint_url = http://localhost:4566
 sso_start_url = https://d-9967054bd3.awsapps.com/start/#
 sso_region = eu-central-1
 sso_registration_scopes = sso:account:access
+
+{{- end }}

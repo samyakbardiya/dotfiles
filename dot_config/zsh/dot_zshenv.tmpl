@@ -24,7 +24,10 @@ export WAVE_HTV_CLI="$HOME/work-tp/wave-hospitality/htv-cli"
 export WAVE_HTV_PORTAL="$HOME/work-tp/wave-hospitality/htv-portal"
 
 # Wave Signage
-export AWS_PROFILE="localstack"
+export AUTH0_CLIENT_ID={{ pass "work-tp/env/AUTH0_CLIENT_ID" }}
+export AUTH0_CLIENT_SECRET={{ pass "work-tp/env/AUTH0_CLIENT_SECRET" }}
+export AUTH0_PORTAL_CLIENT_ID={{ pass "work-tp/env/AUTH0_PORTAL_CLIENT_ID" }}
+# export AWS_PROFILE="localstack"
 export WAVE_SIGNAGE_ROOT_DIR="$HOME/work-tp/wave-signage"
 export WAVE_SIGNAGE_API_DIR="$WAVE_SIGNAGE_ROOT_DIR/api"
 export WAVE_SIGNAGE_CLI_DIR="$WAVE_SIGNAGE_ROOT_DIR/wave-cli"
