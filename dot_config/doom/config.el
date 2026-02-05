@@ -42,7 +42,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/brain/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -77,10 +77,21 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(after! centaur-tabs
-  :config
-  (setq centaur-tabs-height 16
-        centaur-tabs-icon-type 'all-the-icons))
+;; (after! centaur-tabs
+;;   :config
+;;   (setq centaur-tabs-height 16
+;;         centaur-tabs-icon-type 'all-the-icons))
 
-(after! indent-bars
-  (setq indent-bar-color '(:blend 0.2)))
+;; (after! indent-bars
+;;   :custom
+;;   ;; Disable all regular bars, show only current depth bar
+;;   (indent-bars-color-by-depth nil)
+;;   (indent-bars-highlight-current-depth
+;;         '(:face default :blend 0.4))
+;;   (indent-bars-depth-update-delay 0)
+;;   ;; Make bars less intrusive if needed
+;;   (indent-bars-width-frac 0.5)
+;;   (indent-bars-pad-frac 0.25))
+
+(setq which-key-idle-delay 0.2
+      which-key-idle-secondary-delay 0.05)
