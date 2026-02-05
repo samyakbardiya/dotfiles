@@ -50,8 +50,8 @@ local ligature = {
 }
 config.font_size = 14
 config.font = wezterm.font_with_fallback({
-	-- { family = "Fira Code", harfbuzz_features = ligature },
 	{ family = "Monaspace Neon", harfbuzz_features = ligature },
+	-- { family = "Fira Code", harfbuzz_features = ligature },
 	-- { family = "Input Mono", harfbuzz_features = { "ss12" } },
 	{ family = "Symbols Nerd Font Mono", scale = 1.00 },
 })
@@ -121,7 +121,8 @@ config.launch_menu = {
 -- ############
 
 {{ if eq .chezmoi.os "windows" -}}
-config.default_domain = "SSH:lab"
+config.default_prog = { "pwsh" }
+config.default_gui_startup_args = { 'ssh', 'lab'  }
 -- config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o", "-c", "$HOME" }
 {{- end }}
 
