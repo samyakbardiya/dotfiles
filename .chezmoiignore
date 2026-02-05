@@ -8,11 +8,13 @@ __root__
 .config/Code/
 .config/dual-key-remap/
 AppData/
+Documents/
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
 .config/dual-key-remap/
 AppData/
+Documents/
 Library/
 {{- end }}
 
