@@ -93,5 +93,24 @@
 ;;   (indent-bars-width-frac 0.5)
 ;;   (indent-bars-pad-frac 0.25))
 
-(setq which-key-idle-delay 0.2
-      which-key-idle-secondary-delay 0.05)
+;; accept completion from copilot and fallback to company
+;; (use-package! copilot
+;;   :hook (prog-mode . copilot-mode)
+;;   :bind (:map copilot-completion-map
+;;               ("C-a" . 'copilot-accept-completion)
+;;               ("C-S-a" . 'copilot-accept-completion-by-word)
+;;               ("C-n" . 'copilot-next-completion)
+;;               ("C-p" . 'copilot-previous-completion))
+
+;; (use-package! copilot
+;;   :hook (prog-mode . copilot-mode)
+;;   :bind (:map copilot-completion-map
+;;               ("<tab>" . 'copilot-accept-completion)
+;;               ("TAB" . 'copilot-accept-completion)
+;;               ("C-TAB" . 'copilot-accept-completion-by-word)
+;;               ("C-<tab>" . 'copilot-accept-completion-by-word)
+;;               ("C-n" . 'copilot-next-completion)
+;;               ("C-p" . 'copilot-previous-completion))
+
+  (setq which-key-idle-delay 0.2
+        which-key-idle-secondary-delay 0.05)

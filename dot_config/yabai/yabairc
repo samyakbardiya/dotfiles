@@ -59,7 +59,7 @@ yabai -m config normal_window_opacity 0.9
 ##########
 
 ## Spaces that should be created
-declare -a yabai_create_spaces=("mac" "web" "develop" "tool" "product" "social")
+declare -a yabai_create_spaces=("mac" "develop" "web" "editor" "tool" "social")
 
 ## Get nuber of spaces that should be created
 yabai_create_spaces_count=${#yabai_create_spaces[@]}
@@ -92,46 +92,42 @@ done
 ## Rules #
 ##########
 
-## Space 1:banana
+## Space 1:mac
 space=1
 yabai -m rule --add app="^IINA$" space="^${space}"
 yabai -m rule --add app="^Jellyfin Media Player$" space="^${space}"
 yabai -m rule --add app="^Spotify$" space="^${space}"
 yabai -m rule --add app="^Transmission Remote GUI$" space="^${space}"
 
-## Space 2:web
+## Space 2:develop
 space=2
-yabai -m rule --add app="^Zen$" space="^${space}"
-
-## Space 3:develop
-space=3
-yabai -m rule --add app="^Code$" space="^${space}"
 yabai -m rule --add app="^Ghostty$" space="^${space}"
 yabai -m rule --add app="^Sublime Text$" space="^${space}"
-yabai -m rule --add app="^VSCode$" space="^${space}"
-yabai -m rule --add app="^Zed$" space="^${space}"
 yabai -m rule --add app="^alacritty$" space="^${space}"
 
-## Space 4:product
+## Space 3:web
+space=3
+yabai -m rule --add app="^Zen$" space="^${space}"
+
+## Space 4:editor
 space=4
-yabai -m rule --add app="^Notion Calendar$" space="^${space}"
-yabai -m rule --add app="^Notion$" space="^${space}"
+yabai -m rule --add app="^Code$" space="^${space}"
+yabai -m rule --add app="^Emacs$" space="^${space}"
 yabai -m rule --add app="^Obsidian$" space="^${space}"
+yabai -m rule --add app="^VSCode$" space="^${space}"
+yabai -m rule --add app="^Zed$" space="^${space}"
 
 ## Space 5:tool
 space=5
-yabai -m rule --add app="^Beekeeper-Studio$" space="^${space}"
 yabai -m rule --add app="^Helium$" space="^${space}"
-yabai -m rule --add app="^Insomnia$" space="^${space}"
-yabai -m rule --add app="^MongoDB Compass$" space="^${space}"
 
 ## Space 6:social
 space=6
 yabai -m rule --add app="^Discord$" space="^${space}"
 yabai -m rule --add app="^Proton Mail$" space="^${space}"
 yabai -m rule --add app="^Telegram$" space="^${space}"
+yabai -m rule --add app="^WhatsApp Biz$" space="^${space}"
 yabai -m rule --add app="WhatsApp" space="^${space}"
-yabai -m rule --add app="^WhatsApp Business$" space="^${space}"
 
 ### Layer & Sub-layer
 #yabai -m rule --add app="^Code$" sub-layer=normal
@@ -139,20 +135,20 @@ yabai -m rule --add app="^WhatsApp Business$" space="^${space}"
 #yabai -m rule --add app="^Zed$" sub-layer=normal
 #yabai -m rule --add app="^alacritty$" sub-layer=normal
 
-## Sticky Windows
-yabai -m rule --add app="^Todoist$" manage=off
+# ## Sticky Windows
+# yabai -m rule --add app="^Todoist$" manage=off
 
-## Native Fullscreen
-yabai -m rule --add app="^streamio$" manage=off native-fullscreen=on
+# ## Native Fullscreen
+# yabai -m rule --add app="^streamio$" manage=off native-fullscreen=on
 
 ## Unmanaged applications
+yabai -m rule --add app="Zen" title="Extension" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Numi$" manage=off
 yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System.*informationen$" manage=off
-yabai -m rule --add app="Zen" title="Extension" manage=off
 
 ## Apply all rules
 yabai -m rule --apply

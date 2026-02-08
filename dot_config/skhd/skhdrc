@@ -13,22 +13,22 @@
 ###########
 
 ## Focus space
-lalt - u    : yabai -m space --focus 1
-lalt - e    : yabai -m space --focus 2
-lalt - o    : yabai -m space --focus 3
-lalt - a    : yabai -m space --focus 4
-lalt - 0x0E : yabai -m space --focus 5 # .
-lalt - 0x0D : yabai -m space --focus 6 # ,
+lalt - a    : yabai -m space --focus 1
+lalt - o    : yabai -m space --focus 2
+lalt - e    : yabai -m space --focus 3
+lalt - u    : yabai -m space --focus 4
+lalt - 0x0E : yabai -m space --focus 5    # .
+lalt - 0x0D : yabai -m space --focus 6    # ,
 lalt - 0x0C : yabai -m space --focus prev # ;
 lalt - p    : yabai -m space --focus next
 lalt - 0x32 : yabai -m space --focus last # $
 lalt - tab  : yabai -m space --focus recent
 
 ## Move window to space
-alt + shift - u    : yabai -m window --space 1
-alt + shift - e    : yabai -m window --space 2
-alt + shift - o    : yabai -m window --space 3
-alt + shift - a    : yabai -m window --space 4
+alt + shift - a    : yabai -m window --space 1
+alt + shift - o    : yabai -m window --space 2
+alt + shift - e    : yabai -m window --space 3
+alt + shift - u    : yabai -m window --space 4
 alt + shift - 0x0E : yabai -m window --space 5 # .
 alt + shift - 0x0D : yabai -m window --space 6 # ,
 

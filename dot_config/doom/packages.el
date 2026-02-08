@@ -53,8 +53,12 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
+
 (package! catppuccin-theme)
 
 (package! chezmoi)
+
+;; (package! copilot
+;;   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
 
 (package! tldr)
