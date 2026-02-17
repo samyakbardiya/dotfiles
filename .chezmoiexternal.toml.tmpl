@@ -4,9 +4,40 @@
 
 #### Common
 
-[".config/alacritty/catppuccin-mocha.toml"]
+[".config/emacs"]
+type = "git-repo"
+url = "https://github.com/hlissner/doom-emacs"
+refreshPeriod = "0"
+clone.arguments = ["--depth", "1"]
+
+[".config/tmux/plugins/tpm"]
+type = "git-repo"
+url = "https://github.com/tmux-plugins/tpm"
+refreshPeriod = "168h"
+
+# [".local/bin/cht.sh"]
+# type = "file"
+# url = "https://cht.sh/:cht.sh"
+# refreshPeriod = "168h"
+# executable = true
+
+[".local/share/zsh-bench"]
+type = "git-repo"
+url = "https://github.com/romkatv/zsh-bench"
+refreshPeriod = "168h"
+
+######## Colors
+
+# Catppuccin [Mocha|Latte] -- https://catppuccin.com
+
+[".config/alacritty/themes/catppuccin-mocha.toml"]
 type = "file"
 url = "https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml"
+refreshPeriod = "168h"
+
+[".config/alacritty/themes/catppuccin-latte.toml"]
+type = "file"
+url = "https://github.com/catppuccin/alacritty/raw/main/catppuccin-latte.toml"
 refreshPeriod = "168h"
 
 [".config/bat/themes/Catppuccin Mocha.tmTheme"]
@@ -24,22 +55,6 @@ type = "file"
 url = "https://github.com/catppuccin/delta/raw/refs/heads/main/catppuccin.gitconfig"
 refreshPeriod = "168h"
 
-[".config/emacs"]
-type = "git-repo"
-url = "https://github.com/hlissner/doom-emacs"
-refreshPeriod = "0"
-clone.arguments = ["--depth", "1"]
-
-[".config/ghostty/themes/catppuccin-latte.conf"]
-type = "file"
-url = "https://raw.githubusercontent.com/catppuccin/ghostty/refs/heads/main/themes/catppuccin-latte.conf"
-refreshPeriod = "168h"
-
-[".config/ghostty/themes/catppuccin-mocha.conf"]
-type = "file"
-url = "https://raw.githubusercontent.com/catppuccin/ghostty/refs/heads/main/themes/catppuccin-mocha.conf"
-refreshPeriod = "168h"
-
 [".config/gitui/theme.ron"]
 type = "file"
 url = "https://github.com/catppuccin/gitui/raw/refs/heads/main/themes/catppuccin-mocha.ron"
@@ -50,26 +65,40 @@ type = "file"
 url = "https://github.com/catppuccin/zsh-fsh/raw/refs/heads/main/themes/catppuccin-mocha.ini"
 refreshPeriod = "168h"
 
-[".config/tmux/plugins/tpm"]
-type = "git-repo"
-url = "https://github.com/tmux-plugins/tpm"
-refreshPeriod = "168h"
-
 [".config/yazi/theme.toml"]
 type = "file"
 url = "https://github.com/catppuccin/yazi/raw/refs/heads/main/themes/mocha/catppuccin-mocha-blue.toml"
 refreshPeriod = "168h"
 
-# [".local/bin/cht.sh"]
-# type = "file"
-# url = "https://cht.sh/:cht.sh"
-# refreshPeriod = "168h"
-# executable = true
+# Rosé Pine [Moon|Dawn] -- https://rosepinetheme.com/
 
-[".local/share/zsh-bench"]
-type = "git-repo"
-url = "https://github.com/romkatv/zsh-bench"
+[".config/alacritty/themes/rose-pine-moon.toml"]
+type = "file"
+url = "https://github.com/rose-pine/alacritty/raw/main/dist/rose-pine-moon.toml"
 refreshPeriod = "168h"
+
+[".config/alacritty/themes/rose-pine-dawn.toml"]
+type = "file"
+url = "https://github.com/rose-pine/alacritty/raw/main/dist/rose-pine-dawn.toml"
+refreshPeriod = "168h"
+
+# [".config/bat/themes/"]
+
+[".config/doom/themes/doom-rose-pine-theme.el"]
+type = "file"
+url = "https://github.com/donniebreve/rose-pine-doom-emacs/raw/refs/heads/main/doom-rose-pine-theme.el"
+refreshPeriod = "168h"
+
+[".config/doom/themes/doom-rose-pine-moon-theme.el"]
+type = "file"
+url = "https://github.com/donniebreve/rose-pine-doom-emacs/raw/refs/heads/main/doom-rose-pine-moon-theme.el"
+refreshPeriod = "168h"
+
+[".config/doom/themes/doom-rose-pine-dawn-theme.el"]
+type = "file"
+url = "https://github.com/donniebreve/rose-pine-doom-emacs/raw/refs/heads/main/doom-rose-pine-dawn-theme.el"
+refreshPeriod = "168h"
+
 
 ##
 
