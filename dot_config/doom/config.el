@@ -112,5 +112,7 @@
 ;;               ("C-n" . 'copilot-next-completion)
 ;;               ("C-p" . 'copilot-previous-completion))
 
-  (setq which-key-idle-delay 0.2
-        which-key-idle-secondary-delay 0.05)
+(setq TeX-engine 'luatex)
+
+(setq which-key-idle-delay 0.2
+      which-key-idle-secondary-delay 0.05)

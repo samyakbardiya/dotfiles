@@ -51,13 +51,13 @@
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
-       ;; zen               ; distraction-free coding or writing ; TODO:
+       zen               ; distraction-free coding or writing
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
-       ;;(format +onsave)  ; automated prettiness            ; TODO:
+       (format +onsave +lsp)  ; automated prettiness
        ;; god               ; run Emacs commands without modifier keys
        ;; lispy             ; vim for lisp, for people who don't like vim
        multiple-cursors  ; editing in many places at once
@@ -74,7 +74,7 @@
        ;; eww               ; the internet is gross
        (ibuffer +icons)           ; interactive buffer management
        tramp             ; remote files at your arthritic fingertips
-       undo              ; persistent, smarter undo for your inevitable mistakes ; TODO:
+       (undo +tree)              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
@@ -84,8 +84,8 @@
        vterm             ; the best terminal emulation in Emacs
 
        :checkers
-       syntax              ; tasing you for every semicolon you forget ; TODO:
-       (spell +flyspell) ; tasing you for misspelling mispelling ; TODO:
+       (syntax +flymake +icons)              ; tasing you for every semicolon you forget
+       (spell +flyspell) ; tasing you for misspelling mispelling
        grammar           ; tasing grammar mistake every you make
 
        :tools
@@ -99,16 +99,16 @@
        ;; ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
-       ;; llm               ; when I said you needed friends, I didn't mean... ; TODO:
-       (lsp +eglot)      ; M-x vscode : TODO:
+       llm               ; when I said you needed friends, I didn't mean...
+       (lsp +eglot +peek)      ; M-x vscode
        magit             ; a git porcelain for Emacs
        ;; make              ; run make tasks from Emacs
        ;; pass              ; password manager for nerds
        pdf               ; pdf enhancements
-       ;; terraform         ; infrastructure as code
+       terraform         ; infrastructure as code
        tmux              ; an API for interacting with tmux
        tree-sitter       ; syntax and parsing, sitting in a tree...
-       ;; upload            ; map local to remote projects via ssh/ftp : TODO;
+       ;; upload            ; map local to remote projects via ssh/ftp
 
        :os
        (:if (featurep :system 'macos) macos)  ; improve compatibility with macOS
@@ -195,4 +195,4 @@
 
        :config
        ;; literate
-       (default +bindings +smartparens)) ; TODO:
+       (default +bindings +smartparens))
