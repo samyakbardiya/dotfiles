@@ -1,3 +1,4 @@
+tap "asmvik/formulae"
 tap "charmbracelet/tap"
 tap "d12frosted/emacs-plus"
 tap "felixkratz/formulae"
