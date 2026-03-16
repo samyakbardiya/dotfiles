@@ -6,6 +6,7 @@ tap "koekeishiya/formulae"
 tap "localsend/localsend"
 tap "oven-sh/bun"
 tap "scarvalhojr/tap"
+
 brew "aria2"
 brew "asciinema"
 brew "python@3.13"
@@ -189,10 +190,13 @@ cask "whatsapp"
 cask "whichspace"
 cask "zed"
 cask "zen"
+
 mas "Bitwarden", id: 1352778147
 mas "Kindle", id: 302584613
 mas "Spaced", id: 1666327168
+
 go "github.com/x-motemen/gore/cmd/gore"
 go "github.com/pratik-anurag/portik"
 go "github.com/samyakbardiya/trex"
+
 uv "pynvim"
