@@ -26,6 +26,10 @@ for pdf_file in *.pdf; do
   fi
 
   case "$pdf_file" in
+    *560068.pdf)
+      decrypt_pdf '{{ pass "bank/Kotak-811/email-statement" }}' "$pdf_file"
+      ;;
+
     89XXXXX112.pdf)
       decrypt_pdf '{{ pass "bank/Kotak-811/statement" }}' "$pdf_file"
       ;;
@@ -42,6 +46,10 @@ for pdf_file in *.pdf; do
       decrypt_pdf '{{ pass "bank/Yes/statement" }}' "$pdf_file" "5338-- $pdf_file"
       ;;
 
+    Federal\ Bank*.pdf)
+      decrypt_pdf '{{ pass "bank/Federal/statement" }}' "$pdf_file" "6192-- $pdf_file"
+      ;;
+
     Statement_*_575585700.pdf)
       [[ $pdf_file =~ ([0-9]{4})MTH([0-9]{2}) ]]
       new_filename="3304--${match[1]}-${match[2]}.pdf"
@@ -51,6 +59,7 @@ for pdf_file in *.pdf; do
     CardStatement_*.pdf)
       echo "=> $pdf_file"
       [[ $pdf_file =~ ([0-9]{4})-([0-9]{2})-([0-9]{2}) ]]
+      qpdf --decrypt --replace-input "$pdf_file"
       mv "$pdf_file" "2108--${match[1]}-${match[2]}-${match[3]}.pdf"
   esac
 
