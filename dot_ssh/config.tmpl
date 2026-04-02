@@ -62,17 +62,18 @@ Host lab
     IdentityFile ~/.ssh/work-tp/id_ed25519_lab
     PubkeyAuthentication yes
     DynamicForward 1080                 # Tunnel SOCKS5 Proxy
-
-    LocalForward 3000 localhost:3000    # Signage Portal
-    LocalForward 3001 localhost:3001    # Signage Admin Portal
-    LocalForward 8080 localhost:8080    # Signage API Service
-    LocalForward 8081 localhost:8081    # Signage Display Service
-    LocalForward 8082 localhost:8082    # Signage Admin API
-    LocalForward 8083 localhost:8083    # Signage Pro Store
-    LocalForward 8084 localhost:8084    # Signage Creator Service
-    LocalForward 8085 localhost:8085    # Signage Auth Service
-    LocalForward 8086 localhost:8086    # Signage Display Simulator
-    LocalForward 4566 localhost:4566    # Localhost
+    LocalForward 1234 localhost:1234    # FooBar
+    LocalForward 6969 localhost:6969    # FooBar
+    LocalForward 3000 localhost:3000    # Portal
+    LocalForward 3001 localhost:3001    # Admin Portal
+    LocalForward 8080 localhost:8080    # API Service
+    LocalForward 8081 localhost:8081    # Display Service
+    LocalForward 8082 localhost:8082    # Admin API
+    LocalForward 8083 localhost:8083    # Pro Store
+    LocalForward 8084 localhost:8084    # Creator Service
+    LocalForward 8085 localhost:8085    # Auth Service
+    LocalForward 8086 localhost:8086    # Display Simulator
+    LocalForward 4566 localhost:4566    # Localstack
     LocalForward 5432 localhost:5432    # PostgreSQL
     LocalForward 27017 localhost:27017  # Mongo DB
 

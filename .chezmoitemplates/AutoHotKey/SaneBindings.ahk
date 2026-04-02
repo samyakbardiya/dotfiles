@@ -13,11 +13,11 @@
 ^!u:: ActivateOrRunProgram("wezterm-gui.exe", "C:\Users\samyak.bardiya\Documents\WezTerm-windows-20240203-110809-5046fc22\wezterm-gui.exe")
 ^!e:: ActivateOrRunProgram("zen.exe")
 ^!o:: ActivateOrRunProgram("slack.exe", "C:\Users\samyak.bardiya\AppData\Local\slack\slack.exe")
-^!a:: ActivateOrRunProgram("")
-^!p:: ActivateOrRunProgram("msrdc.exe", '"C:\Program Files\WSL\wslg.exe" -d archlinux --cd "~" -- gnome-terminal')
+^!a:: ActivateOrRunProgram("MongoDBCompass.exe", "C:\Users\samyak.bardiya\AppData\Local\MongoDBCompass\MongoDBCompass.exe")
+^!p:: ActivateOrRunProgram("Bruno.exe", "C:\Users\samyak.bardiya\scoop\apps\bruno\current\Bruno.exe")
 ^!.:: ActivateOrRunProgram("chrome.exe", "C:\Users\samyak.bardiya\AppData\Local\imput\Helium\Application\chrome.exe") ;"
 ^!,:: ActivateOrRunProgram("outlook.exe")
-^!;:: ActivateOrRunProgram("")
+^!;:: ActivateOrRunProgram("firefox.exe", "C:\Users\samyak.bardiya\AppData\Local\Firefox Developer Edition\firefox.exe")
 
 ;-----------;
 ; Functions ;
@@ -31,7 +31,7 @@ ActivateOrRunProgram(programName, exePath := "") {
     local winTarget := "ahk_exe " . programName
     if (WinExist(winTarget)) {
         WinActivate(winTarget)
-        WinMaximize(winTarget)
+        ;WinMaximize(winTarget)
     } else {
         try {
             Run(exePath ? exePath : programName,, "Open")

@@ -26,7 +26,8 @@ config.use_resize_increments = false
 -- ##############
 
 -- ## Colors
-config.color_scheme = "Catppuccin Mocha"
+local is_dark = not wezterm.gui or wezterm.gui.get_appearance():find("Dark")
+config.color_scheme = is_dark and "Catppuccin Mocha" or "Catppuccin Latte"
 
 -- ## Cursor
 config.cursor_thickness = 2.0
