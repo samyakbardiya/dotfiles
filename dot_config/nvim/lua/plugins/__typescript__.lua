@@ -26,4 +26,9 @@ return {
     {
         "nvim-ts-autotag",
     },
+
+    --  Basic MJML syntax support for Vim
+    {
+        "amadeus/vim-mjml",
+    },
 }

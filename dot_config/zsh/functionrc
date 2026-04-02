@@ -95,8 +95,8 @@ multiplexer_name_update() {
 # chpwd_functions+=(multiplexer_name_update)
 
 function wave_htv() {
-	export WAVE_HTV_API="$PWD"
-	env | rg WAVE_HTV_
+	# export WAVE_HTV_API="$PWD"
+	env | rg -e AWS_ -e WAVE_HTV_
 	wave-htv $* --verbose &&
 		lazydocker
 }

@@ -12,7 +12,7 @@ return {
             },
         },
         label = {
-            exclude = "cdxyCDXY",
+            exclude = "cdgpxyCDGPXY",
         },
     },
 }

@@ -80,6 +80,22 @@ Host lab
     # RemoteCommand /bin/tmux new-session -A -s zero || /bin/zsh
     # RemoteCommand tmux new-session -A -s zero || /bin/zsh
 
+Host ssm-bastion-tpvision-dev
+    HostName i-0c7663750d8887e38
+    User ubuntu
+    IdentityFile ~/.ssh/work-tp/wave-signage/aws-tpvision-dev-bastion.pem
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    ProxyCommand aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p' --profile ReadOnlyAccess-Dev
+
+Host ssm-bastion-tpvision-prod
+    HostName i-08553d0690ea06850
+    User ubuntu
+    IdentityFile ~/.ssh/work-tp/wave-signage/aws-tpvision-prod-bastion.pem
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    ProxyCommand aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p' --profile ReadOnlyAccess-Prod
+
 Host *htv_temp
     HostName ec2-54-93-55-233.eu-central-1.compute.amazonaws.com
     User ubuntu
