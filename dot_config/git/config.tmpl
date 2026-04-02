@@ -67,20 +67,8 @@
     name = Samyak Bardiya
     email = mail@samyakbardiya.dev
 
-{{ if ne .chezmoi.os "windows" -}}
-
 [includeIf "gitdir:~/work-ct/"]
     path = ~/.config/git/config_work_ct
 
 [includeIf "gitdir:~/work-tp/"]
     path = ~/.config/git/config_work_tp
-
-{{- else -}}
-
-[includeIf "gitdir:%USERPROFILE%/work-ct/"]
-    path = %USERPROFILE%/.config/git/config_work_ct
-
-[includeIf "gitdir:%USERPROFILE%/work-tp/"]
-    path = %USERPROFILE%/.config/git/config_work_tp
-
-{{- end }}
