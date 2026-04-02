@@ -8,6 +8,10 @@
     excludesfile = ~/.config/git/ignore
     pager = delta
     preloadindex = true
+{{ if eq .chezmoi.os "windows" -}}
+	eol = lf
+	autocrlf = input
+{{- end }}
 
 [diff]
     colorMoved = default
@@ -16,6 +20,14 @@
     features = catppuccin-mocha
     line-numbers = true
     navigate = true
+
+{{ if eq .chezmoi.os "windows" -}}
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+{{- end }}
 
 {{ if eq .chezmoi.os "darwin" -}}
 [gpg]
@@ -55,8 +67,20 @@
     name = Samyak Bardiya
     email = mail@samyakbardiya.dev
 
+{{ if ne .chezmoi.os "windows" -}}
+
 [includeIf "gitdir:~/work-ct/"]
     path = ~/.config/git/config_work_ct
 
 [includeIf "gitdir:~/work-tp/"]
     path = ~/.config/git/config_work_tp
+
+{{- else -}}
+
+[includeIf "gitdir:%USERPROFILE%/work-ct/"]
+    path = %USERPROFILE%/.config/git/config_work_ct
+
+[includeIf "gitdir:%USERPROFILE%/work-tp/"]
+    path = %USERPROFILE%/.config/git/config_work_tp
+
+{{- end }}
