@@ -45,9 +45,6 @@ Host github.com
 Host gitlab.com
     AddKeysToAgent yes
     IdentityFile ~/.ssh/work-tp/id_ed25519_gitlab
-    {{ if ne .chezmoi.hostname "inblrlxdt001" -}}
-    ProxyCommand nc -X 5 -x localhost:1080 %h %p
-    {{- end }}
 
 Host lab
     HostName 172.27.221.225
