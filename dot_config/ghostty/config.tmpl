@@ -49,6 +49,8 @@ window-title-font-family = "MonaspiceKr NF"
 {{ if eq .chezmoi.os "darwin" -}}
 command = /opt/homebrew/bin/tmux new-session -A -s zero
 macos-option-as-alt = true
+macos-auto-secure-input = false
+macos-secure-input-indication = true
 # native/transparent/tabs/hidden
 macos-titlebar-style = hidden
 {{ end -}}

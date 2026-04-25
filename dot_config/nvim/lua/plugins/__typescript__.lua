@@ -22,10 +22,10 @@ return {
     --     },
     -- },
 
-    --  Use treesitter to auto close and auto rename html tag
-    {
-        "nvim-ts-autotag",
-    },
+    --  --  Use treesitter to auto close and auto rename html tag
+    --  {
+    --      "nvim-ts-autotag",
+    --  },
 
     --  Basic MJML syntax support for Vim
     {
