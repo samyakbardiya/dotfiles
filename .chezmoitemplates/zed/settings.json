@@ -17,20 +17,21 @@
     "ledger": true,
     "lua": true,
     "marksman": true,
-    "toml": true,
+    "toml": true
   },
 
   "agent": {
+    "dock": "right",
     "default_model": {
       "model": "claude-haiku-4.5",
-      "provider": "copilot_chat",
+      "provider": "copilot_chat"
     },
-    "model_parameters": [],
+    "model_parameters": []
   },
   "audio": {
     "experimental.auto_microphone_volume": true,
     "experimental.auto_speaker_volume": true,
-    "experimental.rodio_audio": true,
+    "experimental.rodio_audio": true
   },
   "auto_signature_help": true,
   "buffer_font_fallbacks": ["Symbols Nerd Font"],
@@ -39,96 +40,101 @@
   "buffer_font_size": 16,
   "buffer_line_height": "standard",
   "calls": {
-    "mute_on_join": true,
+    "mute_on_join": true
+  },
+  "collaboration_panel": {
+    "dock": "left"
   },
   "colorize_brackets": true,
   "cursor_blink": false,
   "edit_predictions": {
-    "mode": "eager",
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
+    "provider": "copilot",
+    "mode": "eager"
   },
   "gutter": {
-    "min_line_number_digits": 3,
+    "min_line_number_digits": 3
   },
   "icon_theme": {
     "dark": "Catppuccin Mocha",
     "light": "Catppuccin Latte",
-    "mode": "system",
+    "mode": "system"
   },
   "indent_guides": {
     "active_line_width": 10,
     "background_coloring": "disabled",
     "coloring": "indent_aware",
-    "line_width": 2,
+    "line_width": 2
   },
   "minimap": {
     "show": "auto",
-    "thumb": "always",
+    "thumb": "always"
+  },
+  "outline_panel": {
+    "dock": "left"
   },
   "prettier": {
-    "allowed": true,
+    "allowed": true
   },
   "project_panel": {
+    "dock": "left",
     "button": true,
-    "entry_spacing": "standard",
+    "entry_spacing": "standard"
   },
   "redact_private_values": true,
   "relative_line_numbers": "enabled",
   "search": {
     "center_on_match": true,
-    "regex": true,
+    "regex": true
   },
   "show_signature_help_after_edits": true,
   "show_whitespaces": "selection",
   "sticky_scroll": {
-    "enabled": true,
+    "enabled": true
   },
   "tab_bar": {
-    "show": true,
+    "show": true
   },
   "tabs": {
     "close_position": "right",
     "file_icons": true,
-    "git_status": true,
+    "git_status": true
   },
   "terminal": {
     "copy_on_select": true,
-    "keep_selection_on_copy": true,
+    "keep_selection_on_copy": true
   },
   "theme": {
     "dark": "Catppuccin Mocha",
     "light": "Catppuccin Latte",
-    "mode": "system",
+    "mode": "system"
   },
   "title_bar": {
-    "show_branch_icon": true,
-    "show_menus": false,
+    "show_branch_status_icon": true,
+    "show_menus": false
   },
   "toolbar": {
-    "code_actions": true,
+    "code_actions": true
   },
   "ui_font_family": "Input Sans",
   "ui_font_features": {
-    "calt": false,
+    "calt": false
   },
   "ui_font_size": 16,
   "use_smartcase_search": true,
   "vertical_scroll_margin": 4,
   "vim": {
     "cursor_shape": {
-      "visual": "hollow",
+      "visual": "hollow"
     },
     "use_smartcase_find": true,
     "toggle_relative_line_numbers": true,
-    "use_system_clipboard": "on_yank",
+    "use_system_clipboard": "on_yank"
   },
   "vim_mode": true,
   "which_key": {
     "delay_ms": 250,
-    "enabled": true,
+    "enabled": true
   },
   "window_decorations": "client",
-  "wrap_guides": [80, 100, 120],
+  "wrap_guides": [80, 100, 120]
 }
