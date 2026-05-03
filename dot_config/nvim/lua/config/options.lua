@@ -5,13 +5,14 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "-"
 
--- vim.opt.cursorcolumn = true
-vim.opt.number = true
-vim.opt.relativenumber = false
--- vim.opt.scrolloff = 10
-vim.opt.splitright = false
-vim.opt.splitbelow = false
-vim.opt.tabstop = 4
+vim.o.clipboard = "unnamedplus"
+-- vim.o.cursorcolumn = true
+vim.o.number = true
+vim.o.relativenumber = false
+-- vim.o.scrolloff = 10
+vim.o.splitright = false
+vim.o.splitbelow = false
+vim.o.tabstop = 4
 
 -- vim.g.ai_cmp = true
 vim.g.copilot_enabled = false
@@ -22,13 +23,16 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_picker = "fzf"
 
 -- Clipboard over SSH
-vim.o.clipboard = "unnamedplus"
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        -- vim.highlight.on_yank()
-        local copy_to_unnamedplus = require("vim.ui.clipboard.osc52").copy("+")
-        copy_to_unnamedplus(vim.v.event.regcontents)
-        local copy_to_unnamed = require("vim.ui.clipboard.osc52").copy("*")
-        copy_to_unnamed(vim.v.event.regcontents)
-    end,
-})
+if os.getenv("SSH_TTY") or os.getenv("SSH_CLIENT") then
+    vim.api.nvim_create_autocmd("TextYankPost", {
+        callback = function()
+            local regcontents = vim.v.event.regcontents
+            require("vim.ui.clipboard.osc52").copy("+")(regcontents)
+            require("vim.ui.clipboard.osc52").copy("*")(regcontents)
+            -- local copy_to_unnamedplus = require("vim.ui.clipboard.osc52").copy("+")
+            -- copy_to_unnamedplus(regcontents)
+            -- local copy_to_unnamed = require("vim.ui.clipboard.osc52").copy("*")
+            -- copy_to_unnamed(regcontents)
+        end,
+    })
+end
