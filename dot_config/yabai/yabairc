@@ -150,6 +150,7 @@ yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Numi$" manage=off
 yabai -m rule --add app="^Raycast$" title="^Settings$" manage=off
+yabai -m rule --add app="Shotter" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System.*informationen$" manage=off
 
