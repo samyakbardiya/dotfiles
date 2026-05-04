@@ -34,3 +34,8 @@ gui:
     "Samyak Bardiya": "#f38ba8"
     "Samyak बरड़िया": "#fab387"
     # "*": "#b4befe"
+
+keybinding:
+  commits:
+    moveDownCommit: J
+    moveUpCommit: K

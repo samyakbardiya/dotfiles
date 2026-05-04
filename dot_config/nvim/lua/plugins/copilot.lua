@@ -1,7 +1,7 @@
 -- Fully featured & enhanced replacement for copilot.vim complete with API for interacting with Github Copilot
 return {
     "zbirenbaum/copilot.lua",
-    -- enabled = false,
+    enabled = false,
     -- cmd = "Copilot",
     -- build = ":Copilot auth",
     -- optional = true,

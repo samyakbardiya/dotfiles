@@ -2,6 +2,7 @@
 return {
     {
         "Exafunction/codeium.nvim",
+        enabled = false,
         opts = {
             enable_chat = true,
         },
