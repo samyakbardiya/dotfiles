@@ -34,6 +34,8 @@ bind o last-window # Second C-o
 unbind -T copy-mode-vi MouseDragEnd1Pane
 bind -T copy-mode-vi y send-keys -X copy-pipe  # Only copy, no cancel
 
+bind -n S-Enter send-keys -H 1b 5b 31 33 3b 32 75
+
 # # sane vim selection mode
 # # TODO: not working
 #

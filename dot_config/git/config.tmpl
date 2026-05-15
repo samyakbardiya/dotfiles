@@ -9,8 +9,8 @@
     pager = delta
     preloadindex = true
 {{ if eq .chezmoi.os "windows" -}}
-	eol = lf
-	autocrlf = input
+    eol = lf
+    autocrlf = input
 {{- end }}
 
 [diff]
@@ -18,15 +18,17 @@
 
 [delta]
     features = catppuccin-mocha
+    hyperlinks = true
+    hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
     line-numbers = true
     navigate = true
 
 {{ if eq .chezmoi.os "windows" -}}
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 {{- end }}
 
 {{ if eq .chezmoi.os "darwin" -}}
