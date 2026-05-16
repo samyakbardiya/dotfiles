@@ -1,0 +1,15 @@
+{
+  "compaction": {
+    "enabled": true,
+    "keepRecentTokens": 19200,
+    "reserveTokens": 19200
+  },
+  "defaultThinkingLevel": "medium",
+  "enableSkillCommands": true,
+  "quietStartup": true,
+  "retry": {
+    "enabled": true,
+    "maxRetries": 3
+  },
+  "theme": "dark"
+}
