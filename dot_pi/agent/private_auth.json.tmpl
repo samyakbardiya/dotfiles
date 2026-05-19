@@ -1,6 +1,18 @@
 {
+  "anthropic": {
+    "type": "api_key",
+    "key": "{{ onepasswordRead "op://shared/claude_token/credential" }}"
+  },
+  "google": {
+    "type": "api_key",
+    "key": "{{ onepasswordRead "op://private/gemini_token/credential" }}"
+  },
+  "opencode": {
+    "type": "api_key",
+    "key": "{{ onepasswordRead "op://private/opencode_token/credential" }}"
+  },
   "opencode-go": {
     "type": "api_key",
-    "key": "{{ onepasswordRead op://private/opencode/api-key }}"
+    "key": "{{ onepasswordRead "op://private/opencode_token/credential" }}"
   }
 }

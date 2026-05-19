@@ -4,16 +4,36 @@
     "keepRecentTokens": 19200,
     "reserveTokens": 19200
   },
+  "defaultModel": "mimo-v2.5-pro",
+  "defaultProvider": "opencode-go",
   "defaultThinkingLevel": "medium",
+  "doubleEscapeAction": "tree",
+  "enableInstallTelemetry": false,
   "enableSkillCommands": true,
+  "followUpMode": "all",
+  "hideThinkingBlock": true,
+  "lastChangelogVersion": "0.75.3",
   "quietStartup": true,
   "retry": {
     "enabled": true,
     "maxRetries": 3
   },
-  "theme": "dark",
-  "lastChangelogVersion": "0.75.3",
-  "defaultProvider": "opencode-go",
-  "defaultModel": "mimo-v2.5-pro",
-  "packages": ["npm:@sherif-fanous/pi-catppuccin"]
+  "theme": "catppuccin-mocha",
+  "warnings": {
+    "anthropicExtraUsage": true
+  },
+  "packages": [
+    "npm:@aliou/pi-guardrails",
+    "npm:@ff-labs/pi-fff",
+    "npm:@juicesharp/rpiv-btw",
+    "npm:@sherif-fanous/pi-catppuccin",
+    "npm:context-mode",
+    "npm:pi-powerline-footer",
+    "npm:pi-simplify",
+    "npm:pi-subagents"
+  ],
+  "powerline": {
+    "preset": "default",
+    "fixedEditor": false
+  }
 }
