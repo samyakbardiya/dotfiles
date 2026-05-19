@@ -20,7 +20,10 @@
   "followUpMode": "all",
   "hideThinkingBlock": true,
   "lastChangelogVersion": "0.75.3",
-  "npmCommand": ["bun"],
+  {{/* prettier-ignore */}}
+  "npmCommand": [
+    "bun"
+  ],
   "quietStartup": true,
   "retry": {
     "enabled": true,
@@ -30,6 +33,7 @@
   "warnings": {
     "anthropicExtraUsage": true
   },
+
   "packages": [
     "npm:@agnishc/edb-auto-name-session",
     "npm:@aliou/pi-guardrails",
@@ -42,6 +46,8 @@
     "npm:pi-simplify",
     "npm:pi-subagents"
   ],
+
+  {{/* package configs */}}
   "powerline": {
     "preset": "default",
     "fixedEditor": true
