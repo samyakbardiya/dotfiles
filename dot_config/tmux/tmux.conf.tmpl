@@ -2,15 +2,17 @@
 # CORE #
 ########
 
-set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm' # Enable undercurls
-set -g mouse on # mouse support
-set -g extended-keys on
-set -g extended-keys-format csi-u
-set -g set-clipboard on
-set -g status-position top # set status bar on top
-set -ga terminal-overrides ",xterm-256color:Tc" # 24-bit colors
-set -sa terminal-overrides "*:Tc"
-setw -g mode-keys vi # vim keybinds
+set -g status-position top
+set -sg terminal-overrides '*:Tc,*:Smulx=\E[4::%p1%dm' # truecolor + undercurl
+
+# mouse and keyboard
+setw -g mouse on
+setw -g mode-keys vi
+
+# server options
+set -sg extended-keys on
+set -sg extended-keys-format csi-u
+set -sg set-clipboard on
 
 # fast scrolling
 bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
@@ -136,7 +138,7 @@ set -g status-right "#{E:@catppuccin_status_session}"
 # set -g @continuum-boot "on"
 # set -g @continuum-restore "on"
 
-set -g @mighty-scroll-pass-through "btop gitui lazydocker lazygit nvim opencode ssh trex vim"
+set -g @mighty-scroll-pass-through "btop gitui lazydocker lazygit nvim opencode pi ssh trex vim"
 
 set -g @open-lazygit "g"
 
