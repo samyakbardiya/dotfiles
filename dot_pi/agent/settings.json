@@ -11,5 +11,9 @@
     "enabled": true,
     "maxRetries": 3
   },
-  "theme": "dark"
+  "theme": "dark",
+  "lastChangelogVersion": "0.75.3",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "mimo-v2.5-pro",
+  "packages": ["npm:@sherif-fanous/pi-catppuccin"]
 }

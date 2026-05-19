@@ -8,14 +8,13 @@ function decrypt_pdf() {
   local in_file="$2"
   local out_file="$3"
 
-  if [[ -z "$out_file" ]]; then
-    qpdf --decrypt --replace-input --password="$password" "$in_file"
-  else
-    qpdf --decrypt --password="$password" "$in_file" "$out_file"
-  fi
-
+  qpdf --decrypt --replace-input --password="$password" "$in_file"
   if [[ $? -ne 0 ]]; then
     echo "Failed to decrypt: $in_file"
+  fi
+
+  if [[ -z "$out_file" ]]; then
+    mv "$in_file" "$out_file"
   fi
 }
 
@@ -31,7 +30,7 @@ for pdf_file in *.pdf; do
       ;;
 
     89XXXXX112.pdf)
-      decrypt_pdf '{{ pass "bank/Kotak-811/statement" }}' "$pdf_file"
+      decrypt_pdf '{{ pass "bank/Kotak-811/statement" }}' "$pdf_file" "8112-- $pdf_file"
       ;;
 
     4315XXXXXXXX4008_*_Retail_Amazon_NORM.pdf)

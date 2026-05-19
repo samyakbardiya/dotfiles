@@ -54,3 +54,10 @@ args = [
     {{ printf "%q" "{{ .Source }}" }},
 ]
 {{- end }}
+
+[onepassword]
+{{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
+    mode = "connect"
+{{   else }}
+    mode = "account"
+{{ end }}
