@@ -1,3 +1,7 @@
+[data]
+is_dark = {{ env "IS_DARK" | default "1" }}
+
+
 [diff]
 {{ if ne .chezmoi.os "windows" -}}
 command = "delta"
@@ -7,6 +11,7 @@ command = "code"
 args = ["--wait", "--diff"]
 {{- end }}
 
+
 [edit]
 apply = false
 watch = false
@@ -15,11 +20,13 @@ command = "code"
 args = ["--wait"]
 {{- end }}
 
+
 [git]
 autoAdd = true
 autoCommit = true
 # autoPush = true
 refreshPeriod = "1h"
+
 
 [merge]
 {{ if ne .chezmoi.os "windows" -}}
@@ -56,8 +63,4 @@ args = [
 {{- end }}
 
 [onepassword]
-{{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
-    mode = "connect"
-{{   else }}
-    mode = "account"
-{{ end }}
+mode = "account"

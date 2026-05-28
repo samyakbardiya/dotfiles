@@ -114,6 +114,15 @@ config.launch_menu = {
 	{ label = "PowerShell Core", args = { "pwsh" }, domain = { DomainName = "local" } },
 	{ label = "Command Prompt", args = { "cmd" }, domain = { DomainName = "local" } },
 }
+config.ssh_domains = {
+	{
+		name = "LAB",
+		remote_address = "lab",
+		ssh_options = {
+			SendEnv = "IS_DARK"
+		}
+	}
+}
 {{- end }}
 
 
@@ -126,6 +135,10 @@ config.default_prog = { "pwsh" }
 config.default_gui_startup_args = { 'ssh', 'lab'  }
 -- config.default_prog = { "wsl", "--", "tmux", "new-session", "-A", "-s", "0_o", "-c", "$HOME" }
 {{- end }}
+
+config.set_environment_variables = {
+	IS_DARK = is_dark and true or false,
+}
 
 
 -- ##########
