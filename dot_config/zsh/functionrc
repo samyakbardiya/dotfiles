@@ -172,4 +172,8 @@ function gnome-term() {
 	dbus-launch gnome-terminal $@
 }
 
+function pi() {
+	fnm exec --using=lts-latest -- pi "$@"
+}
+
 # vim:ft=sh

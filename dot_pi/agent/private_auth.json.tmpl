@@ -1,7 +1,18 @@
+{{- $current := dict -}}
+{{- $authFile := joinPath .chezmoi.homeDir ".pi/agent/auth.json" -}}
+{{- if stat $authFile -}}
+{{-   $current = include $authFile | fromJson -}}
+{{- end -}}
 {
   "anthropic": {
     "type": "api_key",
     "key": "{{ onepasswordRead "op://shared/claude_token/credential" }}"
+  },
+  "github-copilot": {
+    "type": "oauth",
+    "refresh": "{{ dig "github-copilot" "refresh" "" $current }}",
+    "access": "{{ dig "github-copilot" "access" "" $current }}",
+    "expires": {{ dig "github-copilot" "expires" 0 $current }}
   },
   "google": {
     "type": "api_key",

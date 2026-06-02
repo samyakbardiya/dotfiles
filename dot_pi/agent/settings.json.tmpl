@@ -7,20 +7,21 @@
   },
   "defaultModel": "mimo-v2.5-pro",
   "defaultProvider": "opencode-go",
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "high",
   "doubleEscapeAction": "tree",
   "enabledModels": [
+    "google/gemini-flash-latest",
     "opencode-go/kimi-k2.6",
     "opencode-go/mimo-v2.5",
     "opencode-go/mimo-v2.5-pro",
-    "google/gemini-flash-latest"
+    "opencode-go/qwen3.7-max"
   ],
   "enableInstallTelemetry": false,
   "enableSkillCommands": true,
   "followUpMode": "all",
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "0.75.4",
-  {{-/* prettier-ignore */}}
+  "lastChangelogVersion": "0.78.0",
+  {{- /* prettier-ignore */}}
   "npmCommand": [
     "bun"
   ],
@@ -34,6 +35,7 @@
     "anthropicExtraUsage": true
   },
 
+  {{- /* packages */}}
   "packages": [
     "npm:@agnishc/edb-auto-name-session",
     "npm:@aliou/pi-guardrails",
@@ -47,7 +49,7 @@
     "npm:pi-subagents"
   ],
 
-  {{-/* package configs */}}
+  {{- /* package configs */}}
   "powerline": {
     "preset": "default",
     "fixedEditor": true
