@@ -105,6 +105,11 @@ refreshPeriod = "168h"
 #### Darwin
 {{ if eq .chezmoi.os "darwin" -}}
 
+[".config/keeb/dvorak-for-devs"]
+type = "git-repo"
+url = "https://github.com/jayliu50/macos-dvorak-for-devs"
+refreshPeriod = "0"
+
 {{- end -}}
 ##
 
@@ -117,6 +122,11 @@ url = "https://github.com/ililim/dual-key-remap/releases/download/v0.7/dual-key-
 executable = true
 path = "dual-key-remap-v0.7/dual-key-remap.exe"
 refreshPeriod = "168h"
+
+[".config/keeb/dvorak-for-devs"]
+type = "git-repo"
+url = "https://github.com/jayliu50/windows-dvorak-for-devs"
+refreshPeriod = "0"
 
 {{- end -}}
 ##

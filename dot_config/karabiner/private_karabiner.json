@@ -620,6 +620,10 @@
                                             {
                                                 "input_source_id": "com.apple.keyboardlayout.Programmer Dvorak",
                                                 "language": "en"
+                                            },
+                                            {
+                                                "input_source_id": "org.sil.ukelele.keyboardlayout.dvorakfordevs.dvorakfordevs",
+                                                "language": "en"
                                             }
                                         ],
                                         "type": "input_source_if"
