@@ -1,7 +1,7 @@
 {{- $current := dict -}}
-{{- $authFile := joinPath .chezmoi.homeDir ".pi/agent/auth.json" -}}
-{{- if stat $authFile -}}
-{{-   $current = include $authFile | fromJson -}}
+{{- $file := joinPath .chezmoi.homeDir ".pi/agent/auth.json" -}}
+{{- if stat $file -}}
+{{-   $current = include $file | fromJson -}}
 {{- end -}}
 {
   "anthropic": {

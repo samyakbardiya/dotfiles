@@ -1,3 +1,8 @@
+{{- $current := dict -}}
+{{- $file := joinPath .chezmoi.homeDir ".pi/agent/settings.json" -}}
+{{- if stat $file -}}
+{{-   $current = include $file | fromJson -}}
+{{- end -}}
 {
   "autocompleteMaxVisible": 10,
   "compaction": {
@@ -5,12 +10,14 @@
     "keepRecentTokens": 19200,
     "reserveTokens": 19200
   },
-  "defaultModel": "mimo-v2.5-pro",
-  "defaultProvider": "opencode-go",
-  "defaultThinkingLevel": "high",
+  "defaultModel": "{{ dig "defaultModel" "mimo-v2.5-pro" $current }}",
+  "defaultProvider": "{{ dig "defaultProvider" "opencode-go" $current }}",
+  "defaultThinkingLevel": "{{ dig "defaultThinkingLevel" "mid" $current }}",
   "doubleEscapeAction": "tree",
   "enabledModels": [
+    "google/gemini-3.1-pro-preview",
     "google/gemini-flash-latest",
+    "google/gemini-flash-lite-latest",
     "opencode-go/kimi-k2.6",
     "opencode-go/mimo-v2.5",
     "opencode-go/mimo-v2.5-pro",
@@ -20,7 +27,7 @@
   "enableSkillCommands": true,
   "followUpMode": "all",
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "0.78.0",
+  "lastChangelogVersion": "0.79.0",
   {{- /* prettier-ignore */}}
   "npmCommand": [
     "bun"
