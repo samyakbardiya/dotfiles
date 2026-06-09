@@ -1,0 +1,21 @@
+{
+  "allowNonWorkspaceAccess": true,
+  "enableTelemetry": false,
+  "notifications": true,
+  "permissions": {
+    "allow": [
+      "command(git log)",
+      "command(git show)",
+      "command(git diff)",
+      "command(ls)",
+      "command(find)",
+      "command(fnm)"
+    ]
+  },
+  "runningLightSpeed": "fast",
+  "showFeedbackSurvey": false,
+  "trustedWorkspaces": [
+    "/home/samyak_bardiya/.local/share/chezmoi"
+  ],
+  "verbosity": "low"
+}
