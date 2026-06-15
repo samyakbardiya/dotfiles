@@ -3,6 +3,7 @@
 {{- if stat $file -}}
 {{-   $current = include $file | fromJson -}}
 {{- end -}}
+
 {
   "autocompleteMaxVisible": 10,
   "compaction": {
@@ -15,19 +16,17 @@
   "defaultThinkingLevel": "{{ dig "defaultThinkingLevel" "mid" $current }}",
   "doubleEscapeAction": "tree",
   "enabledModels": [
-    "google/gemini-3.1-pro-preview",
-    "google/gemini-flash-latest",
-    "google/gemini-flash-lite-latest",
-    "opencode-go/kimi-k2.6",
-    "opencode-go/mimo-v2.5",
+    "opencode-go/minimax-m3",
+    "opencode-go/qwen3.7-max",
+    "opencode-go/kimi-k2.7-code",
     "opencode-go/mimo-v2.5-pro",
-    "opencode-go/qwen3.7-max"
+    "google/gemini-flash-latest",
   ],
   "enableInstallTelemetry": false,
   "enableSkillCommands": true,
   "followUpMode": "all",
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "0.79.0",
+  "lastChangelogVersion": "{{ dig "lastChangelogVersion" "0.0.0" $current }}",
   {{- /* prettier-ignore */}}
   "npmCommand": [
     "bun"
