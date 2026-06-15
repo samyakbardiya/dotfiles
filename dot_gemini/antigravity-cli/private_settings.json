@@ -1,6 +1,7 @@
 {
   "allowNonWorkspaceAccess": true,
   "enableTelemetry": false,
+  "model": "Gemini 3.5 Flash (Low)",
   "notifications": true,
   "permissions": {
     "allow": [
@@ -9,7 +10,25 @@
       "command(git diff)",
       "command(ls)",
       "command(find)",
-      "command(fnm)"
+      "command(fnm)",
+      "command(git status)",
+      "command(git branch)",
+      "command(yarn add)",
+      "command(git rev-parse)",
+      "command(docker ps)",
+      "command(docker logs)",
+      "command(yarn install)",
+      "command(yarn workspace)",
+      "command(yarn typecheck)",
+      "command(yarn build)",
+      "command(head)",
+      "command(grep)",
+      "command(git fetch)",
+      "command(yarn format:fix)",
+      "command(yarn lint:fix)",
+      "command(cat)",
+      "command(tail)",
+      "command(echo)"
     ]
   },
   "runningLightSpeed": "fast",
