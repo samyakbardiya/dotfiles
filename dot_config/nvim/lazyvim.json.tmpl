@@ -1,4 +1,9 @@
-chezmoi:template:line-ending=native
+{{- $current := dict -}}
+{{- $file := joinPath .chezmoi.homeDir ".config/nvim/lazyvim.json" -}}
+{{- if stat $file -}}
+{{-   $current = include $file | fromJson -}}
+{{- end -}}
+
 {
   "extras": [
     "lazyvim.plugins.extras.ai.supermaven",
@@ -47,8 +52,8 @@ chezmoi:template:line-ending=native
   ],
   "install_version": 7,
   "news": {
-    "NEWS.md": "11866",
-    "doc/news.txt": "25567"
+    "NEWS.md": "{{ dig "news" "NEWS.md" "0" $current }}",
+    "doc/news.txt": "{{ dig "news" "doc/news.txt" "0" $current }}"
   },
   "version": 8
 }
