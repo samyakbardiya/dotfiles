@@ -173,7 +173,7 @@ function gnome-term() {
 }
 
 function pi() {
-	fnm exec --using=lts-latest -- pi "$@"
+	fnm exec --using=system -- pi "$@"
 }
 
 function skills() {
