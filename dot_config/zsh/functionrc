@@ -98,7 +98,7 @@ function wave_htv() {
 	# export WAVE_HTV_API="$PWD"
 	env | rg -e AWS_ -e WAVE_HTV_
 	wave-htv $* --verbose &&
-		lazydocker
+		lazydocker --project wave-hospitality
 }
 
 function wave-htv-unzip-config() {
@@ -172,9 +172,9 @@ function gnome-term() {
 	dbus-launch gnome-terminal $@
 }
 
-function pi() {
-	fnm exec --using=system -- pi "$@"
-}
+# function pi() {
+# 	fnm exec --using=system -- pi "$@"
+# }
 
 function skills() {
 	fnm exec --using=lts-latest -- bunx skills@latest "$@"

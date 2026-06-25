@@ -1,11 +1,12 @@
-{{ if eq .chezmoi.os "darwin" -}}
+{{ if ne .chezmoi.os "windows" -}}
 #!/usr/bin/env zsh
 
 # {{ include "dot_config/homebrew/Brewfile" | sha256sum }}
-echo "brew bundle cleanup --force"
-brew bundle cleanup --force
 
-echo "brew bundle install --no-upgrade"
-brew bundle install --no-upgrade
+echo "brew bundle install --no-upgrade" &&
+  brew bundle install --no-upgrade
+
+echo "brew bundle cleanup --force" &&
+  brew bundle cleanup --force
 
 {{- end }}
