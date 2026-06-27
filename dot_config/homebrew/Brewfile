@@ -1,7 +1,7 @@
 tap "asmvik/formulae"
 tap "d12frosted/emacs-plus"
-tap "dmtrkovalenko/fff"
-tap "gechr/tap"
+tap "dmtrkovalenko/fff", "https://github.com/dmtrKovalenko/homebrew-fff"
+tap "gechr/tap", trusted: { casks: ["whichspace"] }
 tap "modem-dev/tap"
 tap "oven-sh/bun"
 tap "samyakbardiya/local-tap", trusted: true
