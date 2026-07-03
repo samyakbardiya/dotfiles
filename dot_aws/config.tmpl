@@ -1,27 +1,6 @@
 {{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
 
-[profile tpv_dev]
-sso_session = TPV
-sso_account_id = 825169607534
-sso_role_name = PowerUserAccess
-region = eu-central-1
-output = json
-
-[profile tpv_acc]
-sso_session = TPV
-sso_account_id = 585008069858
-sso_role_name = PowerUserAccess
-region = eu-central-1
-output = json
-
-[profile tpv_beta]
-sso_session = TPV
-sso_account_id = 597406702768
-sso_role_name = PowerUserAccess
-region = eu-central-1
-output = json
-
-[profile localstack]
+[profile tpm-local]
 region=us-east-1
 output=json
 endpoint_url = http://localhost:4566
@@ -30,5 +9,30 @@ endpoint_url = http://localhost:4566
 sso_start_url = https://d-9967054bd3.awsapps.com/start/#
 sso_region = eu-central-1
 sso_registration_scopes = sso:account:access
+
+[profile tpv-dev]
+sso_session = TPV
+sso_account_id = 825169607534
+sso_role_name = PowerUserAccess
+region = eu-central-1
+output = json
+
+[profile tpv-dev-titan]
+role_arn = arn:aws:iam::825169607534:role/hospitality-titan-app-list-sync
+source_profile = tpv_dev
+
+[profile tpv-acc]
+sso_session = TPV
+sso_account_id = 585008069858
+sso_role_name = PowerUserAccess
+region = eu-central-1
+output = json
+
+[profile tpv-beta]
+sso_session = TPV
+sso_account_id = 597406702768
+sso_role_name = PowerUserAccess
+region = eu-central-1
+output = json
 
 {{- end }}

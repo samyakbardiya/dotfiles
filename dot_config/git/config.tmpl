@@ -19,6 +19,9 @@
 [coderabbit]
     machineId = {{ $machineId }}
 
+[color]
+    ui = true
+
 [diff]
     colorMoved = default
 
@@ -28,6 +31,11 @@
     hyperlinks-file-link-format = lazygit-edit://{path}:{line}
     line-numbers = true
     navigate = true
+
+[fetch]
+    all = true
+    prune = true
+    pruneTags = true
 
 {{ if eq .chezmoi.os "windows" -}}
 [filter "lfs"]

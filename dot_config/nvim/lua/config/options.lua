@@ -20,7 +20,7 @@ vim.g.python3_host_prog = os.getenv("HOME") .. "/.local/share/pyenv/versions/py3
 vim.g.snacks_animate = false
 
 -- LazyExtras
-vim.g.lazyvim_picker = "fzf"
+vim.g.lazyvim_picker = "snacks"
 
 -- Clipboard over SSH
 if os.getenv("SSH_TTY") or os.getenv("SSH_CLIENT") then
