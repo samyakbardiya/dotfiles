@@ -52,7 +52,6 @@ brew "git-delta"
 brew "git-lfs"
 brew "gitleaks"
 brew "gitui"
-brew "glab"
 brew "glow"
 brew "gnu-sed"
 brew "gnu-tar"
@@ -76,7 +75,6 @@ brew "jj"
 brew "jq"
 brew "js-beautify"
 brew "just"
-brew "jwt-cli"
 brew "lazydocker"
 brew "lazygit"
 brew "ledger"
@@ -118,7 +116,6 @@ brew "tree-sitter-cli"
 brew "uv"
 brew "wget"
 brew "xdg-ninja"
-brew "yarn"
 brew "yazi"
 brew "yq"
 brew "zellij"
@@ -213,13 +210,6 @@ cask "whichspace"
 cask "zed"
 cask "zen"
 mas "1Password for Safari", id: 1569813296
-mas "Bitwarden", id: 1352778147
-mas "Flighty", id: 1358823008
-mas "Kindle", id: 302584613
-mas "Peachy Timer", id: 6756173572
-mas "Spaced", id: 1666327168
-mas "Speediness", id: 1596706466
-mas "Texty", id: 1538996043
 go "github.com/boyter/scc/v3"
 go "github.com/pratik-anurag/portik"
 go "github.com/samyakbardiya/trex"

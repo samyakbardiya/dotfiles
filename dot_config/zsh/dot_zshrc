@@ -41,6 +41,11 @@ bindkey '^Z^Z' edit-command-line
 ## pre zimfw customization #
 ############################
 
+### fpath
+# Personal completion scripts (e.g. _sesh) — must be on fpath BEFORE zim's
+# completion module runs compinit during `source ${ZIM_HOME}/init.zsh`.
+fpath=(${ZDOTDIR}/completions $fpath)
+
 ### completion
 zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
 zstyle ':zim:completion' dumpfile ${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}
@@ -162,7 +167,6 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 [ -d "$FNM_PATH" ] && export PATH="${FNM_PATH}:${PATH}"
 eval "$(fnm env --use-on-cd --shell zsh)"
-source <(fnm completions --shell zsh) > /dev/null 2>&1
 
 lazyload jenv -- '
     eval "$(jenv init -)"
@@ -177,7 +181,3 @@ case ":$PATH:" in
   *":$PNPM_HOME/bin:"*) ;;
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
-# pnpm end
-
-# bun completions
-[ -s "/home/samyak_bardiya/.local/share/bun/_bun" ] && source "/home/samyak_bardiya/.local/share/bun/_bun"
