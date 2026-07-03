@@ -21,14 +21,17 @@
     "opencode-go/mimo-v2.5-pro",
     "opencode-go/mimo-v2.5",
     "opencode-go/minimax-m3",
-    "opencode-go/kimi-k2.7-code",
-    "google/gemini-flash-latest"
+    "opencode-go/kimi-k2.7-code"
   ],
   "enableInstallTelemetry": false,
   "enableSkillCommands": true,
   "followUpMode": "all",
   "hideThinkingBlock": true,
   "lastChangelogVersion": "{{ dig "lastChangelogVersion" "0.0.0" $current }}",
+  {{- /* prettier-ignore */}}
+  "npmCommand": [
+    "bun"
+  ],
   "quietStartup": true,
   "retry": {
     "enabled": true,
@@ -48,7 +51,9 @@
     "npm:@sherif-fanous/pi-catppuccin",
     "npm:@tmustier/pi-usage-extension",
     "npm:context-mode",
+    "npm:pi-intercom",
     "npm:pi-powerline-footer",
+    "npm:pi-prompt-template-model",
     "npm:pi-simplify",
     "npm:pi-subagents"
   ],

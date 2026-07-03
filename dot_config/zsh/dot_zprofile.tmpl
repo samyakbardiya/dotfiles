@@ -43,15 +43,12 @@ fi
 {{ end -}}
 
 # eval "$(atuin init zsh --disable-up-arrow)" # FIXME:
+eval "$(mise activate zsh)"
 eval "$(zoxide init zsh --cmd d)"
 
 #==============#
 ## Development #
 #==============#
-
-[ -d "$FNM_PATH" ] && export PATH="${FNM_PATH}:${PATH}"
-eval "$(fnm env --use-on-cd --shell zsh)"
-source <(fnm completions --shell zsh) > /dev/null 2>&1
 
 {{ if eq .chezmoi.os "darwin" -}}
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :

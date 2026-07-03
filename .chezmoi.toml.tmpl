@@ -4,7 +4,6 @@ is_dark = {{ env "IS_DARK" | default "1" }}
 
 [diff]
 {{ if ne .chezmoi.os "windows" -}}
-command = "delta"
 pager = "delta"
 {{- else -}}
 command = "code"

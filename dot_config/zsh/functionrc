@@ -177,7 +177,7 @@ function gnome-term() {
 # }
 
 function skills() {
-	fnm exec --using=lts-latest -- bunx skills@latest "$@"
+	bunx skills@latest "$@"
 }
 
 # vim:ft=sh

@@ -1,10 +1,12 @@
 {{ if ne .chezmoi.os "windows" -}}
 #!/usr/bin/env zsh
 
+set -eu
+
 # {{ include "dot_config/private_homebrew/Brewfile" | sha256sum }}
 
-echo "brew bundle install --no-upgrade" &&
-  brew bundle install --no-upgrade
+echo "brew bundle install --quiet --no-upgrade" &&
+  brew bundle install --quiet --no-upgrade
 
 echo "brew bundle cleanup --force" &&
   brew bundle cleanup --force

@@ -141,6 +141,11 @@ export FNM_PATH="${XDG_DATA_HOME}/fnm"
 ## PNPM
 export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
 export PATH="${PNPM_HOME}:${PATH}"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+
 
 ## Python
 export PATH="$PYENV_ROOT/bin:$PATH"

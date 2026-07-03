@@ -157,27 +157,10 @@ bindkey -M emacs '^N' history-substring-search-down
 ## p10K
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
-#
-#
+
+
 ############################
 ## Development Environment #
 ############################
 
 eval "$(atuin init zsh --disable-up-arrow)"
-
-[ -d "$FNM_PATH" ] && export PATH="${FNM_PATH}:${PATH}"
-eval "$(fnm env --use-on-cd --shell zsh)"
-
-lazyload jenv -- '
-    eval "$(jenv init -)"
-'
-lazyload pyenv -- '
-    eval "$(pyenv init - zsh)"
-'
-
-# pnpm
-export PNPM_HOME="/Users/samyakbardiya/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac

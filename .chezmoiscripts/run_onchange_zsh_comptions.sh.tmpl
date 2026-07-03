@@ -1,8 +1,8 @@
 {{ if ne .chezmoi.os "windows" -}}
 #!/usr/bin/env zsh
 
-# {{ output "fnm" "--version" | trim }}
-fnm completions --shell zsh >"$ZDOTDIR/completions/_fnm"
+# {{ output "mise" "--version" | trim }}
+mise completion zsh >"$ZDOTDIR/completions/_mise"
 
 # {{ output "sesh" "--version" | trim }}
 sesh completion zsh >"$ZDOTDIR/completions/_sesh"
