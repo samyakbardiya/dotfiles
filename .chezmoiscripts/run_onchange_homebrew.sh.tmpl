@@ -1,7 +1,7 @@
 {{ if ne .chezmoi.os "windows" -}}
 #!/usr/bin/env zsh
 
-# {{ include "dot_config/homebrew/Brewfile" | sha256sum }}
+# {{ include "dot_config/private_homebrew/Brewfile" | sha256sum }}
 
 echo "brew bundle install --no-upgrade" &&
   brew bundle install --no-upgrade
