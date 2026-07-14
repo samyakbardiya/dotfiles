@@ -15,7 +15,8 @@ vim.o.splitbelow = false
 vim.o.tabstop = 4
 
 vim.g.ai_cmp = true
-vim.g.copilot_enabled = false
+vim.g.ai_supermaven_cmp = true
+vim.g.ai_copilot_cmp = false
 vim.g.python3_host_prog = os.getenv("HOME") .. "/.local/share/pyenv/versions/py3nvim/bin/python3"
 vim.g.snacks_animate = false
 
