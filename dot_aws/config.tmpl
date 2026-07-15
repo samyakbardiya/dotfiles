@@ -1,14 +1,33 @@
 {{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
 
-[profile tpm-local]
-region=us-east-1
-output=json
-endpoint_url = http://localhost:4566
-
 [sso-session TPV]
 sso_start_url = https://d-9967054bd3.awsapps.com/start/#
 sso_region = eu-central-1
 sso_registration_scopes = sso:account:access
+
+[profile htv-local]
+region=us-east-1
+output=json
+endpoint_url = http://localhost:4566
+
+[profile htv-dev]
+sso_session = TPV
+sso_account_id = 361116840280
+sso_role_name = PowerUserAccess
+region = eu-central-1
+output = json
+
+[profile htv-acc]
+sso_session = TPV
+sso_account_id = 750910788490
+sso_role_name = PowerUserAccess
+region = eu-central-1
+output = json
+
+[profile tpv-local]
+region=us-east-1
+output=json
+endpoint_url = http://localhost:4566
 
 [profile tpv-dev]
 sso_session = TPV
