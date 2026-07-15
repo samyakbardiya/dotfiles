@@ -8,6 +8,12 @@ return {
         debug = {
             enabled = true,
             show_scores = true,
+            show_file_info = {
+                file_info = true,
+                score_breakdown = false,
+                timings = false,
+                full_path = true,
+            },
         },
         layout = {
             height = 1,
