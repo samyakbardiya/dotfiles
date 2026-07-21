@@ -1,0 +1,17 @@
+onboarding = false
+
+[experimental]
+pane_history = true
+
+[theme]
+name = "catppuccin"
+auto_switch = true
+
+[ui]
+agent_panel_sort = "spaces"
+
+[ui.toast]
+delivery = "terminal"
+
+[update]
+version_check = false
