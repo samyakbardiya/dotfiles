@@ -3,12 +3,12 @@
 
 set -eu
 
-# {{ include "dot_config/private_homebrew/Brewfile" | sha256sum }}
+# {{ "$HOMEBREW_BUNDLE_FILE" | sha256sum }}
 
-echo "brew bundle install --quiet --no-upgrade" &&
-  brew bundle install --quiet --no-upgrade
+echo "brew bundle install" &&
+  brew bundle install --no-upgrade --quiet
 
-echo "brew bundle cleanup --force" &&
+echo "brew bundle cleanup" &&
   brew bundle cleanup --force
 
 {{- end }}

@@ -1,7 +1,8 @@
 tap "asmvik/formulae"
 tap "d12frosted/emacs-plus"
-tap "dmtrkovalenko/fff", "https://github.com/dmtrKovalenko/homebrew-fff"
-tap "gechr/tap", trusted: { casks: ["whichspace"] }
+tap "dmtrkovalenko/fff"
+tap "gechr/tap"
+tap "modem-dev/tap"
 tap "samyakbardiya/local-tap", trusted: true
 tap "scarvalhojr/tap"
 brew "python@3.14"
@@ -198,7 +199,7 @@ cask "todoist-app"
 cask "wakatime"
 cask "wezterm"
 cask "whatsapp"
-cask "whichspace"
+cask "whichspace", trusted: true
 cask "zed"
 cask "zen"
 mas "1Password for Safari", id: 1569813296

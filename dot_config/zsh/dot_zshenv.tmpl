@@ -171,8 +171,13 @@ export FZF_DEFAULT_OPTS=" \
 
 # Homebrew
 export HOMEBREW_BAT=1
-export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/homebrew/Brewfile"
 export HOMEBREW_BUNDLE_NO_DESCRIBE=1
+
+{{ if eq .chezmoi.os "darwin" -}}
+export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/homebrew/darwin.Brewfile"
+{{ else -}}
+export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/homebrew/linux.Brewfile"
+{{ end -}}
 
 # export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
