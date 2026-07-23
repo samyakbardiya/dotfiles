@@ -2,13 +2,12 @@
 
 #SingleInstance
 
-; ; Locale ID
-; Qwerty := 0x9
-; DvorakProg := 0x409
 
-;===================;
-; Dvorak Programmer ;
-;===================;
+#SuspendExempt
+^!#m:: ToggleLayout()
+^+F12:: ReloadScript()
+#SuspendExempt False
+
 
 ; Number Row
 `::$
@@ -24,6 +23,7 @@
 0::]
 [::!
 ]::#
+
 ; Shift + Number Row
 ~::~
 +1::%
@@ -50,3 +50,35 @@
 
 ; Third Row
 `;::'
+
+
+;#############
+;# Functions #
+;#############
+
+ReloadScript() {
+    ToolTip "'DvorakProg' reloaded"
+    SetTimer () => ToolTip(), -1000
+    Reload
+}
+
+SetInputLang(Lang) {
+    try {
+        hwnd := ControlGetFocus("A")
+        PostMessage(0x50, 0, Lang, hwnd)  ; WM_INPUTLANGCHANGEREQUEST
+    } catch {
+        PostMessage(0x50, 0, Lang, , "A")  ; fallback: whole window
+    }
+}
+
+ToggleLayout() {
+    Suspend
+    if A_IsSuspended {
+        SetInputLang(0x0409) ; English US
+        ToolTip "Qwerty Layout"
+    } else {
+        SetInputLang(0x4009) ; English IN
+        ToolTip "DvorakProg Layout"
+    }
+    SetTimer () => ToolTip(), -1000
+}

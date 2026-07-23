@@ -2,8 +2,11 @@
 
 #SingleInstance
 
-; Reload
-+F12:: Reload
+
+#SuspendExempt
++F12:: ReloadScript()
+#SuspendExempt False
+
 
 ; Window Management
 !m:: WinMinimize 'A'
@@ -19,15 +22,14 @@
 ^!,:: ActivateOrRunProgram("outlook.exe")
 ^!;:: ActivateOrRunProgram("firefox.exe", "C:\Users\samyak.bardiya\AppData\Local\Firefox Developer Edition\firefox.exe")
 
-;-----------;
-; Functions ;
-;-----------;
+;#############
+;# Functions #
+;#############
 
 ActivateOrRunProgram(programName, exePath := "") {
     if (!programName) {
         return
     }
-
     local winTarget := "ahk_exe " . programName
     if (WinExist(winTarget)) {
         WinActivate(winTarget)
@@ -44,16 +46,21 @@ ActivateOrRunProgram(programName, exePath := "") {
 ListOpenPrograms() {
     local output := ""
     allWindows := WinGetList(, , "Program Manager")
-
     loop allWindows.Length {
         local procName := WinGetProcessName(allWindows[A_Index])
         if (procName) {
             output .= procName . "`n"
         }
     }
-
     MsgBox(output ? output : "No programs found`n" . allWindows )
 }
+
+ReloadScript() {
+    ToolTip "'SaneBind' reloaded"
+    SetTimer () => ToolTip(), -1000
+    Reload
+}
+
 
 ; RAlt Modifiers
 ; >!h:: SendInput "{Left}"
