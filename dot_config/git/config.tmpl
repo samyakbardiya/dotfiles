@@ -37,7 +37,7 @@
     prune = true
     pruneTags = true
 
-{{ if eq .chezmoi.os "windows" -}}
+{{- if eq .chezmoi.os "windows" -}}
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -45,9 +45,12 @@
     required = true
 {{- end }}
 
-{{- if eq .chezmoi.os "darwin" -}}
 [gpg]
-    program = /opt/homebrew/bin/gpg
+    format = ssh
+
+{{ if eq .chezmoi.os "darwin" -}}
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 {{- end }}
 
 [init]
@@ -82,6 +85,7 @@
 [user]
     name = Samyak Bardiya
     email = mail@samyakbardiya.dev
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHbpZRkQYWG2hMobXAgkcnWyYHB7YkZ6Q3173ksu67kn
 
 [includeIf "gitdir:~/work-ct/"]
     path = ~/.config/git/config_work_ct

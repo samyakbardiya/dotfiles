@@ -1,6 +1,3 @@
 [user]
-  email = samyak.bardiya@tpv-tech.com
-
-
-
-# vim:ft=gitconfig.chezmoitmpl
+    email = samyak.bardiya@tpv-tech.com
+    signingkey =

@@ -1,4 +1,3 @@
 [user]
-  email = samyak.b@cumulations.com
-
-# vim:ft=gitconfig
+    email = samyak.b@cumulations.com
+    signingkey =
