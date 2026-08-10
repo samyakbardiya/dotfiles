@@ -180,4 +180,23 @@ function skills() {
 	bunx skills@latest "$@"
 }
 
-# vim:ft=sh
+function hn() {
+	local label workspace_id
+	label="$(basename "$PWD")"
+
+	workspace_id="$(
+		herdr workspace list |
+			jq -r --arg l "$label" \
+				'[.result.workspaces[] | select(.label == $l) | .workspace_id] | first // empty'
+	)"
+
+	if [[ -n $workspace_id ]]; then
+		herdr workspace focus "$workspace_id" || return $?
+	else
+		herdr workspace create --cwd "$PWD" --label "$label" --focus || return $?
+	fi
+
+	herdr
+}
+
+# vim:ft=zsh
