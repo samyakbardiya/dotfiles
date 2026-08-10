@@ -17,12 +17,20 @@ sso_role_name = PowerUserAccess
 region = eu-central-1
 output = json
 
+[profile htv-dev-titan]
+role_arn = arn:aws:iam::361116840280:role/hospitality-titan-app-list-sync
+source_profile = htv-dev
+
 [profile htv-acc]
 sso_session = TPV
 sso_account_id = 750910788490
 sso_role_name = PowerUserAccess
 region = eu-central-1
 output = json
+
+[profile htv-acc-titan]
+role_arn = arn:aws:iam::750910788490:role/hospitality-titan-app-list-sync
+source_profile = htv-acc
 
 [profile tpv-local]
 region=us-east-1
@@ -38,7 +46,7 @@ output = json
 
 [profile tpv-dev-titan]
 role_arn = arn:aws:iam::825169607534:role/hospitality-titan-app-list-sync
-source_profile = tpv_dev
+source_profile = tpv-dev
 
 [profile tpv-acc]
 sso_session = TPV

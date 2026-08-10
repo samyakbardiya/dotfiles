@@ -16,7 +16,7 @@
 {{ if (or (eq .chezmoi.hostname "inblrnb0230") (eq .chezmoi.hostname "inblrlxdt001")) -}}
 
 # TPV
-export AWS_PROFILE='tpv-dev'
+export AWS_PROFILE='htv-dev'
 export GITLAB_NPM_TOKEN={{ pass "work-tp/env/GITLAB_NPM_TOKEN" }}
 
 # Wave Hospitality
@@ -37,7 +37,7 @@ export PATH="$WAVE_SIGNAGE_ROOT_DIR/tools/scripts:$PATH"
 # export AUTH0_CLIENT_SECRET='{{ pass "work-tp/env/AUTH0_CLIENT_SECRET" }}'
 # export AUTH0_PORTAL_CLIENT_ID='{{ pass "work-tp/env/AUTH0_PORTAL_CLIENT_ID" }}'
 # export AUTH0_TENANT='{{ pass "work-tp/env/AUTH0_TENANT" }}'
-# export AUTH0_USER_SUB='{{ pass "work-tp/env/AUTH0_USER_SUB" }}'
+export AUTH0_USER_SUB='{{ pass "work-tp/env/AUTH0_USER_SUB" }}'
 
 {{- end }}
 

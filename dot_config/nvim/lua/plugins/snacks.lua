@@ -1,7 +1,12 @@
 -- A collection of small QoL plugins for Neovim
 return {
     "folke/snacks.nvim",
+    ---@type snacks.Config
     opts = {
+        ---@class snacks.explorer.Config
+        explorer = {
+            trash = true,
+        },
         ---@class snacks.notifier.Config
         notifier = {
             top_down = false,
@@ -12,12 +17,7 @@ return {
                 height = 1,
                 width = 1,
             },
-            -- stylua: ignore
-            keys = {
-                -- { "<leader>f/", LazyVim.pick("grep"), desc = "Grep (Root Dir)" },
-            },
             sources = {
-                ---@class snacks.picker.explorer.Config
                 explorer = {
                     -- auto_close = true,
                     hidden = true,
@@ -26,7 +26,7 @@ return {
             win = {
                 input = {
                     keys = {
-                        ["<a-z>"] = { "toggle_maximize", mode = { "i", "n" } },
+                        ["M"] = { "toggle_maximize", mode = { "n" } },
                     },
                 },
             },
