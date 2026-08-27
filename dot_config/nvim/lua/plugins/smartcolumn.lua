@@ -5,7 +5,9 @@ return {
         colorcolumn = "80",
         custom_colorcolumn = {
             java = "120",
+            javascript = "100",
             python = "100",
+            typescript = "100",
         },
         disabled_filetypes = {
             "NvimTree",
@@ -23,6 +25,7 @@ return {
             "neo-tree",
             "noice",
             "notify",
+            "snacks_dashboard",
             "toggleterm",
             "trouble",
             "zsh",

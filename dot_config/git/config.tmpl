@@ -45,10 +45,10 @@
     required = true
 {{- end }}
 
+{{ if eq .chezmoi.os "darwin" -}}
 [gpg]
     format = ssh
 
-{{ if eq .chezmoi.os "darwin" -}}
 [gpg "ssh"]
     program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 {{- end }}
@@ -85,7 +85,9 @@
 [user]
     name = Samyak Bardiya
     email = mail@samyakbardiya.dev
+    {{- if ne .chezmoi.os "linux" }}
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHbpZRkQYWG2hMobXAgkcnWyYHB7YkZ6Q3173ksu67kn
+    {{- end }}
 
 [includeIf "gitdir:~/work-ct/"]
     path = ~/.config/git/config_work_ct

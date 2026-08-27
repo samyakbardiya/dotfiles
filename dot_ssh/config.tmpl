@@ -15,13 +15,17 @@
 Include ~/.orbstack/ssh/config
 {{- end }}
 
+Host *
+{{- if eq .chezmoi.os "darwin" }}
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+{{- else if eq .chezmoi.os "linux" }}
+    IdentityAgent "~/.1password/agent.sock"
+{{- end }}
+
 Host _*
     RequestTTY yes
     RemoteCommand tmux new-session -A -s zero
 
-{{- if eq .chezmoi.os "darwin" }}
-    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-{{- end }}
 
 ##############
 ## Personal ##
@@ -29,6 +33,7 @@ Host _*
 
 Host github.com
     AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_ed25519_github
 
 # Host gitlab.com
 #     AddKeysToAgent yes

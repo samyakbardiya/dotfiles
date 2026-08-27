@@ -5,6 +5,17 @@ return {
         require("fff.download").download_or_build_binary()
     end,
     opts = {
+        layout = {
+            height = 0.9,
+            width = 0.9,
+            prompt_position = "top",
+        },
+        git = {
+            status_text_color = true,
+        },
+        file_picker = {
+            fuzzy_query_highlighting = true,
+        },
         debug = {
             enabled = true,
             show_scores = true,
@@ -14,15 +25,6 @@ return {
                 timings = false,
                 full_path = true,
             },
-        },
-        layout = {
-            height = 1,
-            width = 1,
-            prompt_position = "top",
-            anchor = "center",
-        },
-        git = {
-            status_text_color = true,
         },
     },
     -- stylua: ignore
