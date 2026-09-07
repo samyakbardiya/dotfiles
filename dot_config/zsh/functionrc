@@ -150,10 +150,10 @@ function wave-htv-unzip-config() {
 		fd -tf -E '*.zip' --strip-cwd-prefix -x aws s3 cp "{}" "s3://{}"
 }
 
-v() {
-	multiplexer_name_update
-	nvim "$@"
-}
+# function v() {
+# 	multiplexer_name_update
+# 	nvim "$@"
+# }
 
 # yazi
 # https://yazi-rs.github.io/docs/quick-start#shell-wrapper
