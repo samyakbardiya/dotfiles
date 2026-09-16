@@ -94,6 +94,14 @@ multiplexer_name_update() {
 }
 # chpwd_functions+=(multiplexer_name_update)
 
+# 
+function gcM() {
+  local msg
+  msg="$(pi --no-extensions --model opencode-go/deepseek-v4.1-flash:off --print "/skill:caveman-commit staged")" \
+    || msg="$(claude --model claude-haiku-4-5-20251001 --print "/caveman-commit staged")"
+  git commit --edit --message "$msg"
+}
+
 function wave_htv() {
 	# export WAVE_HTV_API="$PWD"
 	env | rg -e AWS_ -e WAVE_HTV_
@@ -197,6 +205,161 @@ function hn() {
 	fi
 
 	herdr
+}
+
+# GitLab activity for date range
+function glab-log-old() {
+	local after="${1:-$(date -d "1 month ago" +%Y-%m-%d)}"
+	local before="${2:-$(date +%Y-%m-%d)}"
+
+	echo "📅 GitLab Activity: $after → $before"
+	echo "───────────────────────────────────────────────────────────────"
+
+	glab api --paginate "/users/$(glab api /user | jq -r .id)/events?after=$after&before=$before" |
+		jq -r '
+			.[] | [
+				(.created_at | split("T")[0]),
+				.action_name,
+				(.target_type // "N/A"),
+				(.target_title // .title // "N/A"),
+				(.project.path_with_namespace // "N/A")
+			] | @tsv
+		' | column -t -s $'\t' | uniq
+}
+
+# GitLab activity for a date range
+# Usage:
+#   glab-log
+#   glab-log 2026-07-01
+#   glab-log 2026-07-01 2026-08-01
+#   glab-log 2026-07-01 2026-08-01 'pushed|opened|approved|commented'
+function glab-log() {
+	local after="${1:-$(date -d '1 month ago' +%Y-%m-%d)}"
+	local before="${2:-$(date +%Y-%m-%d)}"
+	local action_filter="${3:-}"
+
+	local date_re='^[0-9]{4}-[0-9]{2}-[0-9]{2}$'
+	if [[ ! "$after" =~ $date_re || ! "$before" =~ $date_re ]]; then
+		echo "Usage: glab-log [after YYYY-MM-DD] [before YYYY-MM-DD] [action filter]" >&2
+		return 1
+	fi
+
+	# GitLab after/before are exclusive → shift for an inclusive range
+	local api_after api_before
+	api_after=$(date -d "$after - 1 day" +%Y-%m-%d)
+	api_before=$(date -d "$before + 1 day" +%Y-%m-%d)
+
+	echo "📅 GitLab Activity: $after → $before (inclusive)"
+	echo "───────────────────────────────────────────────────────────────"
+
+	local user_id
+	user_id=$(glab api /user 2>/dev/null | jq -r '.id // empty')
+	if [[ -z "$user_id" ]]; then
+		echo "error: could not resolve current user (is glab authenticated?)" >&2
+		return 1
+	fi
+
+	local raw
+	raw=$(
+		glab api --paginate \
+			"/users/${user_id}/events?after=${api_after}&before=${api_before}&sort=desc&per_page=100"
+	) || {
+		echo "error: GitLab API request failed" >&2
+		return 1
+	}
+
+	# Normalize:
+	# - one array          → keep
+	# - one array per page → concat
+	# - error object       → fail clearly
+	local events
+	if ! events=$(
+		printf '%s' "$raw" | jq -c -s '
+			if length == 0 then
+				[]
+			elif all(.[]; type == "array") then
+				(add // [])
+			elif all(.[]; type == "object") then
+				.
+			else
+				error("unexpected API payload shape")
+			end
+			| if length > 0
+					and (.[0] | type == "object")
+					and (.[0] | has("message"))
+					and (.[0] | has("id") | not)
+				then
+					error("API error: " + (.[0].message // "unknown"))
+				else
+					.
+				end
+		'
+	); then
+		echo "error: failed to parse API response" >&2
+		printf '%s\n' "$raw" | head -c 500 >&2
+		echo >&2
+		return 1
+	fi
+
+	local count
+	count=$(printf '%s' "$events" | jq 'length')
+	if [[ "$count" -eq 0 ]]; then
+		echo "(no events in this range)"
+		return 0
+	fi
+
+	local rows
+	rows=$(
+		printf '%s' "$events" | jq -r --arg filter "$action_filter" '
+			.[]
+			| select(
+					($filter == "")
+					or (.action_name | test($filter; "i"))
+				)
+			| [
+					(.created_at | split("T")[0]),
+					.action_name,
+					(
+						.target_type
+						// (if .push_data then "Push" else "N/A" end)
+					),
+					(
+						.target_title
+						// .push_data.commit_title
+						// .note.body
+						// .title
+						// "N/A"
+						| gsub("[\t\n\r]+"; " ")
+						| .[0:90]
+					),
+					(
+						.project.path_with_namespace
+						// (if .project_id then "#\(.project_id)" else "N/A" end)
+					)
+				]
+			| @tsv
+		'
+	)
+
+	if [[ -z "$rows" ]]; then
+		echo "(no events matched filter: ${action_filter})"
+		return 0
+	fi
+
+	{
+		printf '%s\t%s\t%s\t%s\t%s\t%s\n' \
+			"DATE" "TIME" "ACTION" "TYPE" "TITLE" "PROJECT"
+		printf '%s\n' "$rows"
+	} | column -t -s $'\t' | uniq
+
+	local total
+	total=$(printf '%s\n' "$rows" | wc -l | tr -d ' ')
+
+	echo "───────────────────────────────────────────────────────────────"
+	echo "Total: ${total} event(s)"
+	echo
+	echo "By action:"
+	printf '%s\n' "$rows" | awk -F'\t' '{print $2}' | sort | uniq -c | sort -rn
 }
 
 # vim:ft=zsh

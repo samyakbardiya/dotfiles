@@ -116,6 +116,9 @@ alias l='ll'
 # ip
 alias ip='ip -c'
 
+# ripgrep
+alias hl='rg --passthru --'
+
 # Tmux
 alias tn='tmux new-session -A -s zero'
 
@@ -196,7 +199,8 @@ alias dck="docker compose kill"
 # git
 unalias gpf
 alias grr="git rebase --update-refs"
-alias gcpi='pi -ne --model opencode-go/deepseek-v4-pro:off -p "/skill:caveman-commit staged"'
+alias gcMp='pi --no-extensions --model opencode-go/deepseek-v4.1-flash:off --print "/skill:caveman-commit staged"'
+alias gcMc='claude --model claude-haiku-4-5-20251001 --print "/caveman-commit staged"'
 
 # yarn
 alias y="yarn"

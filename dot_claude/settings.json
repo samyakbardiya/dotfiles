@@ -4,6 +4,8 @@
   "model": "claude-sonnet-4-6",
   "effortLevel": "medium",
   "theme": "auto",
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
   "hooks": {
     "SessionStart": [
       {

@@ -1,2 +1,10 @@
+agent_notes = true
+copy_decorations = false
+cursor_line = "row"
+hunk_headers = true
+line_numbers = true
+menu_bar = true
+mode = "auto"
+prompt_save_view_preferences = false
 theme = "catppuccin-mocha"
-mode = "stack"
+wrap_lines = true
