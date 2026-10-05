@@ -13,7 +13,11 @@
         "hooks": [
           {
             "type": "command",
+{{ if eq .chezmoi.os "darwin" }}
             "command": "bash '/Users/samyakbardiya/.claude/hooks/herdr-agent-state.sh' session",
+{{ else if eq .chezmoi.os "linux" }}
+            "command": "bash '/home/samyak_bardiya/.claude/hooks/herdr-agent-state.sh' session",
+{{ end }}
             "timeout": 10
           }
         ]
