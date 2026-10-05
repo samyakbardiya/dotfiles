@@ -69,21 +69,34 @@ Host lab
     UserKnownHostsFile ~/.ssh/known_hosts
     IdentityFile ~/.ssh/work-tp/id_ed25519_lab
     PubkeyAuthentication yes
+
     DynamicForward 1080                 # Tunnel SOCKS5 Proxy
     LocalForward 1234 localhost:1234    # FooBar
     LocalForward 6969 localhost:6969    # FooBar
-    LocalForward 3000 localhost:3000    # Portal
-    LocalForward 3001 localhost:3001    # Admin Portal
-    LocalForward 8080 localhost:8080    # API Service
-    LocalForward 8081 localhost:8081    # Display Service
-    LocalForward 8082 localhost:8082    # Admin API
-    LocalForward 8083 localhost:8083    # Pro Store
-    LocalForward 8084 localhost:8084    # Creator Service
-    LocalForward 8085 localhost:8085    # Auth Service
-    LocalForward 8086 localhost:8086    # Display Simulator
+    LocalForward 7777 localhost:7777    # FooBar
+    LocalForward 8383 127.0.0.1:8384    # Syncthing
+
     LocalForward 4566 localhost:4566    # Localstack
     LocalForward 5432 localhost:5432    # PostgreSQL
+    LocalForward 5601 localhost:5601    # OpenSearch
+    LocalForward 5602 localhost:5602    # OpenSearch
+    LocalForward 8097 localhost:8097    # React Devtools
     LocalForward 27017 localhost:27017  # Mongo DB
+
+    # Project: Wave Signage / AppControl
+    LocalForward 3000 localhost:3000
+    LocalForward 3001 localhost:3001
+    LocalForward 3002 localhost:3002
+    LocalForward 3003 localhost:3003
+    LocalForward 8080 localhost:8080
+    LocalForward 8081 localhost:8081
+    LocalForward 8082 localhost:8082
+    LocalForward 8083 localhost:8083
+    LocalForward 8084 localhost:8084
+    LocalForward 8085 localhost:8085
+    LocalForward 8086 localhost:8086
+    LocalForward 45432 localhost:45432  # Dev PostgreSQL
+    LocalForward 55432 localhost:55432  # Prod PostgreSQL
 
     # RequestTTY yes
     # RemoteCommand /home/linuxbrew/.linuxbrew/bin/tmux new-session -A -s zero || /bin/zsh
@@ -97,6 +110,9 @@ Host ssm-bastion-tpvision-dev
     IdentitiesOnly yes
     StrictHostKeyChecking no
     ProxyCommand aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p' --profile ReadOnlyAccess-Dev
+    LocalForward 45432 api-rds.cjtwwdvqdlvu.eu-central-1.rds.amazonaws.com:5432
+    RequestTTY no
+    SessionType none
 
 Host ssm-bastion-tpvision-prod
     HostName i-08553d0690ea06850
@@ -105,6 +121,9 @@ Host ssm-bastion-tpvision-prod
     IdentitiesOnly yes
     StrictHostKeyChecking no
     ProxyCommand aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p' --profile ReadOnlyAccess-Prod
+    LocalForward 55432 api-rds.ckteraz7ixmi.eu-central-1.rds.amazonaws.com:5432
+    RequestTTY no
+    SessionType none
 
 Host *htv_temp
     HostName ec2-54-93-55-233.eu-central-1.compute.amazonaws.com
